@@ -1,0 +1,24 @@
+footer {
+  background-color: rgb(107, 116, 130);
+  z-index: -1;
+  white-space: nowrap;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-top: 40px;
+  height: 140px;
+}
+
+.contact-icon {
+  border: 3px solid white;
+  border-radius: 100vmax;
+  height: 50px;
+  width: 50px;
+  margin: 5px;
+  transition: 0.3s;
+}
+
+.contact-icon:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.3);
+}

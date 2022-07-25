@@ -1,0 +1,28 @@
+.input-field {
+  color: rgba(0, 0, 0, 0.6);
+  border: 3px solid #FF9B54;
+  border-radius: 12px;
+  text-indent: 10px;
+  padding-right: 5px;
+  font-size: 14px;
+  width: 100%;
+  height: 45px;
+  margin-bottom: 5px
+}
+
+.input-field:focus {
+  outline: 0;
+}
+
+label {
+  color: #FF9B54;
+  font-size: small;
+  padding-left: 10px;
+  position: relative;
+  top: 1px;
+}
+
+.span2 {
+  grid-column: 1 / span 2;
+  ;
+}

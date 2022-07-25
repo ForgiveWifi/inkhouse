@@ -1,0 +1,5 @@
+.header-container {
+  max-width: 950px;
+  align-items: flex-start;
+  z-index: 20;
+}
