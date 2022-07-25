@@ -4,7 +4,7 @@ function NavLinks() {
 
   return (
     <>
-      <div style={{ margin: "auto", marginBottom: "25px" }} className="flexbox-row">
+      <div style={{ margin: "auto", marginBottom: "5px" }} className="flexbox-row">
 
         <a className="nav-link shadow-2" href="#production-header">production</a>
 
