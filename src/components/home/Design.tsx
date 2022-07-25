@@ -7,9 +7,9 @@ function Design() {
     <>
       <div className="flexbox-column full-width flex-wrap">
 
-        <Header title="art + design" id="design-header"/>
+        <Header title="art + design" id="design"/>
 
-        <div className="card flexbox-row" style={{ maxWidth: "800px", marginTop: "20px" }}>
+        <div className="card flexbox-row" style={{ maxWidth: "800px", marginTop: "15px" }}>
 
           <div className="flexbox-column" style={{ marginRight: "30px", marginBottom: "18px" }}>
 

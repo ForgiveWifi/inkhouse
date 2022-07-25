@@ -10,11 +10,11 @@ function Production() {
     <>
       <div className="flexbox-column full-width" style={{ marginTop: "10px", marginBottom: "10px" }}>
 
-        <Header title="high tech production" id="production-header" />
+        <Header title="high tech production" id="production" />
 
         <div className="flexbox-row flex-wrap" >
 
-          <div className="flexbox-column" style={{ alignItems: "flex-end", minWidth: "340px", marginBottom: "10px", paddingTop: "10px" }}>
+          <div className="flexbox-column" style={{ alignItems: "flex-end", minWidth: "340px", marginTop: "10px" }}>
 
             <div className="flexbox-row">
               <h3>no order minimums</h3>

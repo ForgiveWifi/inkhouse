@@ -4,13 +4,13 @@ function NavLinks() {
 
   return (
     <>
-      <div style={{ margin: "auto", marginBottom: "5px" }} className="flexbox-row">
+      <div style={{ margin: "5px auto 5px" }} className="flexbox-row">
 
-        <a className="nav-link shadow-2" href="#production-header">production</a>
+        <a className="nav-link shadow-2" href="#production">production</a>
 
         <span style={{ margin: "10px" }}> & </span>
 
-        <a className="nav-link shadow-2" href="#design-header">art + design</a>
+        <a className="nav-link shadow-2" href="#design">art + design</a>
 
       </div>
     </>
