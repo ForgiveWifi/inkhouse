@@ -28,7 +28,7 @@ function Design() {
           <div className="flexbox-column" style={{ paddingBottom: "30px" }}>
 
             <p style={{ marginBottom: '20px' }}>
-              We offer consultation services to provide customers with custom, unique designs that can be printed on our merchandise.
+              We offer consultation services to provide customers with custom, unique designs that can be printed on your merchandise.
             </p>
 
             <p>
