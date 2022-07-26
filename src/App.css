@@ -44,18 +44,24 @@ span {
 }
 
 .gradient-wave {
+  -webkit-background-color: #FF9B54;
   background-color: #FF9B54;
+  -webkit-background-image:  radial-gradient(circle, rgba(255,119,140,1) 0%, rgba(255,175,117,1) 16%, rgba(196,226,115,1) 32%, rgba(134,227,190,1) 49%, rgba(116,206,255,1) 65%, rgba(137,121,255,1) 81%, #ff75f6 96%);
   background-image:  radial-gradient(circle, rgba(255,119,140,1) 0%, rgba(255,175,117,1) 16%, rgba(196,226,115,1) 32%, rgba(134,227,190,1) 49%, rgba(116,206,255,1) 65%, rgba(137,121,255,1) 81%, #ff75f6 96%);
+  -webkit-background-size: 4000%;
   background-size: 4000%;
+  -webkit-animation: bg-animation 40s linear infinite;
   animation: bg-animation 40s linear infinite;
 }
 
 @keyframes bg-animation {
   0% {
-    background-position-x: left
+    -webkit-background-position-x: left;
+    background-position-x: left;
   }
 
   100% {
+    -webkit-background-position-x: right;
     background-position-x: right
   }
 }
