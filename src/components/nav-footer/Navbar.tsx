@@ -20,7 +20,7 @@ function Navbar() {
 
         {desktopMode && <NavLinks />}
 
-        <div style={{ position: "absolute", top: "24px", right: "15px" }}>
+        <div style={{ position: "absolute", top: "23px", right: "15px" }}>
           <OrderModal />
         </div>
 

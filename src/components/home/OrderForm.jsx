@@ -44,7 +44,7 @@ export default function OrderForm() {
           <InputField name="budget" label="budget" type="number" min="1" placeholder="$" />
 
           <div className='flexbox-column span2' style={{ padding: "0px 10px" }}>
-            <div style={{ fontSize: "25px", fontWeight: "400", color: "#FF9B54" }}>additional details</div>
+            <div style={{ position: "relative", top: "5px", fontSize: "25px", fontWeight: "500", color: "#FF9B54" }}>additional details</div>
             <textarea name="details" className='text-area' required/>
           </div>
 
