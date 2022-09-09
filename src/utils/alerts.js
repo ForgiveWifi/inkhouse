@@ -1,11 +1,36 @@
-import { showNotification } from "@mantine/notifications"
+import { showNotification, updateNotification } from '@mantine/notifications';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import ErrorIcon from '@mui/icons-material/Error';
 
-function sucessAlert() {
-  showNotification({
-    title: 'Success',
-    message: 'Thank you! We will contact you shortly.',
+function loadingAlert(id, message, title) {
+  return {
+    id: id,
+    loading: true,
+    disallowClose: true,
+    autoClose: false,
+    title: title || "Loading",
+    message: message,
+    color: "white",
+    styles: (theme) => ({
+      root: {
+        backgroundColor: "#FF9B54",
+        border: "none",
+      },
+      title: { color: theme.white },
+      description: { color: theme.white },
+      closeButton: {
+        color: theme.white,
+        '&:hover': { backgroundColor: "#fb0000" },
+      },
+    }),
+  }
+}
+
+function successAlert(id, message, title) {
+  return {
+    id: id, 
+    title: title || 'Success',
+    message: message,
     color: "green",
     icon: <CheckCircleOutlineIcon />,
     styles: (theme) => ({
@@ -20,13 +45,14 @@ function sucessAlert() {
         '&:hover': { backgroundColor: "#47ab3f" },
       },
     }),
-  })
+  }
 }
 
-function errorAlert() {
-  showNotification({
-    title: 'Error!',
-    message: 'Something went wrong!',
+function errorAlert(id, message, title) {
+  return {
+    id: id,
+    title: title || 'Error',
+    message: message,
     color: "red",
     icon: <ErrorIcon />,
     styles: (theme) => ({
@@ -41,28 +67,27 @@ function errorAlert() {
         '&:hover': { backgroundColor: "#fb0000" },
       },
     }),
-  })
+  }
 }
 
-function loadingAlert() {
-  showNotification({
-    loading: true,
-    title: 'Loading...',
-    message: 'Please wait',
-    color: "white",
-    styles: (theme) => ({
-      root: {
-        backgroundColor: "#FF9B54",
-        border: "none",
-      },
-      title: { color: theme.white },
-      description: { color: theme.white },
-      closeButton: {
-        color: theme.white,
-        '&:hover': { backgroundColor: "#fb0000" },
-      },
-    }),
-  })
+function showLoading(id, message, title) {
+  showNotification(loadingAlert(id, message, title))
 }
 
-export { sucessAlert, errorAlert, loadingAlert } 
+function showSuccess(id, message, title) {
+  showNotification(successAlert(id, message, title))
+}
+
+function showError(id, message, title) {
+  showNotification(errorAlert(id, message, title))
+}
+
+function updateSuccess(id, message, title) {
+  updateNotification(successAlert(id, message, title))
+}
+
+function updateError(id, message, title) {
+  updateNotification(errorAlert(id, message, title))
+}
+
+export { showLoading, showSuccess, showError, updateSuccess, updateError } 

@@ -12,7 +12,7 @@ function Header(props: HeaderProps) {
   return (
     <>
       <div id={id} className="header-container full-width flexbox-row">
-        <h1 style={{ padding: "10px 0px" }}>{title}</h1>
+        <h1 style={{ padding: "15px 0px" }}>{title}</h1>
       </div>
     </>
   );

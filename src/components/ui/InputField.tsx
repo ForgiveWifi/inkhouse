@@ -1,22 +1,23 @@
 import "./InputField.css"
 
 type InputFieldProps = {
-  name: string
-  label: string,
+  name: string,
   type: string,
-  min?: string,
+  value?: string,
+  min?: number,
   placeholder?: string,
   className?: string
+  onChange?: () => void
 }
 
 function InputField(props: InputFieldProps) {
 
-  const { name, label, type, min, placeholder, className } = props
+  const { name, type, value, min, placeholder, className, onChange } = props
 
   return (
-    <div className={`flex-start ${className}`} >
-      <label>{label}</label>
-      <input className="input-field" name={name} type={type} min={min} placeholder={placeholder} required></input>
+    <div className={`flexbox-start ${className}`} >
+      <label>{name}</label>
+      <input className="input-field" name={name} type={type} value={value} min={min} placeholder={placeholder} onChange={onChange} required></input>
     </div>
   );
 }

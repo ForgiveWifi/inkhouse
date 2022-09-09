@@ -2,6 +2,7 @@
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import EmailIcon from '@mui/icons-material/Email';
 
 export const contactList = [
   {
@@ -15,5 +16,9 @@ export const contactList = [
   {
     icon: <FacebookIcon sx={{ fontSize: "30px" }} />,
     link: "https://www.facebook.com/InkhouseStudioATX"
+  },
+  {
+    icon: <EmailIcon sx={{ fontSize: "30px" }} />,
+    link: "mailto:inkhousestudioatx@gmail.com"
   }
 ]

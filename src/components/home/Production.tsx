@@ -1,7 +1,7 @@
 
-import TextIcon from "../ui/TextIcon";
 import Header from "../ui/Header";
 import Image from "../ui/Image"
+import TextIcon from "../ui/icons/TextIcon";
 import ClearIcon from '@mui/icons-material/Clear';
 import { productionList } from "../../data/productionList"
 
@@ -24,10 +24,10 @@ function Production() {
             </div>
             
             {
-              productionList.map((item) => {
+              productionList.map((item, i) => {
                 const { text, icon, size, weight } = item
                 return (
-                  <div className="flexbox-row" >
+                  <div key={i} className="flexbox-row" >
                     <h3>{text}</h3>
                     <TextIcon icon={icon} size={size} weight={weight} />
                   </div>

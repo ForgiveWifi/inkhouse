@@ -1,7 +1,8 @@
 .image-container {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   min-height: 550px;
+  margin-right: auto
 }
 
 .img-section1 {

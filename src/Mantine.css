@@ -1,0 +1,115 @@
+.mantine-Modal-modal{
+  background-color: grey;
+}
+
+.mantine-TextInput-label {
+  color: white;
+}
+.mantine-TextInput-input{
+  color: rgb(107, 116, 130);
+  border: 1.5px solid white;
+  border-radius: 8px;
+}
+/* .mantine-TextInput-input:hover {
+  border: 1.5px solid grey;
+} */
+.mantine-TextInput-input:focus {
+  border: 1.5px solid grey;
+}
+.mantine-TextInput-invalid {
+  border: 1.5px solid red
+}
+
+
+
+.mantine-NumberInput-label{
+  color: white;
+}
+.mantine-NumberInput-input {
+  width: 90px;
+  border: 1.5 solid white;
+  color: rgb(79, 87, 98);
+  border-radius: 5px;
+}
+.mantine-NumberInput-invalid {
+  border: 1.5px solid red
+}
+.mantine-NumberInput-control {
+  background-color: rgb(107, 116, 130);
+}
+.mantine-NumberInput-controlUp {
+  border-bottom: 0.5px solid white;
+  border-left: 0.5px solid white;
+}
+.mantine-NumberInput-controlDown{
+  border-left: 0.5px solid white;
+}
+
+
+
+.mantine-FileInput-input {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+.mantine-FileInput-input:focus {
+  border: 2px solid white
+}
+
+.mantine-FileInput-placeholder {
+  color:white;
+}
+
+
+
+.mantine-Select-label {
+  color: white
+}
+.mantine-Select-item{
+  color: rgb(107, 116, 130);
+}
+.mantine-Select-input{
+  color: rgb(107, 116, 130);
+  border: 1.5px solid white;
+  border-radius: 8px;
+}
+.mantine-Select-input:focus{
+  border: 1.5px solid grey;
+}
+.mantine-Select-invalid {
+  border: 1.5px solid red
+}
+
+
+
+.mantine-MultiSelect-input {
+  border-color: white;
+  border-radius: 8px;
+}
+.mantine-MultiSelect-item{
+  color: rgb(107, 116, 130)
+}
+.mantine-MultiSelect-defaultValue {
+  background-color: rgb(107, 116, 130);
+  border-radius: 30px;
+}
+.mantine-MultiSelect-label {
+  color: white
+}
+.mantine-MultiSelect-invalid {
+  border: 1.5px solid red;
+}
+
+
+
+.mantine-Button-root {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  transition: 0.2s;
+}
+.mantine-Button-root:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
