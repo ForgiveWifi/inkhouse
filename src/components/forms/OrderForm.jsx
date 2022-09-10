@@ -2,8 +2,8 @@ import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import InputField from "../ui/InputField"
 import PhoneNumber from './PhoneNumber';
-import { showLoading, updateError, updateSuccess } from '../../utils/alerts';
 import "./OrderForm.css"
+import { showLoading, updateError, updateSuccess } from '../../utils/alerts';
 
 
 export default function OrderForm() {
@@ -11,18 +11,20 @@ export default function OrderForm() {
   const form = useRef();
   const phoneInput = useRef(null)
 
-  const id = ""
-
   const sendEmail = (e) => {
-    showLoading(id, "Sumbitting form, please wait...")
-    e.preventDefault();
+    showLoading("order-form", "Sumbitting form, please wait...")
+    e.preventDefault()
+    console.log("sending form..")
     emailjs.sendForm(process.env.REACT_APP_EMAIL_SERVICE_ID, process.env.REACT_APP_EMAIL_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAIL_PUBLIC_KEY)
       .then((result) => {
-        updateSuccess(id, 'Thank you! We will contact you shortly.')
+        console.log("sucess")
+        updateSuccess("order-form", 'Thank you! We will contact you shortly.')
         form.current.reset()
         phoneInput.current.clearInput()
-      }, (error) => {
-        updateError(id, "We ran into a problem submitting your form. Please contact us!")
+      })
+      .catch((error) => {
+        console.log("error")
+        updateError("order-form", "We ran into a problem submitting your form. Please contact us!")
       });
   }
 
