@@ -10,12 +10,12 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <Auth0Provider
-      domain="dev-digb45l6.us.auth0.com"
-      clientId="vF1ko4tMmncDzOJySKUydXTHzp7y8JGy"
-      redirectUri={window.location.origin}
-    >
+  // <React.StrictMode>
+  //   <Auth0Provider
+  //     domain=
+  //     clientId=
+  //     redirectUri={window.location.origin}
+  //   >
       <MantineProvider>
         <NotificationsProvider position='bottom-center' autoClose={5000} zIndex={10000}>
           <SkeletonTheme baseColor="rgba(255, 255, 255, 0.2)" highlightColor="rgba(255, 255, 255, 0.2)"> 
@@ -23,7 +23,7 @@ root.render(
           </SkeletonTheme>
         </NotificationsProvider>
       </MantineProvider>
-    </Auth0Provider>
-  </React.StrictMode> 
+    // </Auth0Provider> 
+  // </React.StrictMode> 
 );
 

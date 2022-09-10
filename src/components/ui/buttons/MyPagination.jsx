@@ -5,8 +5,8 @@ function MyPagination({loading, currentPage, setPageNumber, totalPages}) {
     return null
   }
   else return (
-    <div className="background1 radius10" style={{ padding: " 8px 10px", marginTop: "15px" }}>
-      <Pagination page={currentPage} onChange={setPageNumber} total={totalPages} color="orange" withControls={false} size="md" radius="md" />
+    <div className="background1 max-radius" style={{ padding: " 8px 10px", marginTop: "15px" }}>
+      <Pagination page={currentPage} onChange={setPageNumber} total={totalPages} color="orange" withControls={false} size="md" radius="xl" />
     </div>
   );
 }

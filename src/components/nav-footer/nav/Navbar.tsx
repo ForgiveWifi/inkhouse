@@ -1,17 +1,18 @@
-import { useAuth0 } from "@auth0/auth0-react";
-import NavLinks from "./NavLinks";
+// import { useAuth0 } from "@auth0/auth0-react";
+// import NavLinks from "./NavLinks";
 import { Link } from "react-router-dom";
 
-import { useMediaQuery } from "@mui/material";
-import LogButton from "../../ui/buttons/LogButton";
-import { Button } from "@mantine/core";
+// import { useMediaQuery } from "@mui/material";
+// import LogButton from "../../ui/buttons/LogButton";
+// import { Button } from "@mantine/core";
+import AdminPage from "../../../pages/AdminPage";
 
 
 function Navbar() {
 
-  const { loginWithRedirect, isAuthenticated, logout } = useAuth0()
+  // const { loginWithRedirect, isAuthenticated, logout } = useAuth0()
 
-  const desktopMode = useMediaQuery('(min-width:750px)');
+  // const desktopMode = useMediaQuery('(min-width:750px)');
 
   return (
     <>
@@ -23,7 +24,9 @@ function Navbar() {
           </Link>
         </div>
         
-        <Button component={Link} to="/admin">Menu</Button> 
+        <div style={{marginTop: "8px"}}>
+          <AdminPage />
+        </div>
 
         {/* {desktopMode && <NavLinks />} */}
 

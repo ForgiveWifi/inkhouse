@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios"
 import OrderList from "../../components/list/OrderList"
 import { showError } from "../../utils/alerts";
-import OrderHeading from "../../components/headings/OrdersHeading";
+import OrdersHeading from "../../components/headings/OrdersHeading";
 import useQuery from "../../utils/useQuery";
 import MyPagination from "../../components/ui/buttons/MyPagination";
 
@@ -42,7 +42,7 @@ function Orders() {
 
   return (
     <>
-      <OrderHeading />
+      <OrdersHeading />
       <OrderList loading={loading} orders={orders} />
       <MyPagination loading={loading} currentPage={currentPage} totalPages={totalPages} setPageNumber={setPageNumber} />
     </>

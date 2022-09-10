@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@mantine/core";
 import AddIcon from '@mui/icons-material/Add';
-import Header from "../ui/Header";
 
 function DesignHeader() {
   return (

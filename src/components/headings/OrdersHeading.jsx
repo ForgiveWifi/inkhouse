@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { TextInput, Button } from "@mantine/core";
 import AddIcon from '@mui/icons-material/Add';
 import { showError } from "../../utils/alerts";
-import HorzDivider from "../ui/HorzDivider";
 
 function OrdersHeader() {
   

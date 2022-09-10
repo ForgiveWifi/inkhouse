@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { FileInput }  from "@mantine/core";
 
 function ImageUpload({label, value, onChange}) {

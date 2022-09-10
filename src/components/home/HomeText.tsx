@@ -5,7 +5,6 @@ function HomeText() {
     <>
       <div className="flexbox-start" style={{ maxWidth: "350px"}}> 
         <h1>Welcome to Inkhouse!</h1>
-      
         <FormModal />
       </div>
     </>

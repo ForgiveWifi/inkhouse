@@ -26,8 +26,8 @@ export default function FormModal() {
 
   return (
     <>
-      <div style={{ margin: "10px"}}>
-        <LogButton name="contact" onClick={handleOpen} />
+      <div style={{ marginTop: "10px"}}>
+        <LogButton name="Contact" onClick={handleOpen} />
       </div>
       <Modal
         open={open}

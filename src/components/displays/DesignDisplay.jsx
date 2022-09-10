@@ -2,7 +2,7 @@ import toDate from "../../utils/toDate";
 import toTime from "../../utils/toTime";
 import PlacementList from "../list/PlacementList";
 import Divider from "../ui/Divider";
-import CopyIcon from "../ui/icons/CopyIcon";
+// import CopyIcon from "../ui/icons/CopyIcon";
 
 function DesignDisplay({loading, design_id, design}) {
 

@@ -1,7 +1,6 @@
 import { useState } from "react"
 import axios from "axios";
 import { v4 } from "uuid"
-import { Button, Modal } from "@mantine/core";
 import { storage } from "../../firebase.js";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage"
 import DesignPosition from "../../components/new-design/DesignPosition";
@@ -14,6 +13,7 @@ import DesignTags from "../../components/tags/DesignTags.jsx";
 import DesignPreview from "../../components/displays/DesignPreview.jsx";
 import NoBox from "../../components/ui/NoBox.jsx";
 import PlacementList from "../../components/list/PlacementList.jsx";
+import { Button, Modal } from "@mantine/core";
 
 function NewDesign() {
 
@@ -26,7 +26,7 @@ function NewDesign() {
   const [tags, setTags] = useState([])
   const [dimensions, setDimensions] = useState({})
 
-  const [modal, setModal] = useState(false)
+  const [open, setOpen] = useState(false)
   const [error, setError] = useState(false)
 
   const tags_list = sizes.map(size => {
@@ -59,13 +59,13 @@ function NewDesign() {
     if (!dimensions.width || !dimensions.height) {
       showError("dimension-error", "Tags must have a width and height!")
     } else {
-      setModal(true)
+      setOpen(true)
     }
   }
 
   async function createDesigns() {
     try {
-      setModal(false)
+      setOpen(false)
       const {design_data, shirt_img, tags_data} = await uploadAllFirebase(designs)
       await uploadToDatabase(design_data, shirt_img, tags_data)
       setError(false)
@@ -187,9 +187,8 @@ function NewDesign() {
         { designs.length === 0 ?  <NoBox text="no designs" /> : <PlacementList designs={designs} /> }
         { sizes.length !== 0 && <DesignTags sizes={sizes} tags={tags} setTags={setTags} dimensions={dimensions} setDimensions={setDimensions}/> }
         <Modal
-          opened={modal}
-          onClose={() => setModal(false)}
-          // overlayColor="yellow"
+          opened={open}
+          onClose={() => setOpen(false)}
           overflow="outside"
           withCloseButton={false}
           centered

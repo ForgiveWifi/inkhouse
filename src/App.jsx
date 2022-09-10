@@ -7,7 +7,6 @@ import Orders from "./pages/orders/Orders"
 import SingleOrder from "./pages/orders/SingleOrder"
 import NewOrder from "./pages/orders/NewOrder";
 import Designs from "./pages/designs/Designs"
-import AdminPage from "./pages/AdminPage";
 import NewDesign from "./pages/designs/NewDesign";
 import SingleDesign from "./pages/designs/SingleDesign";
 import Accounts from "./pages/accounts/Accounts";
@@ -18,7 +17,6 @@ import './App.css';
 import "./Mantine.css"
 
 export default function App() {
-  console.log(process.env.REACT_APP_FIREBASE_APP_ID)
   return (
       <BrowserRouter>
         <Routes>
@@ -34,9 +32,6 @@ export default function App() {
             <Route path="design/:design_id" element={<SingleDesign />} />
             <Route path="accounts" element={<Accounts />} />
             <Route path="account/new" element={<NewAccount />} />
-            <Route path="admin" element={<AdminPage />} />
-            
-
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>

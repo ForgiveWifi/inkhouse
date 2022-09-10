@@ -18,7 +18,7 @@ function ProductBox({product}) {
         }
         <img 
           src={design.image.url} 
-          alt={`${design.name} image`} 
+          alt={`${design.name}`} 
           onLoad={() => setLoaded(true)}
           className="radius10" 
           style={loaded ? { width: "80px", height: "80px", marginRight: "10px"} : { display: "none"}} 
