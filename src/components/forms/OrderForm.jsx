@@ -17,7 +17,7 @@ export default function OrderForm() {
   const sendEmail = (e) => {
     showLoading(id, "Sumbitting form, please wait...")
     e.preventDefault();
-    emailjs.sendForm(process.env.EMAIL_SERVICE_ID, process.env.EMAIL_TEMPLATE_ID, form.current, process.env.EMAIL_PUBLIC_KEY)
+    emailjs.sendForm(process.env.REACT_APP_EMAIL_SERVICE_ID, process.env.REACT_APP_EMAIL_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAIL_PUBLIC_KEY)
       .then((result) => {
         updateSuccess(id, 'Thank you! We will contact you shortly.')
         form.current.reset()
