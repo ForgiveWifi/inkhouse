@@ -1,0 +1,3 @@
+[build]
+
+command = "npm run build && node ./firebase.js && node ./components/forms/OrderForm.jsx"
