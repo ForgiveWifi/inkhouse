@@ -22,7 +22,7 @@ function Shirts() {
     const fetchDesigns = async () => {
       try {
         setLoading(true)
-        const {data} = await axios.get(`http://localhost:3010/design?page=${page}&limit=20`)
+        const {data} = await axios.get(`https://inkhouse-api.herokuapp.com/design?page=${page}&limit=20`)
         setDesigns(data.results) 
         setCurrentPage(parseInt(page))
         setTotalPages(data.pages)

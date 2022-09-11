@@ -15,7 +15,7 @@ function SingleOrder() {
     async function fetchOrder() {
       try {
         setLoading(true)
-        const res = await axios.get(`http://localhost:3010/order/${order_id}`)
+        const res = await axios.get(`https://inkhouse-api.herokuapp.com/order/${order_id}`)
         setOrder(res.data)
         setLoading(false)
       }

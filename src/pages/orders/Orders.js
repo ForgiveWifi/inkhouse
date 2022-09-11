@@ -22,7 +22,7 @@ function Orders() {
     const fetchOrders = async () => {
       try {
         setLoading(true)
-        const {data} = await axios.get(`http://localhost:3010/order?page=${page}&limit=15`)
+        const {data} = await axios.get(`https://inkhouse-api.herokuapp.com/order?page=${page}&limit=15`)
         setOrders(data.results) 
         setPage(parseInt(page))
         setTotalPages(data.pages)

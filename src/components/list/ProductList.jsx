@@ -18,7 +18,7 @@ function ProductList({loading, items, reverse}) {
       try {
         setLoad(true)
         const design_list = await Promise.all(items.map(async ({quantity, design_id}) => {
-          const design = await axios.get(`http://localhost:3010/design/${design_id}`)
+          const design = await axios.get(`https://inkhouse-api.herokuapp.com/design/${design_id}`)
           return({
             quantity: quantity,
             design: design.data

@@ -17,7 +17,7 @@ function SingleDesign() {
     async function fetchDesign() {
       try {
         setLoading(true)
-        const res = await axios.get(`http://localhost:3010/design/${design_id}`)
+        const res = await axios.get(`https://inkhouse-api.herokuapp.com/design/${design_id}`)
         setDesign(res.data)
         setLoading(false)
       }

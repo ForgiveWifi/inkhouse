@@ -40,7 +40,7 @@ function NewAccount() {
     }
 
     showLoading("account-alert", "Uploading account...")
-    axios.post("http://localhost:3010/account", account)
+    axios.post("https://inkhouse-api.herokuapp.com/account", account)
       .then((res) => {
         setError(false)
         setShipping(blank)

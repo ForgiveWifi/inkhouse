@@ -164,7 +164,7 @@ function NewDesign() {
     const design_name = `${name} - ${size}`
     try {
       showLoading(size, "Uploading design...", design_name)
-      const data = await axios.post("http://localhost:3010/design", design_data)
+      const data = await axios.post("https://inkhouse-api.herokuapp.com/design", design_data)
       updateSuccess(size, "Design has been uploaded!", design_name) 
       return(data)
     }
