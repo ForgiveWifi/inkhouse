@@ -32,9 +32,9 @@ function Design() {
             className="full-width"
             style={{ maxWidth: "455px", marginTop: "15px" }}
             >
-              <p className={center ? "text-center" : ""}>We offer consultation services to provide customers with custom designs that can be printed on your merchandise.</p>
+              <p className={center ? "text-center" : ""}>We offer consultation services to provide you with custom designs that can be printed on your merchandise.</p>
 
-              <p className={center ? "text-center" : ""} style={{ marginTop: "10px" }}> Our goal is to provide an interactive design process that ensures design needs are met, and customers are left with a seamless experience of turning their concepts into reality. </p>
+              <p className={center ? "text-center" : ""} style={{ marginTop: "10px" }}> Our goal is to provide an interactive design process that ensures design needs are met, and you are left with a seamless experience of turning your concepts into reality. </p>
             </div>
           </motion.div>
 

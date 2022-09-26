@@ -24,7 +24,7 @@ function MenuIcon() {
 
   const sidebar = {
     open: {
-      clipPath: `circle(1400px at 260px 38px)`,
+      clipPath: `circle(1400px at 210px 38px)`,
       transition: {
         type: "spring",
         stiffness: 20,
@@ -32,9 +32,9 @@ function MenuIcon() {
       }
     },
     closed: {
-      clipPath: "circle(28px at 260px 38px)",
+      clipPath: "circle(28px at 210px 38px)",
       transition: {
-        delay: 0.5,
+        delay: 0.2,
         type: "spring",
         stiffness: 400,
         damping: 40

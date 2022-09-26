@@ -4,7 +4,7 @@ import App from './App';
 import { MantineProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 import { SkeletonTheme } from 'react-loading-skeleton'
-import { Auth0Provider } from "@auth0/auth0-react";
+// import { Auth0Provider } from "@auth0/auth0-react";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

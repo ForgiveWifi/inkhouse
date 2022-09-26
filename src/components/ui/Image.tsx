@@ -12,11 +12,11 @@ function Image(props: ImageProp) {
 
   const css = {
     width: width,
-    borderRadius: "25px",
+    borderRadius: "15px",
     ...style
   }
   return (
-    <div className="flexbox" style={{ borderRadius: "25px", boxShadow: "8px 8px #ff6a00"}}>
+    <div className="flexbox" style={{ borderRadius: "15px", boxShadow: "8px 8px #ff6a00"}}>
       <img src={require(`../../assets/${file}`)} alt={alt} style={css} className="shadow2" />
     </div>
   );

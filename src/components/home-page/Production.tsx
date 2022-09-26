@@ -1,31 +1,60 @@
 import { motion } from "framer-motion"
 import Image from "../ui/Image"
-import TextIcon from "../ui/icons/TextIcon";
 import ClearIcon from '@mui/icons-material/Clear';
 import LocalPrintshopIcon from '@mui/icons-material/LocalPrintshop';
 import DateRangeIcon from '@mui/icons-material/DateRange';
-import { productionList } from "../../data/productionList"
+import AllInclusiveIcon from '@mui/icons-material/AllInclusive';
+import {IoIosShirt} from "react-icons/io"
 
 function Production() {
+
+  const productionList = [
+    {
+      name: "DTG printing",
+      icon: <LocalPrintshopIcon sx={{ fontSize: "30px" }} />,
+    },
+    {
+      name: "No order minimums",
+      icon: <ClearIcon sx={{ fontSize: "35px" }} />,
+    },
+    {
+      name: "3 day turnarounds",
+      icon: <DateRangeIcon sx={{ fontSize: "30px" }} />,
+    },
+    {
+      name: "Custom neck tags",
+      icon: <IoIosShirt style={{ fontSize: "30px" }}/>,
+    },
+    {
+      name: "No color limits",
+      icon: <AllInclusiveIcon sx={{ fontSize: "25px" }}/>,
+    },
+  ]
 
   return (
     <>
       <div className="flexbox-column full-width">
+        <div className="flexbox-column" style={{ margin: "20px 10px"}}>
+          <motion.h1 
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="flexbox-column text-center" 
+          >
+            high tech production
+          </motion.h1>
 
-        <motion.div 
-          initial={{ y: 50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="flexbox-column" 
-          style={{ marginBottom: "20px"}}
-        >
-          <h1 className="text-center">high tech production</h1>
-
-          <p className="full-width text-center" style={{ maxWidth: "400px", marginTop: "15px"}}>
-            Our smart printing process offers quick turnarounds, 0 order minimums, full image dot to PANTONE calibrated printing, and per garment customization.
-          </p>
-        </motion.div>
+          <motion.p 
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="full-width text-center" 
+            style={{ maxWidth: "400px", marginTop: "15px"}}>
+            Inkhouse products are printed locally in the US on a wide varity of high-quality garments.  Our smart printing process allows for full customization with a quick turnaround.   
+          </motion.p>
+        </div>
         
 
         <div className="flexbox-row flex-wrap" style={{ gap: "20px"}}>
@@ -48,39 +77,20 @@ function Production() {
             viewport={{ once: true }}
             className="flexbox-start" 
             style={{ minWidth: "300px", margin: "auto"}}>
-
-            <div className="flexbox-row">
-              <div className="text-icon flexbox">
-                <LocalPrintshopIcon sx={{ fontSize: "30px" }} />
-              </div>
-              <h3>DTG printing</h3>
-            </div>
-
-            <div className="flexbox-row">
-              <div className="text-icon flexbox">
-                <ClearIcon sx={{ fontSize: "35px" }} />
-              </div>
-              <h3>No order minimums</h3>
-            </div>
-
-            <div className="flexbox-row">
-              <div className="text-icon flexbox">
-                <DateRangeIcon sx={{ fontSize: "30px" }} />
-              </div>
-              <h3>3 day turnarounds</h3>
-            </div>
             
             {
-              productionList.map((item, i) => {
-                const { text, icon, size, weight } = item
-                return (
-                  <div key={i} className="flexbox-row" >
-                    <TextIcon icon={icon} size={size} weight={weight} />
-                    <h3>{text}</h3>
+              productionList.map(({name, icon},i) => {
+                return(
+                  <div key={i} className="flexbox-row">
+                    <div className="text-icon flexbox">
+                      {icon}
+                    </div>
+                    <h3>{name}</h3>
                   </div>
                 )
               })
             }
+     
           </motion.div>
 
 

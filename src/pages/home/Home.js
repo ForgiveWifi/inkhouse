@@ -10,9 +10,11 @@ function Home() {
   return (
     <>
       <HomePage />
-      <HomeProducts />
+      
       <Production />
       <Design />
+      <HomeProducts />
+
       <ContactForm />
       <ScrollButton />
     </>

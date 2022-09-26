@@ -23,7 +23,7 @@ function HomeProducts() {
   ]
   return (
     <>
-      <div className="flexbox-column" style={{ margin: "30px 0px 20px"}}>
+      <div className="flexbox-column" style={{ margin: "70px 0px 20px"}}>
       
         <motion.h2 
           initial={{ y: 50, opacity: 0 }}
@@ -31,11 +31,11 @@ function HomeProducts() {
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
           className="flexbox-row full-width"
-          style={{ maxWidth: "900px", marginBottom: "10px" }}>
+          style={{ maxWidth: "830px", marginBottom: "10px" }}>
           Products 
         </motion.h2>
 
-        <div className="flexbox-row flex-wrap" style={{ justifyContent: "center", padding: "0px 15px", columnGap: "40px", rowGap: "15px", marginBottom: "80px"}}>
+        <div className="flexbox-row flex-wrap" style={{ justifyContent: "center", padding: "0px 15px", columnGap: "40px", rowGap: "15px", marginBottom: "30px"}}>
           {
             productlist.map(({name, file, alt, position}) => {
               return(

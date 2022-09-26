@@ -66,6 +66,7 @@ ul {
 li {
   color: #ff9244;
   list-style: none;
+  margin-left: 30px;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -87,12 +88,11 @@ span {
 }
 
 .rainbow {
-  -webkit-background-image:  radial-gradient(circle, rgba(255,119,140,1) 0%, rgba(196,226,115,1) 32%, rgba(134,227,190,1) 49%, rgba(116,206,255,1) 65%, rgba(137,121,255,1) 81%, #ff75f6 96%);
-  background-image:  radial-gradient(circle, rgba(255,119,140,1) 0%, rgba(196,226,115,1) 32%, rgba(134,227,190,1) 49%, rgba(116,206,255,1) 65%, rgba(137,121,255,1) 81%, #ff75f6 96%);
-  -webkit-background-size: 4000%;
-  background-size: 4000%;
-  -webkit-animation: bg-animation 40s linear infinite;
-  animation: bg-animation 40s linear infinite;
+  -webkit-background-image:  radial-gradient(circle, rgba(255,84,34,1) 0%, rgba(254,155,0,1) 20%, rgba(79,255,219,1) 40%, rgba(116,178,255,1) 60%, rgba(137,121,255,1) 80%, rgba(255,117,246,1) 97%);
+  background-image: radial-gradient(circle, rgb(94, 215, 191) 5%, rgba(116,178,255,1) 25%, rgb(148, 134, 253) 50%, rgba(255,117,246,1) 75%, rgb(255, 99, 68) 95%);
+  background-size: 3000%;
+  -webkit-animation: bg-animation 30s linear infinite;
+  animation: bg-animation 30s linear infinite;
 }
 
 @keyframes bg-animation {
@@ -146,7 +146,7 @@ span {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 300px;
+  width: 250px;
   height: 300px;
   background: white;
   border-radius: 0px 0px 0px 50px;
