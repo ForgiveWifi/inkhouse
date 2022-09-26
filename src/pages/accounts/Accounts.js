@@ -23,7 +23,7 @@ function Accounts() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const {data} = await axios.get(`https://inkhouse-api.herokuapp.com/account/?page=${page}&limit=15`)
+        const {data} = await axios.get(`${process.env.REACT_APP_API_URL}/account/?page=${page}&limit=15`)
         setAccounts(data.results) 
         setPage(parseInt(page))
         setTotalPages(data.pages)

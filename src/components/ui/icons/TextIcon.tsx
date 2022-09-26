@@ -1,5 +1,3 @@
-import "./TextIcon.css"
-
 type TextIconProp = {
   icon: string,
   size: number,

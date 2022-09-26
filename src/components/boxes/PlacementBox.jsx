@@ -5,11 +5,11 @@ function PlacementBox({ design }) {
 
   return (
     <>
-      <div className="flexbox-column background1 full-width radius15" style={{ width: "300px", marginTop: "10px"}}>
+      <div className="flexbox-column background1 full-width radius15" style={{ width: "300px" }}>
         <img 
           src={ art_file instanceof File ? URL.createObjectURL(art_file) : design.art_url }
           alt={ art_file instanceof File ? art_file.name : art_file}
-          className="full-width shadow-2" 
+          className="full-width shadow2" 
           style={{ borderRadius: "15px 15px 0px 0px" }} />
 
         <div className="background2 radius10" style={{ padding: "2px 10px", marginTop: "10px" }}>{design.placement}</div>

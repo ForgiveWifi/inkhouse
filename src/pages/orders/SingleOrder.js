@@ -15,7 +15,7 @@ function SingleOrder() {
     async function fetchOrder() {
       try {
         setLoading(true)
-        const res = await axios.get(`https://inkhouse-api.herokuapp.com/order/${order_id}`)
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/order/${order_id}`)
         setOrder(res.data)
         setLoading(false)
       }
@@ -32,7 +32,7 @@ function SingleOrder() {
   
   return (
     <>
-      <div className="flexbox-column full-width background1 radius15 full-width shadow-2" style={{ maxWidth: "700px", padding: "15px", marginTop: "20px"}} >
+      <div className="flexbox-column full-width background1 radius15 full-width shadow2" style={{ maxWidth: "700px", padding: "15px", marginTop: "20px"}} >
         <BackButton />
         
         <div className="full-width" style={{ padding: "0px 30px 10px"}}>

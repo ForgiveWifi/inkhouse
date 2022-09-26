@@ -1,25 +1,19 @@
-// import NavLinks from "../../components/nav-footer/nav/NavLinks";
-import HomeText from "../../components/home/HomeText";
-import Production from "../../components/home/Production";
-import Design from "../../components/home/Design";
+import HomePage from "../../components/home-page/HomePage";
+import Production from "../../components/home-page/Production";
+import Design from "../../components/home-page/Design";
 import ScrollButton from "../../components/ui/buttons/ScrollButton";
-// import { useMediaQuery } from "@mui/material";
-import Image from "../../components/ui/Image";
+import ContactForm from "../../components/forms/ContactForm";
+import HomeProducts from "../../components/home-page/HomeProducts";
 
 function Home() {
 
-  // const desktopMode = useMediaQuery('(min-width:750px)');
-
   return (
     <>
-      {/* {!desktopMode && <NavLinks /> } */}
-      <div className="flexbox-row flex-wrap" style={{ marginTop: "10px"}}>
-        <HomeText /> 
-        <Image file="BellaCanvas_3001_ChangeColor_01.jpg" alt="Design and Art" width="275px" className="shadow-1"/>
-        <Image file="BellaCanvas_3001_White_04.jpg" alt="Design and Art" width="250px" className="shadow-1" style={{ position: "relative", right: "10px"}}/>
-      </div>
+      <HomePage />
+      <HomeProducts />
       <Production />
       <Design />
+      <ContactForm />
       <ScrollButton />
     </>
   );

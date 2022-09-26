@@ -9,6 +9,10 @@ footer {
   height: 100px;
 }
 
+.logo {
+  filter: drop-shadow(5px 5px 5px #666666)
+}
+
 .contact-icon {
   border: 3px solid white;
   border-radius: 100vmax;

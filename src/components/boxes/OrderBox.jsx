@@ -8,7 +8,7 @@ function OrderBox(props) {
   const { _id, account, order, created_at } = props.order
   return (
     <>
-      <Link to={`/order/${_id}`} className="order-box link flexbox-row full-width shadow-2">
+      <Link to={`/order/${_id}`} className="order-box link flexbox-row full-width shadow2">
         <div className="order-id">{`#${_id}`}</div>
 
         <div className="flexbox" style={{ width: "100px"}}>

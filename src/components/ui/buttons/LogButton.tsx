@@ -12,7 +12,7 @@ function LogButton(props: ButtonProps) {
   
   return (
     <>
-      <button onClick={onClick} className="contact-button shadow-2">
+      <button onClick={onClick} className="contact-button shadow2">
         {name}
       </button>
     </>

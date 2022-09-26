@@ -12,7 +12,7 @@ function ProductBox({product}) {
   const {style, size, color } = design.attributes
   return (
     <>
-      <div className="flexbox-row flex-wrap full-width background1 radius15 shadow-2" style={{ margin: "5px 0px", padding: "0px 10px", height: "100px" }}>
+      <div className="flexbox-row flex-wrap full-width background1 radius15 shadow2" style={{ maxWidth: "500px", margin: "5px 0px", paddingRight: "10px" }}>
         {
           loaded ? null : <Skeleton style={{ width: "80px", height: "80px", marginRight: "10px"}} />
         }
@@ -21,7 +21,7 @@ function ProductBox({product}) {
           alt={`${design.name}`} 
           onLoad={() => setLoaded(true)}
           className="radius10" 
-          style={loaded ? { width: "80px", height: "80px", marginRight: "10px"} : { display: "none"}} 
+          style={loaded ? { marginRight: "10px", height: "150px", borderRadius: "10px 0px 0px 10px"} : { display: "none"}} 
         />
 
         <div className="flexbox-start" style={{ marginLeft: "4px" }}>

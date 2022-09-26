@@ -9,7 +9,7 @@ import DesignDetails from "../../components/new-design/DesignDetails";
 import Header from "../../components/ui/Header";
 import { showError, showLoading, updateSuccess, updateError } from '../../utils/alerts'
 import BackButton from "../../components/ui/buttons/BackButton.jsx";
-import DesignTags from "../../components/tags/DesignTags.jsx";
+import DesignTags from "../../components/new-design/DesignTags.jsx";
 import DesignPreview from "../../components/displays/DesignPreview.jsx";
 import NoBox from "../../components/ui/NoBox.jsx";
 import PlacementList from "../../components/list/PlacementList.jsx";
@@ -164,7 +164,7 @@ function NewDesign() {
     const design_name = `${name} - ${size}`
     try {
       showLoading(size, "Uploading design...", design_name)
-      const data = await axios.post("https://inkhouse-api.herokuapp.com/design", design_data)
+      const data = await axios.post(`${process.env.REACT_APP_API_URL}/design`, design_data)
       updateSuccess(size, "Design has been uploaded!", design_name) 
       return(data)
     }

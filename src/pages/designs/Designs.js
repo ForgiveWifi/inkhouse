@@ -17,12 +17,12 @@ function Shirts() {
   const [currentPage, setCurrentPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
   const [loading, setLoading] = useState(false)
-
+  
   useEffect(() => {
     const fetchDesigns = async () => {
       try {
         setLoading(true)
-        const {data} = await axios.get(`https://inkhouse-api.herokuapp.com/design?page=${page}&limit=20`)
+        const {data} = await axios.get(`${process.env.REACT_APP_API_URL}/design?page=${page}&limit=20`)
         setDesigns(data.results) 
         setCurrentPage(parseInt(page))
         setTotalPages(data.pages)
@@ -43,7 +43,7 @@ function Shirts() {
   return (
     <>
       <DesignHeader />
-     
+
       <DesignList loading={loading} designs={designs} />
       
       <MyPagination loading={loading} currentPage={currentPage} setPageNumber={setPageNumber} totalPages={totalPages}  />

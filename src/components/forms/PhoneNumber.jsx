@@ -20,7 +20,7 @@ function PhoneNumber(props, ref) {
   return (
     <div className="flexbox-start span2" >
       <label>phone number</label>
-      <input ref={ref} onChange={e => handleInput(e)} value={input} name="phoneNumber" type="text" className="input-field"required></input>
+      <input ref={ref} onChange={e => handleInput(e)} value={input} name="phoneNumber" type="text" className="input-field"></input>
     </div>
   );
 }

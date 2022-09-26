@@ -5,7 +5,7 @@ import Footer from "../components/nav-footer/footer/Footer"
 function Layout() {
   return (
     <>
-        <div className="page-background gradient-wave flexbox-column">
+        <div className="page-background orange-background flexbox-column">
           <div className="page-content flexbox-column full-width">
             <Navbar />
             <Outlet />

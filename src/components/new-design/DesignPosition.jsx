@@ -66,7 +66,7 @@ function DesignPosition({designs, setDesigns}) {
           value={design.placement}
           onChange={placement => setDesign( {...design, placement: placement})}
           error={error && !design.placement}
-          data={['Front Center', 'Back Center', 'Front Left Chest', 'Front Right Chest']}
+          data={['Front Center', 'Front Left Chest', 'Front Right Chest', 'Back Center']}
           dropdownPosition="bottom"
         />
 

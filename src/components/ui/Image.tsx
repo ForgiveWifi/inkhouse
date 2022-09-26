@@ -3,23 +3,22 @@ type ImageProp = {
   file: string,
   alt: string,
   width: string,
-  shadow?: boolean
-  radius?: string 
-  className?: string,
   style?: {}
 }
 
 function Image(props: ImageProp) {
 
-  const { file, alt, width, radius, shadow, className, style } = props
+  const { file, alt, width, style } = props
 
   const css = {
     width: width,
-    borderRadius: radius,
+    borderRadius: "25px",
     ...style
   }
   return (
-    <img src={require(`../../assets/${file}`)} alt={alt} style={css} className={`img-border ${className} ${!shadow && "shadow-1"}`} />
+    <div className="flexbox" style={{ borderRadius: "25px", boxShadow: "8px 8px #ff6a00"}}>
+      <img src={require(`../../assets/${file}`)} alt={alt} style={css} className="shadow2" />
+    </div>
   );
 }
 

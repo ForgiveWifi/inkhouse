@@ -6,7 +6,7 @@ function ProductSkeleton({count}) {
   return (
     Array(count).fill(0).map((_,i) => {
       return(
-        <div key={i} className="flexbox-row flex-wrap full-width background1 radius15 shadow-2" style={{ margin: "5px 0px", padding: "0px 10px", height: "100px" }}>
+        <div key={i} className="flexbox-row flex-wrap full-width background1 radius15 shadow2" style={{ margin: "5px 0px", padding: "0px 10px", height: "100px" }}>
 
           <Skeleton style={{ width: "80px", height: "80px", marginRight: "15px", position: "relative", bottom: "2px" }} />
 

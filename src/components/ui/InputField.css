@@ -1,6 +1,6 @@
 .input-field {
   color: rgba(0, 0, 0, 0.6);
-  border: 3px solid #FF9B54;
+  border: 3px solid #ff9244;
   border-radius: 12px;
   text-indent: 10px;
   padding-right: 5px;
@@ -15,7 +15,7 @@
 }
 
 label {
-  color: #FF9B54;
+  color: #ff9244;
   font-size: small;
   padding-left: 10px;
   position: relative;

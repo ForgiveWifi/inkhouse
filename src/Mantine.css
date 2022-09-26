@@ -2,6 +2,13 @@
   background-color: grey;
 }
 
+.mantine-Input-input{
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  padding-top: 2.5px;
+  padding-left: 28px
+}
+
 .mantine-TextInput-label {
   color: white;
 }
@@ -10,9 +17,7 @@
   border: 1.5px solid white;
   border-radius: 8px;
 }
-/* .mantine-TextInput-input:hover {
-  border: 1.5px solid grey;
-} */
+
 .mantine-TextInput-input:focus {
   border: 1.5px solid grey;
 }

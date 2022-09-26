@@ -31,8 +31,8 @@ function NewOrder() {
     async function fetchNewOrderData() {
       try {
         setLoading(true)
-        const res1 = await axios.get("https://inkhouse-api.herokuapp.com/order/accounts")
-        const res2 = await axios.get("https://inkhouse-api.herokuapp.com/order/products")
+        const res1 = await axios.get(`${process.env.REACT_APP_API_URL}/order/accounts`)
+        const res2 = await axios.get(`${process.env.REACT_APP_API_URL}/order/products`)
         setAccounts(res1.data)
         setProducts(res2.data)
         setLoading(false)
@@ -73,7 +73,7 @@ function NewOrder() {
     } 
 
     showLoading("new-order", "Creating new order...")
-    axios.post("https://inkhouse-api.herokuapp.com/order", data)
+    axios.post(`${process.env.REACT_APP_API_URL}/order`, data)
       .then((res) => {
         setError(false)
         setOrder(blank)
