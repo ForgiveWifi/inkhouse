@@ -39,7 +39,7 @@ function HomePage() {
             <Image file="BellaCanvas_3001_ChangeColor_01.jpg" alt="BellaCanvas 3001 Purple" width="100%" />
           </div>
 
-          <div className="margin-auto-left" style={{ position: "relative", left: "5%", width: "55%"}}>
+          <div className="margin-auto-left" style={{ position: "relative", left: "5%", width: "55%", marginTop: mobile ? "3%" : "0px"}}>
             <Image 
               file="3501_Citron_3513_Grey-Triblend_3501CVC_Athletic-Heather_SPSU22D4_Split_03.jpg" 
               alt="3501 Citron, 3513 Grey-Triblend, 3501CVC Athletic-Heather" 
