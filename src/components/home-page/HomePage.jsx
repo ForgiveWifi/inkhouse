@@ -30,7 +30,7 @@ function HomePage() {
           
         </div>
 
-        <div className="flexbox-row-start full-width flex-wrap margin-auto" style={{ maxWidth: "500px", paddingLeft: "10px", paddingRight: "4%", marginTop: mobile ? "0px" : "80px", gap: "5%"}}>
+        <div className="flexbox-row-start full-width flex-wrap margin-auto" style={{ maxWidth: "500px", paddingRight: "20px", marginTop: mobile ? "0px" : "70px", gap: "5%"}}>
           <div style={{ position: "relative", top: "18%",  width: "45%"}}>
             <Image file="BellaCanvas_3001_ChangeColor_03.jpg" alt="Bella Canvas 3001 White" width="100%" />
           </div>

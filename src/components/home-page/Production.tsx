@@ -34,7 +34,7 @@ function Production() {
   return (
     <>
       <div className="flexbox-column full-width">
-        <div className="flexbox-column" style={{ margin: "20px 10px"}}>
+        <div className="flexbox-column" style={{ margin: "40px 0px 20px"}}>
           <motion.h1 
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -52,7 +52,7 @@ function Production() {
             viewport={{ once: true }}
             className="full-width text-center" 
             style={{ maxWidth: "400px", marginTop: "15px"}}>
-            Inkhouse products are printed locally in the US on a wide varity of high-quality garments.  Our smart printing process allows for full customization with a quick turnaround.   
+            inkhouse products are printed on high-quality garments, locally in the US.  Our wide variety of styles and colors allows for full customization.  Our smart printing process allows for a quick turnaround.   
           </motion.p>
         </div>
         

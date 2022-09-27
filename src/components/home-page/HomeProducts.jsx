@@ -23,7 +23,7 @@ function HomeProducts() {
   ]
   return (
     <>
-      <div className="flexbox-column" style={{ margin: "70px 0px 20px"}}>
+      <div className="flexbox-column" style={{ marginTop: "50px"}}>
       
         <motion.h2 
           initial={{ y: 50, opacity: 0 }}
