@@ -19,7 +19,6 @@ function ProductPreview({color, imageList, setImageList, tagList}) {
 
   if (image) {
     document.onkeydown = (e) => {
-      console.log("click")
       e.preventDefault()
       switch (e.keyCode) {
         case 37:
@@ -78,7 +77,7 @@ function ProductPreview({color, imageList, setImageList, tagList}) {
           height: '400px', 
           zIndex: 11
         }}>
-          { image && <CurrentImage currentImage={currentImage} setCurrentImage={setCurrentImage} setDragOutline={setDragOutline} />}
+          <CurrentImage currentImage={currentImage} setCurrentImage={setCurrentImage} setDragOutline={setDragOutline} />
           <Images currentImage={currentImage} imageList={imageList}/>
         </div>
         <ProductButtons currentImage={currentImage} setCurrentImage={setCurrentImage} imageList={imageList} setImageList={setImageList}/>

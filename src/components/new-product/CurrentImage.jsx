@@ -15,6 +15,8 @@ function CurrentImage({ currentImage, setCurrentImage, setDragOutline }) {
 
   return (
     <>
+      {
+        image &&
       <Rnd
         size={{ width: width, height: height }}
         position={{ x: x, y: y }}
@@ -60,6 +62,7 @@ function CurrentImage({ currentImage, setCurrentImage, setDragOutline }) {
           onLoad={() => setLoaded(true)}
         />
       </Rnd>
+      }
     </>
   )
 }
