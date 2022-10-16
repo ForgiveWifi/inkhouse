@@ -9,6 +9,7 @@ function DesignDisplay({loading, design_id, design}) {
   if(loading || !design) {
     return null
   } else {
+    
   const {name, attributes, image, created_at} = design
   const {style, size, color} = attributes 
   return (

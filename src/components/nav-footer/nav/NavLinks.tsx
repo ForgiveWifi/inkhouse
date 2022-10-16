@@ -7,9 +7,9 @@ function NavLinks() {
     <>
       <div style={{ marginTop: "9px" }} className="flexbox-row">
 
-        <Link to="/accounts/?page=1" className="nav-link shadow2">accounts</Link>
+        {/* <Link to="/accounts/?page=1" className="nav-link shadow2">accounts</Link>
 
-        <Link to="/orders/?page=1" className="nav-link shadow2">orders</Link>
+        <Link to="/orders/?page=1" className="nav-link shadow2">orders</Link> */}
 
         <Link to="/designs/?page=1" className="nav-link shadow2">designs</Link>
 

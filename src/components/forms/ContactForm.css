@@ -11,7 +11,7 @@
 
 .text-area {
   color: rgba(0, 0, 0, 0.6);
-  border: 3px solid #FF9B54;
+  border: 3px solid #FF9244;
   border-radius: 15px;
   resize: none;
   width: 100%;
@@ -27,7 +27,7 @@
 
 .form-button {
   color: white;
-  background-color: #FF9B54;
+  background-color: #FF9244;
   font-size: 25px;
   font-weight: 700;
   border: none;

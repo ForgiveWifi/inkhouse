@@ -8,14 +8,14 @@ function MenuIcon() {
   const [isOpen, setIsOpen] = useState(false)
 
   const navList = [
-    {
-      name: "accounts",
-      to: "/accounts/?page=1"
-    },
-    {
-      name: "orders",
-      to: "/orders/?page=1"
-    },
+    // {
+    //   name: "accounts",
+    //   to: "/accounts/?page=1"
+    // },
+    // {
+    //   name: "orders",
+    //   to: "/orders/?page=1"
+    // },
     {
       name: "designs",
       to: "/designs/?page=1"
@@ -61,15 +61,16 @@ function MenuIcon() {
       <motion.div className="menu-background backgroun1 shadow1" variants={sidebar} />
       <motion.ul variants={variants} className="menu-list">
         {
-          navList.map(({name, to}) => {
+          navList.map((item, i) => {
+            const {name, to} = item
             return(
-              <MenuItem setIsOpen={setIsOpen} name={name} to={to}/>
+              <MenuItem key={i} setIsOpen={setIsOpen} name={name} to={to}/>
             )
           })
         }
       </motion.ul>
 
-      <MenuButton toggle={() => setIsOpen(!isOpen)} />
+      <MenuButton isOpen={isOpen} setIsOpen={setIsOpen}/>
     </motion.nav>
     </>
   );

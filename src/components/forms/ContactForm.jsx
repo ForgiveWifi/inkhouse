@@ -24,13 +24,11 @@ export default function ContactForm() {
       setTimeout(() => setCooldown(false),5000)
       emailjs.sendForm(process.env.REACT_APP_EMAIL_SERVICE_ID, process.env.REACT_APP_EMAIL_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAIL_PUBLIC_KEY)
         .then((result) => {
-          console.log("sucess")
           updateSuccess("order-form", 'Thank you! We will contact you shortly.')
           form.current.reset()
           phoneInput.current.clearInput()
         })
         .catch((error) => {
-          console.log("error")
           updateError("order-form", "We ran into a problem submitting your form. Please contact us!")
         });
     }
@@ -69,9 +67,11 @@ export default function ContactForm() {
             <div className={`flexbox-start`} >
               <label>budget</label>
               <Input
-                icon={<AttachMoneyIcon style={{ fill: "rgba(0, 0, 0, 0.6)"}}/>} 
+                icon={<AttachMoneyIcon style={{ fill: "rgba(0, 0, 0, 0.6)", marginLeft: "10px"}}/>} 
+                iconWidth={30}
                 variant="unstyled"
                 className="input-field"
+                style={{ color: "rgba(0, 0, 0, 0.6)", fontSize: "14px", paddingTop: "1px"}}
                 name="budget" 
                 type="number" 
                 min={0}
@@ -79,7 +79,7 @@ export default function ContactForm() {
             </div>
 
             <div className='flexbox-column span2' style={{ padding: "0px 10px" }}>
-              <div style={{ position: "relative", top: "5px", fontSize: "25px", fontWeight: "500", color: "#FF9B54" }}>additional details</div>
+              <div style={{ position: "relative", top: "5px", fontSize: "25px", fontWeight: "500", color: "#FF9244" }}>additional details</div>
               <textarea name="details" className='text-area'/>
             </div>
 

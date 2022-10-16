@@ -9,9 +9,9 @@ function HomePage() {
   return (
     <>
       <motion.div 
-        initial={{ y: 50, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6 }}
+        initial={{ y: 30, scale: 0.95, opacity: 0 }}
+        whileInView={{ y: 0, scale: 1, opacity: 1 }}
+        transition={{ duration: 0.7, delay: 0.3 }}
         viewport={{ once: true }}
         className="flexbox-row-start flex-wrap full-width margin-auto" 
         style={desktop ? {maxWidth: "560px", marginBottom: "50px" } : { maxWidth: "800px", marginBottom: "50px" }}
@@ -25,7 +25,7 @@ function HomePage() {
             <h2 className="rainbow flexbox no-wrap text-center max-radius shadow2" style={{ width: "350px", height: "45px", padding: "0px 10px", fontWeight: "500", marginTop: "8px"}}>a merchandise agency</h2>
           </div>
           <div className={mobile ? "text-center" : ""} style={mobile ? { width: "100%", margin: "15px 0px"} : { width:"240px", height: "10px", margin: "25px 0px 10px" }}>
-            Our company provides production and design services for apparel.  Turn your ideas into custom merchandise for your store, groups, or events.
+            Our company provides production and design services for apparel.  Turn your ideas into custom merchandise for your brand, company, groups, or events.
           </div>
           
         </div>

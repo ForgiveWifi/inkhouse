@@ -1,6 +1,6 @@
 import NoBox from "../ui/NoBox";
-import DesignBox from "../boxes/DesignBox";
-import DesignSkeleton from "../skeletons/DesignSkeleton";
+import DesignBox from "./DesignBox";
+import DesignSkeleton from "./DesignSkeleton";
 
 function DesignList({loading, designs}) {
   if (loading || designs === null) {

@@ -1,5 +1,4 @@
-import SizeList from "../new-design/SizeList";
-import ColorPalette from "../selects/color-select/ColorPalette";
+import SizeList from "./SizeList";
 
 
 function DesignPreview({ details, attributes, sizes, image}) {
@@ -16,7 +15,7 @@ function DesignPreview({ details, attributes, sizes, image}) {
       {
         image &&
         <div className="flexbox full-width" style={{ maxWidth: "400px", marginTop: "5px" }}>
-          <img src={URL.createObjectURL(image)} alt={image.name} className="full-width radius10" />
+          <img src={image} alt={image.name} className="full-width radius10" />
         </div>
       }
 
@@ -47,7 +46,6 @@ function DesignPreview({ details, attributes, sizes, image}) {
       }
 
       <h4>Color</h4>
-      {color && <ColorPalette color={attributes?.color} />}
 
       <h4> Sizes</h4>
       {sizes && <SizeList sizes={sizes} />}

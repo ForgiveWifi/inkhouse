@@ -1,19 +1,16 @@
-// import { useState } from "react";
 import { Select, MultiSelect } from "@mantine/core"
 import sortSizes from "../../utils/sortSizes";
-import ColorSelect from "../selects/color-select/ColorSelect";
+import ColorSelect from "./ColorSelect";
+import SizeList from "./SizeList";
+import SizeSelect from "./SizeSelect";
 
 function AttributesSelect({attributes, setAttributes, sizes, setSizes, error}) {
 
   const data = ["red", "blue","green", "yellow","grey","black","white"]
-
-  // const [ loading, setLoading ] = useState(false)
-
   return (
     <>
-      <div className="flexbox-column full-width" style={{ marginTop: "10px"}}>Attributes</div>
-      <div className="flexbox-column background1 padding15 radius15" style={{ paddingTop: "5px"}}>
-
+      <div className="flexbox-start full-width">
+      
         <div style={{ maxWidth: "191px"}}>
           <Select 
             label="style"
@@ -24,19 +21,11 @@ function AttributesSelect({attributes, setAttributes, sizes, setSizes, error}) {
           />
         </div>
 
-        <div style={{ maxWidth: "250px"}}>
-        <MultiSelect 
-          label="sizes"
-          value={sizes} 
-          onChange={sizes => setSizes(sortSizes(sizes))} 
-          error={error && sizes.length === 0}
-          data={["KIDS","S","M","L","XL","XXL","XXXL"]} 
-        />
-        </div>
-        
         <div className="label">colors</div>
         <ColorSelect colors={data} attributes={attributes} setAttributes={setAttributes}/>
-        
+
+        <div className="label">sizes</div>
+        <SizeSelect sizes={sizes} setSizes={setSizes} sizeOptions={["S", "M", "L", "XL", "2XL", "3XL"]} />
       </div>
     </>
   );

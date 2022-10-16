@@ -5,7 +5,7 @@ import AddIcon from '@mui/icons-material/Add';
 function DesignHeader() {
   return (
     <>
-      <div className="full-width" style={{ maxWidth: "1060px", margin: "15px 0px"}}>
+      <div className="full-width" style={{ maxWidth: "1060px", margin: "20px 0px"}}>
         <h1>Designs</h1>
       </div>
       <div className="flexbox-row full-width" style={{ maxWidth: '1060px'}}>

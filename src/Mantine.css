@@ -1,12 +1,5 @@
 .mantine-Modal-modal{
-  background-color: grey;
-}
-
-.mantine-Input-input{
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 14px;
-  padding-top: 3px;
-  padding-left: 28px
+  background-color: rgb(133, 133, 133);
 }
 
 .mantine-TextInput-label {

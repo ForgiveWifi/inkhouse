@@ -40,23 +40,33 @@ function HomeProducts() {
             productlist.map(({name, file, alt, position}) => {
               return(
                 <motion.div 
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
+                  initial={{ scale: 0.95, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.7, delay: 0.3 }}
                   viewport={{ once: true }}
                 >
                   <motion.div
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ scale: 1.05}}
                     whileTap={{ scale: 0.98 }}
                     transition={{ duration: 0.3 }}
+                    
                   >
-                    <img 
+                  
+                  <div style={{ position: "relative"}}> 
+                    <div className="product-box radius15" style={{ backgroundColor: "white", top: 0}}></div> 
+
+                    <motion.img 
+                      whileHover={{ opacity: 0.8}}
                       src={require(`../../assets/${file}`)} 
                       alt={alt}
-                      style={{ objectPosition: position, width: "250px", height: "250px", objectFit: "cover", borderRadius: "15px" }}
+                      className="product-box"
+                      style={{ position: "absolute", top: 0, objectPosition: position, objectFit: "cover" }}
                     />
+                  </div>
+                  
+                 
                     
-                    <div style={{ position: "relative", bottom: "5px", height: "15px", marginLeft: "5px"}}>{name} </div> 
+                    <h4 style={{ height: 25, marginLeft: 5, marginTop: 6}}>{name.toUpperCase()} </h4> 
                   </motion.div>
                 </motion.div>
               )

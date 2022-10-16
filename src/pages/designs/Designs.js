@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import DesignHeader from "../../components/headings/DesignHeader";
+import DesignHeader from "../../components/design-page/DesignHeader";
 import { showError } from "../../utils/alerts";
-import DesignList from "../../components/list/DesignList";
+import DesignList from "../../components/design-page/DesignList";
 import useQuery from "../../utils/useQuery";
 import MyPagination from "../../components/ui/buttons/MyPagination";
 
@@ -43,9 +43,7 @@ function Shirts() {
   return (
     <>
       <DesignHeader />
-
       <DesignList loading={loading} designs={designs} />
-      
       <MyPagination loading={loading} currentPage={currentPage} setPageNumber={setPageNumber} totalPages={totalPages}  />
 
     </>

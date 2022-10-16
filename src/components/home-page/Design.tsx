@@ -13,7 +13,7 @@ function Design() {
 
   const boxIcon = {
     fontSize: "30px",
-    fill: "#FF9B54"
+    fill: "#FF9244"
   }
 
   return (
@@ -39,9 +39,9 @@ function Design() {
           </motion.div>
 
           <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            initial={{ y: 30, scale: 0.95, opacity: 0 }}
+            whileInView={{ y: 0, scale: 1, opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.8 }}
             viewport={{ once: true }}
             className={mobile ? "flexbox-start full-width" : center ? "form-grid flex-wrap" : "form-grid margin-auto"}
             style={center ? { maxWidth: "507px", marginTop: "10px", } : { maxWidth: "400px", marginTop: "10px", gap: "5px" }}>

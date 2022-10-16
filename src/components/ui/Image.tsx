@@ -16,7 +16,7 @@ function Image(props: ImageProp) {
     ...style
   }
   return (
-    <div className="flexbox" style={{ borderRadius: "15px", boxShadow: "8px 8px #ff6a00"}}>
+    <div className="flexbox black-border" style={{ borderRadius: "15px", boxShadow: "8px 8px #ff6a00"}}>
       <img src={require(`../../assets/${file}`)} alt={alt} style={css} className="shadow2" />
     </div>
   );

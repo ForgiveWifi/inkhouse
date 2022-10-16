@@ -13,7 +13,7 @@ function loadingAlert(id, message, title) {
     color: "white",
     styles: (theme) => ({
       root: {
-        backgroundColor: "#FF9B54",
+        backgroundColor: "#FF9244",
         border: "none",
       },
       title: { color: theme.white },

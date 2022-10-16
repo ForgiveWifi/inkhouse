@@ -7,7 +7,7 @@ import Orders from "./pages/orders/Orders"
 import SingleOrder from "./pages/orders/SingleOrder"
 import NewOrder from "./pages/orders/NewOrder";
 import Designs from "./pages/designs/Designs"
-import NewDesign from "./pages/designs/NewDesign";
+import NewProduct from "./pages/NewProduct";
 import SingleDesign from "./pages/designs/SingleDesign";
 import Accounts from "./pages/accounts/Accounts";
 import NewAccount from "./pages/accounts/NewAccount";
@@ -28,7 +28,7 @@ export default function App() {
             <Route path="order/new" element={<NewOrder />} />
             <Route path="order/:order_id" element={<SingleOrder />} />
             <Route path="designs" element={<Designs />} />
-            <Route path="design/new" element={<NewDesign />} />
+            <Route path="design/new" element={<NewProduct />} />
             <Route path="design/:design_id" element={<SingleDesign />} />
             <Route path="accounts" element={<Accounts />} />
             <Route path="account/new" element={<NewAccount />} />

@@ -52,7 +52,11 @@ p {
 button {
   background-color: transparent;
   border: none;
-  padding: 4px 10px
+  padding: 4px 10px;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 ul {
@@ -64,7 +68,7 @@ ul {
 }
 
 li {
-  color: #ff9244;
+  color: #FF9244;
   list-style: none;
   margin-left: 30px;
   margin-bottom: 20px;
@@ -72,7 +76,6 @@ li {
   align-items: center;
   cursor: pointer;
   font-size: 16px;
-  
 }
 
 span {
@@ -137,8 +140,13 @@ span {
 }
 
 .orange-background {
-  -webkit-background-color:  #ff9244;
-  background-color: #ff9244;
+  -webkit-background-color:  #FF9244;
+  background-color: #FF9244;
+}
+
+.grey-background {
+  -webkit-background-color:  rgb(107, 116, 130);
+  background-color: rgb(107, 116, 130);
 }
 
 .menu-background {
@@ -174,10 +182,6 @@ span {
   z-index: 100;
 }
 
-.grey {
-  background-color: rgb(107, 116, 130);
-}
-
 .grey-text {
   color: rgb(107, 116, 130);
 }
@@ -187,7 +191,7 @@ span {
 }
 
 .orange-text {
-  color: #ff9244
+  color: #FF9244
 } 
 
 .text-center {
@@ -264,6 +268,10 @@ span {
   border-radius: 5px;
 }
 
+.black-border {
+  border: 5px solid rgb(63, 63, 63)
+}
+
 .margin-auto {
   margin: 0px auto
 }
@@ -313,10 +321,18 @@ span {
   margin: 8px
 }
 
+.product-box {
+  width: 250px;
+  height: 250px;
+  border-radius: 15px
+}
+
 .design-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 100%;
   margin-top: 20px
 }
 
@@ -330,4 +346,12 @@ span {
   display: grid;
   grid-template-columns: repeat(auto-fill, 1fr);
   grid-gap: 15px
+}
+
+.position-button:hover {
+  background-color: rgb(234, 234, 234);
+}
+
+.color {
+  color:rgb(255, 63, 63)
 }
