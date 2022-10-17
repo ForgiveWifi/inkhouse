@@ -348,8 +348,28 @@ span {
   grid-gap: 15px
 }
 
-.position-button:hover {
-  background-color: rgb(234, 234, 234);
+.confirm-button {
+  background-color: rgb(30, 179, 30);
+  border: none;
+  box-shadow: 4px 4px 0 rgb(18, 105, 18);
+  transition: 0.2s;
+}
+
+.confirm-button:active {
+  box-shadow: 0 0 0 #e96100;
+  transform: translate(4px, 4px);
+}
+
+.position-button {
+  background-color: grey;
+  border: none;
+  box-shadow: 4px 4px 0 rgb(18, 105, 18);
+  transition: 0.2s;
+}
+
+.position-button:active {
+  box-shadow: 0 0 0 #e96100;
+  transform: translate(4px, 4px);
 }
 
 .color {

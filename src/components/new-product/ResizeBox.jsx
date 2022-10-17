@@ -1,8 +1,8 @@
 
-function ResizeBox() {
+function ResizeBox({light}) {
   return (
-    <div  className="flexbox" style={{ width: 20, height: 20}}>
-      <div style={{ width: 10, height: 10, backgroundColor: "white", border: "2px solid black"}}></div>
+    <div className="flexbox" style={{ width: 20, height: 20}}>
+      <div style={{ width: 10, height: 10, backgroundColor: light ? "white" : "black", border: `2px solid ${light ? "black" : "white"}`}}></div>
     </div>
   );
 }

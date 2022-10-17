@@ -33,13 +33,17 @@
   border: none;
   border-radius: 15px;
   padding: 5px 15px;
-  box-shadow: 0 4px 0 #e96100;
-  transition: 0.1s;
+  box-shadow: 4px 4px 0 #e96100;
+  transition: 0.12s;
 }
 
 .form-button:active {
   box-shadow: 0 0 0 #e96100;
-  transform: translateY(4px);
+  transform: translate(4px, 4px);
+}
+
+.form-button:hover {
+  background-color: #ff9b54
 }
 
 input::-webkit-outer-spin-button,

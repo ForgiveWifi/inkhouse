@@ -3,7 +3,7 @@ import { Rnd } from "react-rnd"
 import ResizeBox from "./ResizeBox"
 
 
-function CurrentImage({ currentImage, setCurrentImage, setDragOutline }) {
+function CurrentImage({ currentImage, setCurrentImage, setDragOutline, light }) {
 
   const {image, width, height, x, y } = currentImage
   const [loaded, setLoaded] = useState(false)
@@ -38,10 +38,10 @@ function CurrentImage({ currentImage, setCurrentImage, setDragOutline }) {
         minWidth={25}
         enableResizing={{ top: false, bottom: false, left: false, right: false, topRight: true, topLeft: true, bottomRight: true, bottomLeft: true }}
         resizeHandleComponent={{
-          topRight: <ResizeBox />,
-          topLeft: <ResizeBox />,
-          bottomRight: <ResizeBox />,
-          bottomLeft: <ResizeBox />
+          topRight: <ResizeBox light={light}/>,
+          topLeft: <ResizeBox light={light} />,
+          bottomRight: <ResizeBox light={light}/>,
+          bottomLeft: <ResizeBox light={light}/>
         }}
         onDragStart={() => {
           setDragOutline(true)
@@ -50,7 +50,7 @@ function CurrentImage({ currentImage, setCurrentImage, setDragOutline }) {
           setDragOutline(true)
         }}
         style={{
-          outline: image ? "2px solid black" : null,
+          outline: image ? `2px solid ${light ? "black" : "white"}` : null,
           zIndex: 12
         }}
       >

@@ -16,13 +16,11 @@ root.render(
   //     clientId=
   //     redirectUri={window.location.origin}
   //   >
-      <MantineProvider>
         <NotificationsProvider position='bottom-center' autoClose={5000} zIndex={10000}>
           <SkeletonTheme baseColor="rgba(255, 255, 255, 0.2)" highlightColor="rgba(255, 255, 255, 0.2)"> 
             <App />
           </SkeletonTheme>
         </NotificationsProvider>
-      </MantineProvider>
     // </Auth0Provider> 
   // </React.StrictMode> 
 );
