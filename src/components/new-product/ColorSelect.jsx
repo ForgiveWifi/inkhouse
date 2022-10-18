@@ -2,7 +2,7 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
 function ColorSelect({colors, attributes, setAttributes}) {
 
-  const lightColors = ["#DFDEDA", "#A1ACC4", "#FFC632", "#A9BCD2", "#DFB9C7", "#BABBBE", "white"]
+  const lightColors = ["#DFDEDA", "#A1ACC4", "#FFC632", "#A9BCD2", "#DFB9C7", "#BABBBE", "white", null]
 
   return (
     <>

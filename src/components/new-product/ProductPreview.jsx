@@ -7,6 +7,7 @@ import { ImageUpload } from "./ImageUpload";
 import CurrentImage from "./CurrentImage";
 import Images from "./Images";
 import { Button } from "@mantine/core";
+import TagDisplay from "./TagDisplay";
 
 function ProductPreview({color, imageList, setImageList, tagList}) {
 
@@ -14,51 +15,11 @@ function ProductPreview({color, imageList, setImageList, tagList}) {
   const light = lightColors.includes(color)
 
   const [currentImage, setCurrentImage] = useState({ position: "front", width: 200, x: 50, y:0})
+  const [selectedImage, setSelectedImage] = useState(null)
   const [dragOutline, setDragOutline] = useState(false)
 
-  console.log(currentImage)
   const {image, position, width, height, x, y} = currentImage
   const front = position === "front"
-
-  // if (image) {
-  //   document.onkeydown = (e) => {
-  //     e.preventDefault()
-  //     switch (e.keyCode) {
-  //       case 37:
-  //         if (x > 0) {
-  //           if (x <= 1) {
-  //             setCurrentImage({ ...currentImage, x: 0 })
-  //           } else
-  //           setCurrentImage({ ...currentImage, x: x - 1 })
-  //         }
-  //         break;
-  //       case 38:
-  //         if (y > 0) {
-  //           if (y <= 1) {
-  //             setCurrentImage({ ...currentImage, y: 0 })
-  //           } else
-  //           setCurrentImage({ ...currentImage, y: y - 1 })
-  //         }
-  //         break;
-  //       case 39:
-  //         if (x < 300 - width ) {
-  //           if (x >= 299 - width) {
-  //             setCurrentImage({ ...currentImage, x: 300 - width })
-  //           } else
-  //           setCurrentImage({ ...currentImage, x: x + 1 })
-  //         }
-  //         break;
-  //       case 40:
-  //         if (y < 400 - height) {
-  //           if (y >= 399 - height) {
-  //             setCurrentImage({ ...currentImage, y: 400 - height })
-  //           } else
-  //           setCurrentImage({ ...currentImage, y: y + 1 })
-  //         }
-  //         break;
-  //     }
-  //   }
-  // }
 
   return (
     <>
@@ -69,6 +30,7 @@ function ProductPreview({color, imageList, setImageList, tagList}) {
           style={{ position: "absolute", width: 650, height: 650, zIndex: 1}} 
           draggable="false" 
         />
+        {(tagList && front) && <TagDisplay tagList={tagList} />}
         <div 
           className="flexbox radius5"
           style={{ 
@@ -81,7 +43,7 @@ function ProductPreview({color, imageList, setImageList, tagList}) {
           zIndex: 11
         }}>
           {currentImage.image && <CurrentImage currentImage={currentImage} setCurrentImage={setCurrentImage} setDragOutline={setDragOutline} light={light} />}
-          <Images currentImage={currentImage} imageList={imageList}/>
+          <Images currentImage={currentImage} imageList={imageList} selectedImage={selectedImage} setSelectedImage={setSelectedImage} light={light} />
         </div>
         <ProductButtons currentImage={currentImage} setCurrentImage={setCurrentImage} imageList={imageList} setImageList={setImageList}/>
         <div style={{ position: "absolute", top: 0, right: 0, zIndex: 20}}>
@@ -92,14 +54,14 @@ function ProductPreview({color, imageList, setImageList, tagList}) {
         </div>
         {
           image &&
-          <div className="flexbox-column" style={{ position: "absolute", bottom: 0, left: 0, width: 150, height: 360,  zIndex: 20}}>
+          <div className="flexbox-column" style={{ position: "absolute", bottom: 0, left: 0, width: 155, height: 360,  zIndex: 20}}>
             <div className="orange-text" style={{ marginTop: "auto"}}>width: {width / 20} in.</div>
             <div className="orange-text">height: {height /20} in.</div>
-            <div className="flexbox-column" style={{gap: 10, marginTop: 10}}>
-              <button onClick={() => setCurrentImage({...currentImage, y: 0})} className="position-button full-width">TOP</button>
-              <button onClick={() => setCurrentImage({...currentImage, x: (300 - width) / 2})} className="position-button full-width">CENTER</button>
-              <button onClick={() => setCurrentImage({...currentImage, x: 0})} className="position-button full-width">LEFT</button>
-              <button onClick={() => setCurrentImage({...currentImage, x: 300 - width})} className="position-button full-width" style={{ marginBottom: 60}} >RIGHT</button>
+            <div className="flexbox-column" style={{gap: 5, marginTop: 10}}>
+              <button onClick={() => setCurrentImage({...currentImage, y: 0})} className="position-button full-width max-radius">TOP</button>
+              <button onClick={() => setCurrentImage({...currentImage, x: (300 - width) / 2})} className="position-button full-width max-radius">CENTER</button>
+              <button onClick={() => setCurrentImage({...currentImage, x: 0})} className="position-button full-width max-radius">LEFT</button>
+              <button onClick={() => setCurrentImage({...currentImage, x: 300 - width})} className="position-button full-width max-radius" style={{ marginBottom: 55}} >RIGHT</button>
             </div>
           </div>
         }

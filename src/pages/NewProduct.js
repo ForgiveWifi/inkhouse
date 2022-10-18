@@ -189,7 +189,7 @@ function NewProduct() {
         <ProductPreview color={attributes.color} imageList={imageList} setImageList={setImageList} tagList={{tagList}}/>
         
         <div className="flexbox-column">
-          <div className="flexbox-column background1 full-width radius15" style={{ maxWidth: "300px", padding: "0px 15px 15px"}}>
+          <div className="flexbox-column background1 full-width radius15" style={{ maxWidth: "300px", padding: "5px 15px 15px"}}>
             <h2 className="full-width">New Product</h2>
             <ProductDetails details={details} setDetails={setDetails} error={error} />
             <AttributesSelect attributes={attributes} setAttributes={setAttributes} sizes={sizes} setSizes={setSizes} error={error}/>

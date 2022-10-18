@@ -360,18 +360,29 @@ span {
   transform: translate(4px, 4px);
 }
 
+.confirm-button:hover {
+  background-color: rgb(34, 195, 34)
+}
 .position-button {
-  background-color: grey;
+  font-size: 200;
+  background-color: rgb(107, 116, 130);
   border: none;
-  box-shadow: 4px 4px 0 rgb(18, 105, 18);
+  font-size: 16px;
+  padding: 10px 30px;
   transition: 0.2s;
 }
 
-.position-button:active {
-  box-shadow: 0 0 0 #e96100;
-  transform: translate(4px, 4px);
+.position-button:hover {
+  background-color: rgb(121, 131, 147);
+  transform: scale(1.02);
 }
 
+.position-button:active {
+  background-color: rgb(93, 101, 114);
+  transform: scale(0.98);
+}
+
+
 .color {
-  color:rgb(255, 63, 63)
+  color:rgb(236, 236, 236)
 }
