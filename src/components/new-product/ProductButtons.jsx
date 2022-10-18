@@ -19,7 +19,7 @@ function ProductButtons({currentImage, setCurrentImage, imageList, setImageList}
   return (
     <>
       <div className="flexbox-row" style={{ position: "absolute", top: "10px", left: "10px", gap: "8px", zIndex: 12 }}>
-        <button onClick={image ? () => setCurrentImage({ position: "front", width: 200, x: 50, y:10 }) : () => setUploadModal(true) } className="form-button flexbox max-radius" style={{ width: "60px", height: "60px"}}>
+        <button onClick={image ? () => setCurrentImage({ position: position, width: 200, x: 50, y:0}) : () => setUploadModal(true) } className="form-button flexbox max-radius" style={{ width: "60px", height: "60px"}}>
           <motion.div animate={{ rotate: uploadModal || image ? 45 : 0}} className="flexbox">
             <AddIcon sx={{ fontSize: "45px" }}/>
           </motion.div>

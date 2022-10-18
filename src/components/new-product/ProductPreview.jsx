@@ -15,10 +15,9 @@ function ProductPreview({color, imageList, setImageList, tagList}) {
   const light = lightColors.includes(color)
 
   const [currentImage, setCurrentImage] = useState({ position: "front", width: 200, x: 50, y:0})
-  const [selectedImage, setSelectedImage] = useState(null)
   const [dragOutline, setDragOutline] = useState(false)
 
-  const {image, position, width, height, x, y} = currentImage
+  const { position, width, height, x, y} = currentImage
   const front = position === "front"
 
   return (
@@ -43,7 +42,7 @@ function ProductPreview({color, imageList, setImageList, tagList}) {
           zIndex: 11
         }}>
           {currentImage.image && <CurrentImage currentImage={currentImage} setCurrentImage={setCurrentImage} setDragOutline={setDragOutline} light={light} />}
-          <Images currentImage={currentImage} imageList={imageList} selectedImage={selectedImage} setSelectedImage={setSelectedImage} light={light} />
+          { imageList.length !== 0 && <Images currentImage={currentImage} setCurrentImage={setCurrentImage} imageList={imageList} setImageList={setImageList} light={light} />}
         </div>
         <ProductButtons currentImage={currentImage} setCurrentImage={setCurrentImage} imageList={imageList} setImageList={setImageList}/>
         <div style={{ position: "absolute", top: 0, right: 0, zIndex: 20}}>
@@ -53,7 +52,7 @@ function ProductPreview({color, imageList, setImageList, tagList}) {
           </div>
         </div>
         {
-          image &&
+          currentImage?.image &&
           <div className="flexbox-column" style={{ position: "absolute", bottom: 0, left: 0, width: 155, height: 360,  zIndex: 20}}>
             <div className="orange-text" style={{ marginTop: "auto"}}>width: {width / 20} in.</div>
             <div className="orange-text">height: {height /20} in.</div>

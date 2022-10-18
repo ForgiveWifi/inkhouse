@@ -4,7 +4,7 @@ import ResizeBox from "./ResizeBox"
 
 
 function CurrentImage({ currentImage, setCurrentImage, setDragOutline, light }) {
-
+  
   const {image, width, height, x, y } = currentImage
   const [loaded, setLoaded] = useState(false)
   const ref = useRef(0)
@@ -13,43 +13,48 @@ function CurrentImage({ currentImage, setCurrentImage, setDragOutline, light }) 
     setCurrentImage({ ...currentImage, height: ref.current.height })
   }, [loaded])
 
-  document.onkeydown = (e) => {
-    e.preventDefault()
-    switch (e.keyCode) {
-      case 37:
-        if (x > 0) {
-          if (x <= 1) {
-            setCurrentImage({ ...currentImage, x: 0 })
-          } else
-          setCurrentImage({ ...currentImage, x: x - 1 })
-        }
-        break;
-      case 38:
-        if (y > 0) {
-          if (y <= 1) {
-            setCurrentImage({ ...currentImage, y: 0 })
-          } else
-          setCurrentImage({ ...currentImage, y: y - 1 })
-        }
-        break;
-      case 39:
-        if (x < 300 - width ) {
-          if (x >= 299 - width) {
-            setCurrentImage({ ...currentImage, x: 300 - width })
-          } else
-          setCurrentImage({ ...currentImage, x: x + 1 })
-        }
-        break;
-      case 40:
-        if (y < 400 - height) {
-          if (y >= 399 - height) {
-            setCurrentImage({ ...currentImage, y: 400 - height })
-          } else
-          setCurrentImage({ ...currentImage, y: y + 1 })
-        }
-        break;
-    }
-  }
+  // if (currentImage.image) {
+  //   null
+  // } else
+  //   document.onkeydown = (e) => {
+  //   console.log(currentImage)
+  //   e.preventDefault()
+  //   switch (e.keyCode) {
+  //     case 37:
+  //       if (x > 0) {
+  //         if (x <= 1) {
+  //           setCurrentImage({ ...currentImage, x: 0 })
+  //         } else
+  //         setCurrentImage({ ...currentImage, x: x - 1 })
+  //       }
+  //       break;
+  //     case 38:
+  //       if (y > 0) {
+  //         if (y <= 1) {
+  //           setCurrentImage({ ...currentImage, y: 0 })
+  //         } else
+  //         setCurrentImage({ ...currentImage, y: y - 1 })
+  //       }
+  //       break;
+  //     case 39:
+  //       if (x < 300 - width ) {
+  //         if (x >= 299 - width) {
+  //           setCurrentImage({ ...currentImage, x: 300 - width })
+  //         } else
+  //         setCurrentImage({ ...currentImage, x: x + 1 })
+  //       }
+  //       break;
+  //     case 40:
+  //       if (y < 400 - height) {
+  //         if (y >= 399 - height) {
+  //           setCurrentImage({ ...currentImage, y: 400 - height })
+  //         } else
+  //         setCurrentImage({ ...currentImage, y: y + 1 })
+  //       }
+  //       break;
+  //   }
+  // }
+  
 
   return (
     <>
