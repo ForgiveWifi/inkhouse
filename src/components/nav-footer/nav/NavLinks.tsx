@@ -10,6 +10,7 @@ function NavLinks() {
 
         <Link to="/design" className="nav-link shadow2">design</Link>
 
+
         {/* <Link to="/accounts/?page=1" className="nav-link shadow2">accounts</Link> */}
         
         <Link to="/products/?page=1" className="nav-link shadow2">products</Link>
