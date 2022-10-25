@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import emailjs from '@emailjs/browser';
 import InputField from "../ui/InputField"
 import PhoneNumber from './PhoneNumber';
-import { Input } from '@mantine/core';
+import { Input, Button } from '@mantine/core';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import { showLoading, updateError, updateSuccess } from '../../utils/alerts';
 import "./ContactForm.css"
@@ -31,6 +31,8 @@ export default function ContactForm() {
         .catch((error) => {
           updateError("order-form", "We ran into a problem submitting your form. Please contact us!")
         });
+    } else {
+      e.preventDefault()
     }
   }
 
@@ -83,8 +85,8 @@ export default function ContactForm() {
               <textarea name="details" className='text-area'/>
             </div>
 
-            <div className='flexbox-row span2' style={{ margin: "15px 10px 5px auto" }}>
-              <input name="sumbitButton" className='form-button' type="submit" value="send"></input>
+            <div className='flexbox-row span2' style={{ margin: "15px 13px 5px auto" }}>
+              <Button name="sumbit-button" className='form-button ' type="submit" style={{ backgroundColor: "#FF9244", borderRadius: 10 }}>SEND</Button>
             </div>
 
           </form>

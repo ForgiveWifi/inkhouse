@@ -27,7 +27,7 @@ function TagUpload({label, value, onChange, deleteTag}) {
               <div className="flexbox full-width" style={{ width: 120}}>
                 <img src={URL.createObjectURL(value)} alt={value.name} className="full-width"/>
               </div>
-              <button onClick={deleteTag} className="flexbox" style={{ position: "absolute", top: 0, left: 0, backgroundColor: "rgb(255, 63, 63)", width: 20, height: 20, borderRadius: 10}}>
+              <button onClick={deleteTag} className="flexbox" style={{ position: "absolute", top: 0, left: 0, backgroundColor: "rgb(253, 81, 81)", width: 20, height: 20, borderRadius: 10}}>
                 <CloseIcon style={{ fontSize: 12}}/>
               </button>
             </div>

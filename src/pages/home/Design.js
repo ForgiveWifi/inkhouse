@@ -1,6 +1,6 @@
 import Header from "../../components/ui/Header";
 
-function DesignPage() {
+function Design() {
   return (
     <>
       <Header title='Art + Design' />
@@ -8,4 +8,4 @@ function DesignPage() {
   );
 }
 
-export default DesignPage;
+export default Design;

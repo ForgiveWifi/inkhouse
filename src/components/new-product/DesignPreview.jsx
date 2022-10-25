@@ -1,7 +1,6 @@
 import SizeList from "./SizeList";
 
-
-function DesignPreview({ details, attributes, sizes, image}) {
+function DesignPreview({ details, attributes, sizes}) {
 
   const {name, description} = details
   const {style, color} = attributes
@@ -11,13 +10,8 @@ function DesignPreview({ details, attributes, sizes, image}) {
       className="flexbox-column full-width background1 radius10"
       style={{ maxWidth: "400px", padding: "15px", paddingTop: "10px" }}
     >
-
-      {
-        image &&
-        <div className="flexbox full-width" style={{ maxWidth: "400px", marginTop: "5px" }}>
-          <img src={image} alt={image.name} className="full-width radius10" />
-        </div>
-      }
+      
+      <div id="output"></div>
 
       <div className="flexbox-column">
         <h4>Name</h4>

@@ -1,7 +1,9 @@
+import { Button } from "@mantine/core";
 import NoBox from "../ui/NoBox";
 import TagUpload from "./TagUpload";
+import CloseIcon from '@mui/icons-material/Close';
 
-function TagList({sizes, tagList, setTagList}) {
+function TagList({sizes, tagList, setTagList, setTags}) {
 
   function addTag(file, size) {
     const tag = { ...tagList }
@@ -13,12 +15,15 @@ function TagList({sizes, tagList, setTagList}) {
     setTagList({...tagList, [size]: null })
   }
 
-  console.log("sizes", sizes)
-  console.log("tags-list", tagList)
+  function removeTags() {
+    setTagList({})
+    setTags(false)
+  }
+
   return (
     <>
         <div className="label full-width">tags</div>
-        { sizes.length === 0 && <NoBox text="Select Sizes"/> }
+        {/* { sizes.length === 0 && <NoBox text="Select Sizes"/> } */}
         <div className="full-width" style={{ display: "grid", gridTemplateColumns : "repeat(2, 1fr)", maxWidth: 300}}>
           {
             sizes.map((size,i) => {
@@ -27,6 +32,14 @@ function TagList({sizes, tagList, setTagList}) {
               )
             })
           }
+        {
+          sizes &&
+          <div className="flexbox span2" style={{ marginTop: 10}}>
+            <Button onClick={() => removeTags()} style={{ borderRadius: 50, backgroundColor: "rgb(253, 81, 81)"}} leftIcon={<CloseIcon style={{fontSize: 20}} />} uppercase>
+              tags
+            </Button>
+          </div>
+        }
         </div>
     </>
   );

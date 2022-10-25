@@ -1,8 +1,8 @@
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import { Tooltip } from '@mantine/core';
+import { colors } from "../../data/colors";
 
-function ColorSelect({colors, attributes, setAttributes}) {
-
-  const lightColors = ["#DFDEDA", "#A1ACC4", "#FFC632", "#A9BCD2", "#DFB9C7", "#BABBBE", "white", null]
+function ColorSelect({ attributes, setAttributes}) {
 
   return (
     <>
@@ -10,19 +10,22 @@ function ColorSelect({colors, attributes, setAttributes}) {
         {
           colors.map((color,i) => {
             
-            const selected = color === attributes.color
-            const light = lightColors.includes(color)
+            const selected = color.value === attributes.color.value
+
+            const {value, hex, light} = color
 
             return(
               <>
-                <button 
-                  key={i}
-                  onClick={() => setAttributes({...attributes, color})} 
-                  className="flexbox max-radius" 
-                  style={{ margin: "5px", backgroundColor: color, width: "40px", height: "40px", outline: !selected ? "none" : light ? "2px solid black" : "2px solid white" }}
-                >
-                  { selected && <CheckCircleOutlineIcon key={i} sx={{ fill: light ? "black" : "white"}} />}
-                </button>
+                <Tooltip label={value}>
+                  <button 
+                    key={i}
+                    onClick={() => setAttributes({...attributes, color: color})} 
+                    className="flexbox max-radius" 
+                    style={{ margin: "5px", backgroundColor: hex, width: "40px", height: "40px", outline: !selected ? "none" : light ? "2px solid black" : "2px solid white" }}
+                  >
+                    { selected && <CheckCircleOutlineIcon key={i} sx={{ fill: light ? "black" : "white"}} />}
+                  </button>
+                </Tooltip>
               </>
             )
           })

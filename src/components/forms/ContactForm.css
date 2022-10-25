@@ -27,23 +27,22 @@
 
 .form-button {
   color: white;
-  background-color: #FF9244;
+  background-color: #ff8936;
   font-size: 25px;
   font-weight: 700;
   border: none;
-  border-radius: 15px;
   padding: 5px 15px;
-  box-shadow: 4px 4px 0 #e96100;
+  box-shadow: 3px 3px 0 #e96100;
   transition: 0.12s;
 }
 
 .form-button:active {
   box-shadow: 0 0 0 #e96100;
-  transform: translate(4px, 4px);
+  transform: translate(3px, 3px);
 }
 
 .form-button:hover {
-  background-color: #ff9b54
+  background-color: #ffa15f
 }
 
 input::-webkit-outer-spin-button,

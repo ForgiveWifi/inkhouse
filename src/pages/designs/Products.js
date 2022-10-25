@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import DesignHeader from "../../components/design-page/DesignHeader";
 import { showError } from "../../utils/alerts";
 import DesignList from "../../components/design-page/DesignList";
 import useQuery from "../../utils/useQuery";
 import MyPagination from "../../components/ui/buttons/MyPagination";
+import { Button } from "@mantine/core";
+import AddIcon from '@mui/icons-material/Add';
+import { Link } from "react-router-dom";
 
-function Shirts() {
+function Products() {
 
   const query = useQuery()
   const page = query.get("page")
@@ -22,7 +24,7 @@ function Shirts() {
     const fetchDesigns = async () => {
       try {
         setLoading(true)
-        const {data} = await axios.get(`${process.env.REACT_APP_API_URL}/design?page=${page}&limit=20`)
+        const {data} = await axios.get(`${process.env.REACT_APP_API_URL}/products?page=${page}&limit=20`)
         setDesigns(data.results) 
         setCurrentPage(parseInt(page))
         setTotalPages(data.pages)
@@ -42,7 +44,10 @@ function Shirts() {
 
   return (
     <>
-      <DesignHeader />
+      <h1>Products</h1>
+      <div className="flexbox-row full-width" style={{ maxWidth: '1060px'}}>
+        <Button leftIcon={<AddIcon />} component={Link} to={"/product/new"}>New product</Button>
+      </div>
       <DesignList loading={loading} designs={designs} />
       <MyPagination loading={loading} currentPage={currentPage} setPageNumber={setPageNumber} totalPages={totalPages}  />
 
@@ -50,4 +55,4 @@ function Shirts() {
   );
 }
 
-export default Shirts;
+export default Products;

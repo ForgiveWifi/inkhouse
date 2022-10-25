@@ -1,16 +1,16 @@
-// import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth0 } from "@auth0/auth0-react";
 import { useMediaQuery } from '@mantine/hooks';
 import NavLinks from "./NavLinks";
 import { Link } from "react-router-dom";
 import MenuIcon from './MenuIcon';
 
-// import LogButton from "../../ui/buttons/LogButton";
+import LogButton from "../../ui/buttons/LogButton";
 // import { Button } from "@mantine/core";
 
 
 function Navbar() {
 
-  // const { loginWithRedirect, isAuthenticated, logout } = useAuth0()
+  const { loginWithRedirect, isAuthenticated, logout } = useAuth0()
   const mobile = useMediaQuery('(max-width: 1200px)')
 
   return (
@@ -23,11 +23,12 @@ function Navbar() {
           </Link>
         </div>
 
-        {mobile ? <MenuIcon/> : <NavLinks />}
+        
 
-        {/* <div style={{ marginLeft: "auto", marginTop: "10px" }}>
+        <div className="flexbox-row" style={{ marginLeft: "auto", marginTop: "10px" }}>
+          { mobile ? <MenuIcon/> : <NavLinks />}
           { isAuthenticated ? <LogButton name="logout" onClick={() => logout({ returnTo: window.location.origin })}/> : <LogButton name="login" onClick={() => loginWithRedirect()}/>}
-        </div> */}
+        </div>
 
       </nav>
     </>

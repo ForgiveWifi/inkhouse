@@ -50,7 +50,7 @@ function PlacementBox({ design }) {
               </div>
 
               <div className="flexbox-row">
-                <div>{y_offset}</div>
+                <div>{-(y_offset)}</div>
                 <div style={{ marginLeft: "5px"}}>mm</div>
               </div>
             </div>

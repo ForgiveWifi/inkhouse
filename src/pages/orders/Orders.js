@@ -19,7 +19,7 @@ function Orders() {
   const [loading, setLoading] = useState(false)
   
   useEffect(() => {
-    const fetchOrders = async () => {
+    async function fetchOrders() {
       try {
         setLoading(true)
         const {data} = await axios.get(`${process.env.REACT_APP_API_URL}/order?page=${page}&limit=15`)
