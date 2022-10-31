@@ -15,5 +15,5 @@ function formatDesign(design) {
     y_offset: y_offset === 0 ? 0 : (Math.round(y_offset * 1.27)),
   });
 }
-
+ 
 export default formatDesign;
