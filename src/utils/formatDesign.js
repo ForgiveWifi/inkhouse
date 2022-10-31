@@ -1,4 +1,4 @@
-module.exports = function formatDesign(design) {
+function formatDesign(design) {
   const {placement, width, height, x_offset, y_offset} = design
   
   const center = (320 - width) / 2
@@ -16,5 +16,4 @@ module.exports = function formatDesign(design) {
   });
 }
 
-
-// export default formatDesign;
+export default formatDesign;
