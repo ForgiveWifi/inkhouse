@@ -210,21 +210,20 @@ function NewProduct() {
       <BackButton />
 
       <div className="flexbox flex-wrap full-width" style={{ alignItems: "flex-start", gap: "20px"}}>
-
-        <div className="flexbox-column">
-          <div className="flexbox-column background1 full-width radius15" style={{ maxWidth: "300px", padding: "5px 15px 15px"}}>
-            <h2 className="full-width">New Product</h2>
-            <ProductDetails details={details} setDetails={setDetails} error={error} />
-            <AttributesSelect attributes={attributes} setAttributes={setAttributes} sizes={sizes} setSizes={setSizes} error={error}/>
-            {
-              tags ?
-              <TagList sizes={sizes} tagList={tagList} setTagList={setTagList} setTags={setTags} /> :
-              <Button onClick={() => setTags(true)} leftIcon={<AddIcon />} style={{ borderRadius:50, marginTop: 15}} >ADD TAGS</Button> 
-            }
-          </div>
-          <Button className="form-button" style={{ margin: "10px 15px 5px auto"}} onClick={openConfirmModal} uppercase>submit</Button>
+        <div className="flexbox-column background1 full-width radius15" style={{ maxWidth: "300px", padding: "5px 15px 15px"}}>
+          <h2 className="full-width">New Product</h2>
+          <ProductDetails details={details} setDetails={setDetails} error={error} />
+          <AttributesSelect attributes={attributes} setAttributes={setAttributes} sizes={sizes} setSizes={setSizes} error={error}/>
+          {
+            tags ?
+            <TagList sizes={sizes} tagList={tagList} setTagList={setTagList} setTags={setTags} /> :
+            <Button onClick={() => setTags(true)} leftIcon={<AddIcon />} style={{ borderRadius:50, marginTop: 15}} >ADD TAGS</Button> 
+          }
         </div>
-        <ProductPreview frontImages={frontImages} backImages={backImages} color={attributes.color} currentImage={currentImage} setCurrentImage={setCurrentImage} imageList={imageList} setImageList={setImageList}/>
+        <div className="flexbox-column">
+          <ProductPreview frontImages={frontImages} backImages={backImages} color={attributes.color} currentImage={currentImage} setCurrentImage={setCurrentImage} imageList={imageList} setImageList={setImageList}/>
+          <Button className="form-button" style={{ margin: "10px 3px 5px auto"}} onClick={openConfirmModal} uppercase>submit</Button>
+        </div>
         {/* <ConfirmModal openConfirm={openConfirm} close={() => setOpenConfirm(false)} details={details} attributes={attributes} sizes={sizes}/> */}
       </div>
     </>

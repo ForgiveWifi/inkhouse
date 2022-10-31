@@ -70,7 +70,7 @@ function Production() {
           <motion.div 
             initial={{ x: 100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.5, delay: 0.8 }}
+            transition={{ duration: 1.2, delay: 0.8 }}
             viewport={{ once: true }}
             className="flexbox-start" 
             style={{ minWidth: "300px", margin: "auto"}}>

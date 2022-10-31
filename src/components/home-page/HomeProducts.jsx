@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 function HomeProducts() {
   const productlist = [
     {
-      name:"Shirts",
+      name:"Bella + Canvas",
       file: "BellaCanvas_3001_White_04.jpg",
       alt: "Bella Canvas 3001 White",
       position: "0px -30px",

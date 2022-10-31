@@ -6,7 +6,7 @@ function ProductList({products}) {
   }
   return (
     <>
-      <div className="flexbox-row flex-wrap" style={{ gap: 20, marginTop: 15, justifyContent: "space-around" }}>
+      <div className="product-grid" style={{}}>
         {
           products.map((product, i) => {
             return(

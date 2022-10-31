@@ -9,6 +9,7 @@ import AddIcon from '@mui/icons-material/Add';
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import ProductList from "../../components/products/ProductList";
+import Loading from "../../auth/Loading";
 
 function Products() {
 
@@ -54,10 +55,12 @@ function Products() {
 
   return (
     <>
+      { loading && <Loading /> }
       <h1>Products</h1>
       <Button leftIcon={<AddIcon />} component={Link} to={"/account/product/new"} style={{ marginTop: 15}}>New product</Button>
       <ProductList products={products}/>
       <MyPagination loading={loading} currentPage={currentPage} setPageNumber={setPageNumber} totalPages={totalPages}  />
+      
     </>
   );
 }
