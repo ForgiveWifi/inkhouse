@@ -33,32 +33,29 @@ function Production() {
 
   return (
     <>
-      <div className="flexbox-column full-width">
-        <div className="flexbox-column" style={{ margin: "40px 0px 20px"}}>
-          <motion.h1 
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
+      <div className="flexbox-column full-width" style={{ marginBottom: 60}}>
+        <motion.div 
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="flexbox-column" 
+          style={{ marginBottom: 20}}>
+          <h1 
             className="flexbox-column text-center" 
           >
             high tech production
-          </motion.h1>
+          </h1>
 
-          <motion.p 
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
+          <p 
             className="full-width text-center" 
             style={{ maxWidth: "400px", marginTop: "15px"}}>
             inkhouse products are printed on quality garments, locally in the US.  Our wide variety of styles and colors allows for full customization.  Our smart printing process allows for a quick turnaround.   
-          </motion.p>
-        </div>
+          </p>
+        </motion.div>
         
 
         <div className="flexbox-row flex-wrap" style={{ gap: "20px"}}>
-
           <motion.div 
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -71,9 +68,9 @@ function Production() {
           
 
           <motion.div 
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1.5, delay: 0.8 }}
             viewport={{ once: true }}
             className="flexbox-start" 
             style={{ minWidth: "300px", margin: "auto"}}>
@@ -90,7 +87,7 @@ function Production() {
                 )
               })
             }
-     
+    
           </motion.div>
 
 

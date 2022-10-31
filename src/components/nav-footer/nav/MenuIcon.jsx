@@ -16,10 +16,15 @@ function MenuIcon() {
     //   name: "orders",
     //   to: "/orders/?page=1"
     // },
+    // {
+    //   name: "designs",
+    //   to: "/designs/?page=1"
+    // },
     {
-      name: "designs",
-      to: "/designs/?page=1"
-    }
+      name: "profile",
+      to: "/account/profile"
+    },
+    
   ]
 
   const sidebar = {

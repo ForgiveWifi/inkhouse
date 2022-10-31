@@ -66,14 +66,14 @@ export default function ContactForm() {
             <PhoneNumber ref={phoneInput} />
             <InputField name="quantity" type="number" min={0} />
 
-            <div className={`flexbox-start`} >
+            <div className="flexbox-start" style={{ color: "rgba(0, 0, 0, 0.6)", fontSize: "104px", paddingTop: "1px"}}>
               <label>budget</label>
               <Input
-                icon={<AttachMoneyIcon style={{ fill: "rgba(0, 0, 0, 0.6)", marginLeft: "10px"}}/>} 
-                iconWidth={30}
+                icon={<AttachMoneyIcon style={{ fill: "rgba(0, 0, 0, 0.6)", marginLeft: "2px"}}/>} 
+                iconWidth={25}
                 variant="unstyled"
                 className="input-field"
-                style={{ color: "rgba(0, 0, 0, 0.6)", fontSize: "14px", paddingTop: "1px"}}
+                
                 name="budget" 
                 type="number" 
                 min={0}

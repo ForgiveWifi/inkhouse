@@ -1,4 +1,4 @@
-import formatDesign from "./formatDesign.js"
+const formatDesign = require("./formatDesign")
 
 const design1 = {
   placement: "front",
@@ -16,7 +16,7 @@ const design2 = {
   height: 100
 }
  
-const end = { 
+const end1 = { 
   placement: "Front Left Chest",
   x_offset: 0,
   y_offset: 127,
@@ -33,5 +33,6 @@ const end2 = {
 }
 
 test("check format design", () => {
-  expect(formatDesign(design2)).toBe(end2)
+  expect(formatDesign(design1)).toEqual(end1)
+  expect(formatDesign(design2)).toEqual(end2)
 })

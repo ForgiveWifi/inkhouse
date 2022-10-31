@@ -4,6 +4,7 @@ function Production() {
   return (
     <>
       <Header title='Production' />
+      <div className="full-width">Work in progress</div>
     </>
   );
 }

@@ -14,14 +14,17 @@ import TagList from "../components/new-product/TagList.jsx";
 import ConfirmModal from "../components/new-product/ConfirmModal.jsx";
 import formatDesign from "../utils/formatDesign.js";
 import html2canvas from "html2canvas";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function NewProduct() {
 
   const [currentImage, setCurrentImage] = useState({ placement: "front", width: 200, x_offset: 60, y_offset:0})
   const [sizes, setSizes] = useState([])
-  const [attributes, setAttributes] = useState({style: "3001", color: { value: "Army", hex: "#5C554C", light: true }})
+  const [attributes, setAttributes] = useState({style: "3001", color: { value: "White", hex: "white", light: true }})
   const [details, setDetails] = useState({name: "", description: ""})
   const [imageList, setImageList] = useState([])
+
+  const { getAccessTokenSilently } = useAuth0()
 
   const [error, setError] = useState(false)
 
@@ -58,19 +61,17 @@ function NewProduct() {
     } else
     // setOpenConfirm(true)
     submitProduct()
-    // uploadProductImages()
   }
 
   async function submitProduct() {
     try {
       const {product_images, design_data, tag_list} = await uploadAllFirebase()
       await uploadAllProducts(product_images, design_data, tag_list)
-      // setError(false)
-      // setSizes([])
-      // setAttributes({style: "3001", color: { value: "Army", hex: "#5C554C", light: true }})
-      // setDetails({name: "", description: ""})
-      // setImageList([])
-      // setPreview([])
+      setError(false)
+      setSizes([])
+      setAttributes({style: "3001", color: { value: "White", hex: "white", light: true }})
+      setDetails({name: "", description: ""})
+      setImageList([])
     }
     catch (err) {
     }
@@ -85,7 +86,7 @@ function NewProduct() {
       return({ product_images, design_data, tag_list})
     }
     catch (err) {
-      updateError("firebase", "Problem uploading images to server.  Contact us!", err.message)
+      updateError("firebase", "Server Error: firebase", "Contact us!")
     }
   }
 
@@ -188,7 +189,13 @@ function NewProduct() {
     const design_name = `${name} - ${size}`
     try {
       showLoading(size, "Uploading...", design_name)
-      const data = await axios.post(`${process.env.REACT_APP_API_URL}/product`, product)
+      const access_token = await getAccessTokenSilently()
+      console.log(access_token)
+      const data = await axios.post(`${process.env.REACT_APP_API_URL}/product`, product, {
+        headers: {
+          authorization: `Bearer ${access_token}` 
+        }
+      })
       updateSuccess(size, "Design has been uploaded!", design_name) 
       return(data)
     }
@@ -204,8 +211,6 @@ function NewProduct() {
 
       <div className="flexbox flex-wrap full-width" style={{ alignItems: "flex-start", gap: "20px"}}>
 
-        <ProductPreview frontImages={frontImages} backImages={backImages} color={attributes.color} currentImage={currentImage} setCurrentImage={setCurrentImage} imageList={imageList} setImageList={setImageList}/>
-        
         <div className="flexbox-column">
           <div className="flexbox-column background1 full-width radius15" style={{ maxWidth: "300px", padding: "5px 15px 15px"}}>
             <h2 className="full-width">New Product</h2>
@@ -219,6 +224,7 @@ function NewProduct() {
           </div>
           <Button className="form-button" style={{ margin: "10px 15px 5px auto"}} onClick={openConfirmModal} uppercase>submit</Button>
         </div>
+        <ProductPreview frontImages={frontImages} backImages={backImages} color={attributes.color} currentImage={currentImage} setCurrentImage={setCurrentImage} imageList={imageList} setImageList={setImageList}/>
         {/* <ConfirmModal openConfirm={openConfirm} close={() => setOpenConfirm(false)} details={details} attributes={attributes} sizes={sizes}/> */}
       </div>
     </>

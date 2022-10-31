@@ -9,7 +9,7 @@ import NewOrder from "./pages/orders/NewOrder";
 import Products from "./pages/designs/Products"
 import NewProduct from "./pages/NewProduct";
 import SingleDesign from "./pages/designs/SingleDesign";
-import Accounts from "./pages/accounts/Accounts";
+import Account from "./pages/Account";
 import NewAccount from "./pages/accounts/NewAccount";
 import NoPage from "./pages/NoPage";
 
@@ -26,11 +26,12 @@ export default function App() {
             <Route index element={<Home />} />
             <Route path="production" element={<Production />} />
             <Route path="design" element={<Design />} />
-            <Route path="profile" element={<ProtectedRoute component={Profile} />} >
+            <Route path="account" element={<ProtectedRoute component={Account} />} >
+              <Route path="profile" element={<Profile />} />
               <Route path="orders" element={<Orders />} />
               <Route path="order/new" element={<NewOrder />} />
-              <Route path="products" element={<ProtectedRoute component={Products}/>} />
-              <Route path="product/new" element={<ProtectedRoute component={NewProduct}/>} />
+              <Route path="products" element={<Products/>} />
+              <Route path="product/new" element={<NewProduct/>} />
             </Route>
 
             {/* <Route path="orders" element={<Orders />} /> */}

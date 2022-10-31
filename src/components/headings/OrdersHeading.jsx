@@ -11,7 +11,7 @@ function OrdersHeader() {
 
   function searchOrder() {
     if (search) {
-      navigate(`/order/${search}`)
+      navigate(`order/${search}`)
     } else {
       showError("search-error", "Please enter an order ID!")
     }
@@ -19,18 +19,19 @@ function OrdersHeader() {
 
   return (
     <>
-      <div className="flexbox-row full-width flex-wrap" style={{ justifyContent: "space-between", maxWidth: "600px", margin: "20px 0px 5px", padding: "0px 15px"}}>
-        <h1 style={{ marginRight: "20px"}}>Orders</h1>
+      <h1 style={{ marginRight: "20px"}}>Orders</h1>
+
+      <div className="flexbox-row full-width flex-wrap" style={{ marginTop: 13}}>
+
+        <Button onClick={() => navigate("/account/order/new")} leftIcon={<AddIcon />}>New order</Button>
+
         <div className="flexbox-row full-width" style={{maxWidth: "300px", marginTop: "5px", marginLeft: "auto"}}>
           <TextInput className="full-width" type="number" autoComplete="off" placeholder="Search by Order ID..." value={search} onChange={(event) => setSearch(event.currentTarget.value)} />
           <Button onClick={searchOrder} style={{ marginLeft: "10px"}} uppercase>
             Search
           </Button>
         </div>
-      </div> 
 
-      <div className="full-width" style={{ maxWidth: "600px"}}>
-        <Button onClick={() => navigate("/order/new")} leftIcon={<AddIcon />} style={{ position: "relative", top: "10px"}}>New order</Button>
       </div>
       
       <div className="flexbox-row full-width" style={{ justifyContent: "space-between", margin: "10px 0px 5px", maxWidth: "600px", position: "relative", top: "13px"}}>

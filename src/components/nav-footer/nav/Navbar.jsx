@@ -10,25 +10,21 @@ import LogButton from "../../ui/buttons/LogButton";
 
 function Navbar() {
 
-  const { loginWithRedirect, isAuthenticated, logout } = useAuth0()
-  const mobile = useMediaQuery('(max-width: 1200px)')
+  
+  const mobile = useMediaQuery('(max-width: 600px)')
 
   return (
     <>
-      <nav className="flexbox-row full-width">
+      <nav className="flexbox-row full-width" style={{ marginTop: "10px"}}>
 
-        <div style={{ marginRight: "auto", marginTop: "10px"}}>
+        <div >
           <Link to="" className='link'>
             <img src={require("../../../assets/inkhouse-white.png")} alt="Inkhouse Logo" style={{ height: "50px" }} />
           </Link>
         </div>
-
         
-
-        <div className="flexbox-row" style={{ marginLeft: "auto", marginTop: "10px" }}>
-          { mobile ? <MenuIcon/> : <NavLinks />}
-          { isAuthenticated ? <LogButton name="logout" onClick={() => logout({ returnTo: window.location.origin })}/> : <LogButton name="login" onClick={() => loginWithRedirect()}/>}
-        </div>
+        {/* { mobile ? <MenuIcon/> : <NavLinks />} */}
+        <NavLinks />
 
       </nav>
     </>

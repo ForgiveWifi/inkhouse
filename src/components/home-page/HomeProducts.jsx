@@ -29,9 +29,9 @@ function HomeProducts() {
       <div className="flexbox-column" style={{ marginTop: "50px"}}>
       
         <motion.h2 
-          initial={{ x: 50, opacity: 0 }}
+          initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
           className="flexbox-row full-width"
           style={{ maxWidth: "830px", marginBottom: "10px" }}>

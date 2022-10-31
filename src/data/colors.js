@@ -1,5 +1,10 @@
 export const colors = [
   {
+    value: "White",
+    hex: "white",
+    light: true
+  },
+  {
     value: "Army",
     hex: "#5C554C",
     light: true
@@ -98,10 +103,5 @@ export const colors = [
     value: "Turquoise",
     hex: "#72A4C5",
     light: true
-  },
-  {
-    value: "White",
-    hex: "white",
-    light: true
-  },
+  }
 ]

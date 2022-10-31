@@ -39,8 +39,8 @@ function Design() {
           </motion.div>
 
           <motion.div
-            initial={{ y: 30, scale: 0.95, opacity: 0 }}
-            whileInView={{ y: 0, scale: 1, opacity: 1 }}
+            initial={{ scale: 0.90, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.8 }}
             viewport={{ once: true }}
             className={mobile ? "flexbox-start full-width" : center ? "form-grid flex-wrap" : "form-grid margin-auto"}
