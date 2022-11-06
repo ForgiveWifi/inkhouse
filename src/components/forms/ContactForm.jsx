@@ -49,7 +49,7 @@ export default function ContactForm() {
           style={{ height: "190px", position: "relative", top: "40px", borderRadius: "30px", padding: "0px 20px"}}
         >
           <div className='flexbox-column' style={{ marginTop: "15px"}}>
-          <h1 style={{ fontSize: "40px"}}>Get A Quote</h1>
+          <h1 style={{ fontSize: "40px"}}>Get a Quote</h1>
           <p className="text-center" style={{ maxWidth: "250px", marginLeft: "3px" }}>Leave your details and we will contact you as soon as we can.</p>
           </div>
         </motion.div>
