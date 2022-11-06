@@ -11,9 +11,7 @@ function Navbar() {
             <img src={require("../../../assets/inkhouse-white.png")} alt="Inkhouse Logo" style={{ height: "50px" }} />
           </Link>
         </div>
-        
         <NavLinks />
-
       </nav>
     </>
   )
