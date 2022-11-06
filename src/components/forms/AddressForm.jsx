@@ -2,10 +2,8 @@ import { TextInput } from "@mantine/core";
 
 function AddressForm({shipping, setShipping, error}) {
 
-  const {company_name, first_name, last_name, line1, line2, city, state, postal_code, country } = shipping
-
-  const name = !((first_name && last_name) || company_name)
-  
+  const {line1, line2, city, state, postal_code, country } = shipping
+    
   return (
     <>
       <div style={{ maxWidth: 400}}>

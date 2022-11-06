@@ -30,20 +30,22 @@ function Profile() {
           }
         })
         const { first_name, last_name, company} = res.data.metadata
-        const update = {
+        const account = {
           first_name: first_name,
           last_name: last_name,
           company: company,
         }
-        setProfile(update)
-        setProfileRef(update)
-        setShipping(res.data.shipping.address)
-        setShippingRef(res.data.shipping.address)
+        setProfile(account)
+        setProfileRef(account)
+        if (res.data.shipping) {
+          setShipping(res.data.shipping.address)
+          setShippingRef(res.data.shipping.address)
+        }
         setLoading(false)
       }
-      catch {
+      catch (err) {
         setLoading(false)
-        showError("profile", "API Error: account", "Contact Us!")
+        showError("profile", "API Error: profile", "Contact Us!")
       }
     }
     getProfile()
