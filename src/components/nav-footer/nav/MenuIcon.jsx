@@ -1,11 +1,15 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import { motion } from "framer-motion"
 import { useState } from "react";
+import LogButton from "../../ui/buttons/LogButton";
 import MenuButton from "./MenuButton";
 import MenuItem from "./MenuItem";
 
 function MenuIcon() {
   
   const [isOpen, setIsOpen] = useState(false)
+
+  const { logout } = useAuth0()
 
   const navList = [
     // {
@@ -24,7 +28,10 @@ function MenuIcon() {
       name: "profile",
       to: "/account/profile"
     },
-    
+    {
+      name: "products",
+      to: "/account/products/?page=1"
+    },
   ]
 
   const sidebar = {
@@ -39,7 +46,7 @@ function MenuIcon() {
     closed: {
       clipPath: "circle(28px at 210px 38px)",
       transition: {
-        delay: 0.2,
+        delay: 0.15,
         type: "spring",
         stiffness: 400,
         damping: 40
@@ -49,10 +56,27 @@ function MenuIcon() {
 
   const variants = {
     open: {
-      transition: { staggerChildren: 0.07, delayChildren: 0.2 }
+      transition: { staggerChildren: 0.07, delayChildren: 0.1 }
     },
     closed: {
       transition: { staggerChildren: 0.05, staggerDirection: -1 }
+    }
+  };
+
+  const variations = {
+    open: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { stiffness: 1000, velocity: -100 }
+      }
+    },
+    closed: {
+      y: 50,
+      opacity: 0,
+      transition: {
+        y: { stiffness: 1000 }
+      }
     }
   };
   
@@ -73,6 +97,17 @@ function MenuIcon() {
             )
           })
         }
+        <div className="flexbox">
+          <motion.button 
+            variants={variations}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => logout({ returnTo: window.location.origin })} 
+            style={{ border: "4px solid #FF9244", padding: "5px 20px", borderRadius: 20, marginTop: 30, marginLeft: 12}}
+          >
+            <h2 className="orange-text">logout</h2>
+          </motion.button> 
+        </div>
       </motion.ul>
 
       <MenuButton isOpen={isOpen} setIsOpen={setIsOpen}/>

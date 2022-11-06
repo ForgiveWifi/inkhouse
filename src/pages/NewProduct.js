@@ -173,7 +173,7 @@ function NewProduct() {
       {
         !mobile ? 
         <NoBox text="Please use a wider screen" />  :
-        <div className="flexbox flex-wrap full-width" style={{ margin: "80px 0px 15px", alignItems: "flex-start", gap: 0}}>
+        <div className="flexbox flex-wrap full-width" style={{ margin: "80px 0px 15px", alignItems: "flex-start", gap: 15}}>
           <div className="flexbox-column background3 full-width radius15" style={{ maxWidth: "300px", padding: "5px 15px 15px"}}>
             <h2 className="full-width">New Product</h2>
             <ProductDetails details={details} setDetails={setDetails} error={error} />

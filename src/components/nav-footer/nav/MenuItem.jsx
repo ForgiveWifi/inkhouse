@@ -21,6 +21,7 @@ function MenuItem({setIsOpen, name, to}) {
       }
     }
   };
+  
   function nav() { 
     setIsOpen(false)
     navigate(to)
