@@ -4,20 +4,34 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Loading from "../auth/Loading";
 import AddressForm from "../components/forms/AddressForm";
-import NoBox from "../components/ui/NoBox";
 import { showError, showLoading, updateError, updateSuccess } from "../utils/alerts";
 import { TextInput } from "@mantine/core";
+import isEqual from 'lodash.isequal'
 
 function Profile() {
   
+  const profileBlank = {
+    first_name: "",
+    last_name: "",
+    company: ""
+  }
+  const shippingBlank = {
+    line1: "",
+    line2: "",
+    city: "",
+    state: "",
+    postal_code: ""
+  }
   const { user, isAuthenticated, isLoading, getAccessTokenSilently } = useAuth0()
-  const [profile, setProfile] = useState({})
-  const [profileRef, setProfileRef] = useState({})
+  const [profile, setProfile] = useState(profileBlank)
+  const [profileRef, setProfileRef] = useState(profileBlank)
   // const [address, setAddress] = useState({})
-  const [shipping, setShipping] = useState({})
-  const [shippingRef, setShippingRef] = useState({})
+  const [shipping, setShipping] = useState(shippingBlank)
+  const [shippingRef, setShippingRef] = useState(shippingBlank)
   const [loading, setLoading] = useState(false)
   const error = false
+
+  const save = (!isEqual(profile, profileRef) || !isEqual(shipping, shippingRef)) && !loading
 
   useEffect(() => {
     async function getProfile() {
@@ -31,9 +45,9 @@ function Profile() {
         })
         const { first_name, last_name, company} = res.data.metadata
         const account = {
-          first_name: first_name,
-          last_name: last_name,
-          company: company,
+          first_name: first_name || "",
+          last_name: last_name || "",
+          company: company || "",
         }
         setProfile(account)
         setProfileRef(account)
@@ -66,6 +80,8 @@ function Profile() {
           authorization: `Bearer ${access_token}` 
         }
       })
+      setProfileRef(profile)
+      setShippingRef(shipping)
       updateSuccess("shipping", null, "Changes has been saved!") 
     }
     catch (err) {
@@ -121,7 +137,7 @@ function Profile() {
           {/* <h2>Address</h2>
           <AddressForm shipping={address} setShipping={setAddress} error={error} /> */}
           {
-            (profile !== profileRef || shipping !== shippingRef) &&
+            save &&
             <div style={{ marginTop: 20}}>
             <Button onClick={() => saveProfile()} style={{ marginRight: 10}}>
               save
