@@ -35,7 +35,6 @@ function Products() {
           }
         })
         const {data} = res
-        console.log("products", data.results)
         setProducts(data.results) 
         setCurrentPage(parseInt(page))
         setTotalPages(data.pages)
@@ -56,11 +55,14 @@ function Products() {
   return (
     <>
       { loading && <Loading /> }
-      <h1>Products</h1>
-      <Button leftIcon={<AddIcon />} component={Link} to={"/account/product/new"} style={{ marginTop: 15}}>New product</Button>
+      <div style={{ margin: 40}}>
+      <h1 className="full-width">Products</h1>
+      <div className="full-width">
+        <Button leftIcon={<AddIcon />} component={Link} to={"/account/product/new"} style={{ marginTop: 15}}>New product</Button>
+      </div>
       <ProductList products={products}/>
       <MyPagination loading={loading} currentPage={currentPage} setPageNumber={setPageNumber} totalPages={totalPages}  />
-      
+      </div>
     </>
   );
 }

@@ -1,10 +1,5 @@
-import { useRef, useState } from "react";
-import { motion } from "framer-motion"
-import DoneOutlineIcon from '@mui/icons-material/DoneOutline';
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ProductButtons from "./ProductButtons";
 import CurrentImage from "./CurrentImage";
-import TagDisplay from "./TagDisplay";
 import BackPreview from "./BackPreview";
 import FrontPreview from "./FrontPreview";
 
@@ -26,7 +21,6 @@ function ProductPreview({frontImages, backImages, color, currentImage, setCurren
       <div className="flexbox" style={{position: "relative", width: 650, height: 650}}>
         <FrontPreview currentImage={currentImage} makeCurrentImage={makeCurrentImage} zIndex={front ? 20 : 1} color={color} frontImages={frontImages}/>
         <BackPreview currentImage={currentImage} makeCurrentImage={makeCurrentImage} zIndex={front ? 1 : 20 } color={color} backImages={backImages}/>
-        {/* {(tagList && front) && <TagDisplay tagList={tagList} />} */}
         { currentImage.image && <CurrentImage currentImage={currentImage} setCurrentImage={setCurrentImage} light={light} /> }
         <ProductButtons currentImage={currentImage} setCurrentImage={setCurrentImage} imageList={imageList} setImageList={setImageList}/>
         <div style={{ position: "absolute", top: 0, right: 0, zIndex: 20}}>
@@ -36,7 +30,7 @@ function ProductPreview({frontImages, backImages, color, currentImage, setCurren
           currentImage?.image &&
           <div className="flexbox-column" style={{ position: "absolute", bottom: 0, left: 0, width: 150, height: 360,  zIndex: 20}}>
             <div className="orange-text" style={{ marginTop: "auto"}}>width: {width / 20} in.</div>
-            <div className="orange-text">height: {height /20} in.</div>
+            <div className="orange-text">height: {height / 20} in.</div>
             <div className="flexbox-column" style={{gap: 5, marginTop: 10}}>
               <button onClick={() => setCurrentImage({...currentImage, y_offset: 0})} className="position-button full-width max-radius">TOP</button>
               <button onClick={() => setCurrentImage({...currentImage, x_offset: (320 - width) / 2})} className="position-button full-width max-radius">CENTER</button>

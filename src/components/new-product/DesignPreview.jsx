@@ -1,4 +1,4 @@
-import SizeList from "./SizeList";
+import SizeList from "../products/SizeList";
 
 function DesignPreview({ details, attributes, sizes}) {
 

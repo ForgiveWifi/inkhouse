@@ -32,7 +32,7 @@ function Design() {
             className="full-width"
             style={{ maxWidth: "455px", marginTop: "15px" }}
             >
-              <p className={center ? "text-center" : ""}>We offer consultation services to provide you with custom designs that can be printed on your merchandise.</p>
+              <p className={center ? "text-center" : ""}>Create your own designs or we offer consultation services that provide you with custom designs that can be printed on your merchandise.</p>
 
               <p className={center ? "text-center" : ""} style={{ marginTop: "10px" }}> Our goal is to provide an interactive design process that ensures design needs are met, and you are left with a seamless experience of turning your concepts into reality. </p>
             </div>
@@ -41,7 +41,7 @@ function Design() {
           <motion.div
             initial={{ scale: 0.90, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.8 }}
+            transition={{ duration: 1, delay: 1 }}
             viewport={{ once: true }}
             className={mobile ? "flexbox-start full-width" : center ? "form-grid flex-wrap" : "form-grid margin-auto"}
             style={center ? { maxWidth: "507px", marginTop: "10px", } : { maxWidth: "400px", marginTop: "10px", gap: "5px" }}>

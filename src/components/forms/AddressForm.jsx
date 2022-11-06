@@ -2,82 +2,58 @@ import { TextInput } from "@mantine/core";
 
 function AddressForm({shipping, setShipping, error}) {
 
-  const {company_name, first_name, last_name, address, address_2, city, state, zip_code, country } = shipping
+  const {company_name, first_name, last_name, line1, line2, city, state, postal_code, country } = shipping
 
   const name = !((first_name && last_name) || company_name)
   
   return (
     <>
-      <div>
-        <div className="flexbox">
-          <TextInput
-            label="Company"
-            value={company_name}
-            onChange={(e) => setShipping({...shipping, company_name: e.currentTarget.value})}
-            error={error && name}
-            autoComplete="off"
-          />
-        </div>
+      <div style={{ maxWidth: 400}}>
         <div style={{ display: "grid", gridColumnGap: "15px"}}>
-        
-          <TextInput 
-            label="First Name"
-            value={first_name}
-            onChange={(e) => setShipping({...shipping, first_name: e.currentTarget.value})}
-            error={error && name}
-            autoComplete="off"
-          />
-          <TextInput 
-            label="Last Name"
-            value={last_name}
-            onChange={(e) => setShipping({...shipping, last_name: e.currentTarget.value})}
-            error={error && name}
-            autoComplete="off"
-          />
-          <TextInput 
-            label="Address"
-            value={address}
-            onChange={(e) => setShipping({...shipping, address: e.currentTarget.value})}
-            error={error && !address}
+          <TextInput
+            label="address"
+            value={line1}
+            onChange={(e) => setShipping({...shipping, line1: e.currentTarget.value})}
+            error={error && !line1}
             autoComplete="off"
             className="span2"
           />
           <TextInput 
-            label="Address 2"
-            value={address_2}
-            onChange={(e) => setShipping({...shipping, address_2: e.currentTarget.value})}
-            error={error && !address}
+            label="address 2"
+            value={line2}
+            onChange={(e) => setShipping({...shipping, line2: e.currentTarget.value})}
+            error={error && !line1}
             autoComplete="off"
             className="span2"
           />
           <TextInput 
-            label="City"
+            label="city"
             value={city}
             onChange={(e) => setShipping({...shipping, city: e.currentTarget.value})}
             error={error && !city}
             autoComplete="off"
           />
           <TextInput 
-            label="State"
+            label="state"
             value={state}
             error={error && !state}
             onChange={(e) => setShipping({...shipping, state: e.currentTarget.value})}
             autoComplete="off"
           />
           <TextInput 
-            label="Zip Code"
-            value={zip_code}
-            onChange={(e) => setShipping({...shipping, zip_code: e.currentTarget.value})}
-            error={error && !zip_code}
+            label="zip code"
+            value={postal_code}
+            onChange={(e) => setShipping({...shipping, postal_code: e.currentTarget.value})}
+            error={error && !postal_code}
             autoComplete="off"
           />
-          <TextInput 
+          {/* <TextInput 
             label="Country"
             value={country}
             onChange={(e) => setShipping({...shipping, country: e.currentTarget.value})}
             error={error && !country}
             autoComplete="off"
-          />
+          /> */}
         </div>
       </div>
     </>

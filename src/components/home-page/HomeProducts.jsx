@@ -29,9 +29,9 @@ function HomeProducts() {
       <div className="flexbox-column" style={{ marginTop: "50px"}}>
       
         <motion.h2 
-          initial={{ x: 100, opacity: 0 }}
+          initial={{ x: 40, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 1, delay: 0.5 }}
           viewport={{ once: true }}
           className="flexbox-row full-width"
           style={{ maxWidth: "830px", marginBottom: "10px" }}>
@@ -53,7 +53,6 @@ function HomeProducts() {
                     whileHover={{ scale: 1.05}}
                     whileTap={{ scale: 0.98 }}
                     transition={{ duration: 0.3 }}
-                    
                   >
                   
                   <div style={{ position: "relative"}}> 

@@ -8,20 +8,16 @@ function loadingAlert(id, message, title) {
     loading: true,
     disallowClose: true,
     autoClose: false,
-    title: title || "Loading",
+    title: title || "Loading...",
     message: message,
-    color: "white",
+    color: "#FF9244",
     styles: (theme) => ({
       root: {
-        backgroundColor: "#FF9244",
+        backgroundColor: "rgb(250, 250, 250)",
         border: "none",
       },
-      title: { color: theme.white },
-      description: { color: theme.white },
-      closeButton: {
-        color: theme.white,
-        '&:hover': { backgroundColor: "#fb0000" },
-      },
+      title: { color: "#FF9244"},
+      description: { color: "#FF9244" },
     }),
   }
 }

@@ -50,7 +50,7 @@ function Production() {
           <p 
             className="full-width text-center" 
             style={{ maxWidth: "400px", marginTop: "15px"}}>
-            inkhouse products are printed on quality garments, locally in the US.  Our wide variety of styles and colors allows for full customization.  Our smart printing process allows for a quick turnaround.   
+            inkhouse products are printed on premium garments, locally in the US.  Our wide variety of styles and colors allow for full customization.   
           </p>
         </motion.div>
         

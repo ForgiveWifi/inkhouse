@@ -61,8 +61,8 @@ export function ImageUpload({currentImage, setCurrentImage, open, close}) {
               </Dropzone.Idle>
 
             <Text align="center" size="sm" mt="xs" color="dimmed" style={{ marginBottom: "20px"}}>
-              Drag and drop images here for your design. We reccomend png and jpeg files that
-              are less than 10mb in size.
+              Select or drop image here for your design. We reccomend .png and .jpeg files that
+              are less than 10mb in size.  You must own rights to images.
             </Text>
           </div>
         </Dropzone>

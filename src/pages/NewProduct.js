@@ -10,13 +10,18 @@ import BackButton from "../components/ui/buttons/BackButton.jsx";
 import { Button } from "@mantine/core";
 import ProductPreview from "../components/new-product/ProductPreview";
 import AddIcon from '@mui/icons-material/Add';
-import TagList from "../components/new-product/TagList.jsx";
 import ConfirmModal from "../components/new-product/ConfirmModal.jsx";
 import formatDesign from "../utils/formatDesign.js";
 import html2canvas from "html2canvas";
 import { useAuth0 } from "@auth0/auth0-react";
+import { useMediaQuery } from '@mantine/hooks';
+import NoBox from "../components/ui/NoBox.jsx";
 
 function NewProduct() {
+
+  const mobile = useMediaQuery('(min-width: 670px)')
+
+  const { getAccessTokenSilently } = useAuth0()
 
   const [currentImage, setCurrentImage] = useState({ placement: "front", width: 200, x_offset: 60, y_offset:0})
   const [sizes, setSizes] = useState([])
@@ -24,17 +29,8 @@ function NewProduct() {
   const [details, setDetails] = useState({name: "", description: ""})
   const [imageList, setImageList] = useState([])
 
-  const { getAccessTokenSilently } = useAuth0()
-
   const [error, setError] = useState(false)
-
   // const [openConfirm, setOpenConfirm] = useState(false)
-  const [tags, setTags] = useState(false)
-  const [tagList, setTagList] = useState({})
-
-  const orderedTags = sizes.map(size => {
-    return(tagList[size])
-  })
   
   const frontImages = imageList.filter((image) => image.placement === "front")
   const backImages = imageList.filter((image) => image.placement === "back")
@@ -56,17 +52,14 @@ function NewProduct() {
     if (currentImage.image) {
       showError("image-error", null, `Place current image!`)
     } else
-    if (tags && orderedTags.some(tag => tag === null || tag === undefined)) {
-      showError("tag-error", null, `Missing tags!`)
-    } else
     // setOpenConfirm(true)
     submitProduct()
   }
 
   async function submitProduct() {
     try {
-      const {product_images, design_data, tag_list} = await uploadAllFirebase()
-      await uploadAllProducts(product_images, design_data, tag_list)
+      const {product_images, design_data} = await uploadAllFirebase()
+      await postProduct(product_images, design_data)
       setError(false)
       setSizes([])
       setAttributes({style: "3001", color: { value: "White", hex: "white", light: true }})
@@ -80,10 +73,9 @@ function NewProduct() {
     try {
       showLoading("firebase", null, "Uploading images...")
       const product_images = await uploadProductImages()
-      const tag_list = await uploadTags(orderedTags)
       const design_data = await uploadImageList(imageList)
       updateSuccess("firebase", null, "Uploaded images!")
-      return({ product_images, design_data, tag_list})
+      return({ product_images, design_data })
     }
     catch (err) {
       updateError("firebase", "Server Error: firebase", "Contact us!")
@@ -94,9 +86,9 @@ function NewProduct() {
     const canvas = await html2canvas(document.getElementById(id))
     const screenshot = await new Promise((resolve) => canvas.toBlob(async function(blob) {
       const image = new Image();
-      const name = `${id}-${details.name}`
+      const name = `${details.name}-${id}`
       image.src = blob;
-      const imageRef = ref(storage, `products/${name}`)
+      const imageRef = ref(storage, `${id}/${name}`)
       await uploadBytes(imageRef, blob)
       const url = await getDownloadURL(imageRef)
       resolve(url)
@@ -122,24 +114,6 @@ function NewProduct() {
     return (design_data)
   }
 
-  async function uploadTags() {
-    if (tags) {
-      return Promise.all(orderedTags.map(async (tag) => {
-        const image = await uploadFirebase("tag", tag)
-        return({
-          placement: "Neck",
-          art_file: image.name,
-          art_url: image.url,
-          underbase: true,
-          x_offset: 0,
-          y_offset: 0,
-          width: 4.0,
-          height: 3.0
-        })
-      }))
-    } else return null
-  }
-
 
   async function uploadImage(design) {
     const art = await uploadFirebase("art", design.image)
@@ -163,44 +137,32 @@ function NewProduct() {
     })
   }
 
-  async function uploadAllProducts(product_images, design_data, tag_list) { 
-    
-    const formatted_design = design_data.map((design) => formatDesign(design))
-    const {name, description} = details 
-    
-    for (let i = sizes.length - 1; i >= 0; i--) {
-      await postProduct({
-        name: name,
+  async function postProduct(product_images, design_data) { 
+    const {name, description} = details
+    try {
+      showLoading(name, "Uploading...", name)
+      const formatted_design = design_data.map((design) => formatDesign(design))
+      const access_token = await getAccessTokenSilently()
+      const product = {
+        name: name, 
         description: description,
+        sizes: sizes,
         images: product_images,
         attributes: {
           ...attributes,
-          size: sizes[i],
           color: attributes.color.value.toUpperCase()
         },
-        designs: tags ? [...formatted_design, tag_list[i]] : formatted_design 
-      })
-    }
-    }
-
-  async function postProduct(product) { 
-    const { name, attributes } = product
-    const { size } = attributes
-    const design_name = `${name} - ${size}`
-    try {
-      showLoading(size, "Uploading...", design_name)
-      const access_token = await getAccessTokenSilently()
-      console.log(access_token)
-      const data = await axios.post(`${process.env.REACT_APP_API_URL}/product`, product, {
+        designs: formatted_design 
+      }
+      await axios.post(`${process.env.REACT_APP_API_URL}/product`, product, {
         headers: {
           authorization: `Bearer ${access_token}` 
         }
       })
-      updateSuccess(size, "Design has been uploaded!", design_name) 
-      return(data)
+      updateSuccess(name, "Product has been uploaded!", name) 
     }
     catch (err) {
-      updateError(size, "Problem uploading shirt.  Contact us!", design_name) 
+      updateError(name, "Problem uploading shirt.  Contact us!", name) 
     }
   }
 
@@ -208,24 +170,22 @@ function NewProduct() {
     <>
     
       <BackButton />
-
-      <div className="flexbox flex-wrap full-width" style={{ alignItems: "flex-start", gap: "20px"}}>
-        <div className="flexbox-column background1 full-width radius15" style={{ maxWidth: "300px", padding: "5px 15px 15px"}}>
-          <h2 className="full-width">New Product</h2>
-          <ProductDetails details={details} setDetails={setDetails} error={error} />
-          <AttributesSelect attributes={attributes} setAttributes={setAttributes} sizes={sizes} setSizes={setSizes} error={error}/>
-          {
-            tags ?
-            <TagList sizes={sizes} tagList={tagList} setTagList={setTagList} setTags={setTags} /> :
-            <Button onClick={() => setTags(true)} leftIcon={<AddIcon />} style={{ borderRadius:50, marginTop: 15}} >ADD TAGS</Button> 
-          }
+      {
+        !mobile ? 
+        <NoBox text="Please use a wider screen" />  :
+        <div className="flexbox flex-wrap full-width" style={{ margin: "80px 0px 15px", alignItems: "flex-start", gap: 0}}>
+          <div className="flexbox-column background3 full-width radius15" style={{ maxWidth: "300px", padding: "5px 15px 15px"}}>
+            <h2 className="full-width">New Product</h2>
+            <ProductDetails details={details} setDetails={setDetails} error={error} />
+            <AttributesSelect attributes={attributes} setAttributes={setAttributes} sizes={sizes} setSizes={setSizes} error={error}/>
+          </div>
+          <div className="flexbox-column">
+            <ProductPreview frontImages={frontImages} backImages={backImages} color={attributes.color} currentImage={currentImage} setCurrentImage={setCurrentImage} imageList={imageList} setImageList={setImageList}/>
+            <Button onClick={openConfirmModal} className="form-button" style={{ margin: "10px 3px 5px auto"}}  leftIcon={<AddIcon />} uppercase>submit</Button>
+          </div>
+          {/* <ConfirmModal openConfirm={openConfirm} close={() => setOpenConfirm(false)} details={details} attributes={attributes} sizes={sizes}/> */}
         </div>
-        <div className="flexbox-column">
-          <ProductPreview frontImages={frontImages} backImages={backImages} color={attributes.color} currentImage={currentImage} setCurrentImage={setCurrentImage} imageList={imageList} setImageList={setImageList}/>
-          <Button className="form-button" style={{ margin: "10px 3px 5px auto"}} onClick={openConfirmModal} uppercase>submit</Button>
-        </div>
-        {/* <ConfirmModal openConfirm={openConfirm} close={() => setOpenConfirm(false)} details={details} attributes={attributes} sizes={sizes}/> */}
-      </div>
+      }
     </>
   );
 }

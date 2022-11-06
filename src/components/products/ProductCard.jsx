@@ -1,10 +1,13 @@
+import SizeList from "./SizeList";
+
 function ProductCard({product}) {
   console.log(product)
   return (
     <>
-      <div className="flexbox-column" style={{ width: 250 }}>
+      <div className="flexbox-column margin-auto" style={{ width: 250 }}>
         <img className="radius10" src={product.images[0]} style={{ width: 250 }}/>
-        <div className="full-width">{product.name}</div>
+        <h3 className="full-width">{product.name}</h3>
+        <SizeList sizes={product.sizes} />
       </div>
     </>
   );

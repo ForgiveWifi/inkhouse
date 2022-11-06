@@ -14,7 +14,7 @@ export default function BackButton({maxWidth}) {
   
   return(
     <>
-      <div className="flexbox-row full-width" style={{ maxWidth: maxWidth}}>
+      <div style={{ position: "absolute", top: 20, left: 20}}>
         <IconButton onClick={goBack}>
           <ArrowBackIcon sx={{ fontSize: "30px" }} />
         </IconButton>

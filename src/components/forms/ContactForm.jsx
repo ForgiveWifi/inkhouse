@@ -49,12 +49,12 @@ export default function ContactForm() {
           style={{ height: "190px", position: "relative", top: "40px", borderRadius: "30px", padding: "0px 20px"}}
         >
           <div className='flexbox-column' style={{ marginTop: "15px"}}>
-          <h1 style={{ fontSize: "40px"}}>Contact Us</h1>
+          <h1 style={{ fontSize: "40px"}}>Get A Quote</h1>
           <p className="text-center" style={{ maxWidth: "250px", marginLeft: "3px" }}>Leave your details and we will contact you as soon as we can.</p>
           </div>
         </motion.div>
 
-        <section className='flexbox full-width shadow1' style={{ maxWidth: "500px", backgroundColor: "white", borderRadius: "30px", padding: "30px", zIndex: "2"}}>
+        <section className='flexbox full-width shadow1' style={{ maxWidth: "500px", backgroundColor: "white", borderRadius: "30px", padding: "25px", zIndex: "2"}}>
 
           <form ref={form} onSubmit={sendEmail} className='form-grid full-width' style={{ maxWidth: "375px" }} autoComplete="off" >
             <div className='flexbox span2' style={{ marginBottom: "20px"}}>

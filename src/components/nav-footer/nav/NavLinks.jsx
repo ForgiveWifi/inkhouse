@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion"
 import LogButton from "../../ui/buttons/LogButton";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import "./NavLinks.css"
 
 function NavLinks() {
 

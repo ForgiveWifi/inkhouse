@@ -13,14 +13,14 @@ const root = ReactDOM.createRoot(
   document.getElementById('root')
 );
 root.render(
-  <React.StrictMode>
-    <Auth0Provider domain={domain} clientId={clientId} audience={audience} redirectUri={window.location.origin}>
+  // <React.StrictMode>
+    <Auth0Provider domain={domain} clientId={clientId} audience={audience} redirectUri="http://inkhouse.studio/account/profile">
       <NotificationsProvider position='bottom-center' autoClose={4000} zIndex={10000}>
         <SkeletonTheme baseColor="rgba(255, 255, 255, 0.2)" highlightColor="rgba(255, 255, 255, 0.2)"> 
           <App />
         </SkeletonTheme>
       </NotificationsProvider>
     </Auth0Provider> 
-  </React.StrictMode> 
+  // </React.StrictMode> 
 );
 
