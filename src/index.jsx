@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   // <React.StrictMode>
-    <Auth0Provider domain={domain} clientId={clientId} audience={audience} redirectUri="https://inkhouse.studio/account/profile">
+    <Auth0Provider domain={domain} clientId={clientId} audience={audience} redirectUri="https://www.inkhouse.studio/account/profile">
       <NotificationsProvider position='bottom-center' autoClose={4000} zIndex={10000}>
         <SkeletonTheme baseColor="rgba(255, 255, 255, 0.2)" highlightColor="rgba(255, 255, 255, 0.2)"> 
           <App />
