@@ -46,7 +46,7 @@ function MenuIcon() {
     closed: {
       clipPath: "circle(28px at 210px 38px)",
       transition: {
-        delay: 0.15,
+        delay: 0.2,
         type: "spring",
         stiffness: 400,
         damping: 40
@@ -103,7 +103,7 @@ function MenuIcon() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => logout({ returnTo: window.location.origin })} 
-            style={{ border: "4px solid #FF9244", padding: "5px 20px", borderRadius: 20, marginTop: 30, marginLeft: 12}}
+            style={{ border: "4px solid #FF9244", padding: "5px 20px", borderRadius: 20, marginTop: 40, marginLeft: 12}}
           >
             <h2 className="orange-text">logout</h2>
           </motion.button> 

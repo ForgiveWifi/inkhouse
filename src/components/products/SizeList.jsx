@@ -1,15 +1,25 @@
+import Divider from "../ui/Divider";
 
 function SizeList({sizes}) {
   return (
-    <>
-      <div className="flexbox-row flex-wrap" style={{ maxWidth: "200px", justifyContent: "center"}}> 
+    <div className="flexbox full-width">
+      <div className="flexbox-row background1 radius15 flex-wrap" style={{ padding: "3px 14px"}} > 
         {
           sizes.map((size,i) => {
-              return(<h4 key={i} className="background1 radius15" style={{ border: "1px solid white", padding: "4px 20px", margin: "3px"}}>{size.toUpperCase()}</h4>)
+            if (i === sizes.length - 1) {
+              return <h5 style={{ color: "rgba(0, 0, 0, 0.3)"}}>{size}</h5>
+            } else {
+              return(
+                <>
+                  <h5 style={{ color: "rgba(0, 0, 0, 0.3)"}}>{size}</h5>
+                  <Divider />
+                </>
+              )
+            }
           })
         }
       </div>
-    </>
+    </div>
   );
 }
 
