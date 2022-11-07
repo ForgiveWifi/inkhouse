@@ -2,19 +2,21 @@
   background-color: rgb(240, 239, 239)
 }
 
-
+.mantine-Input-input{
+  color: rgba(0, 0, 0, 0.6)
+}
 
 .mantine-TextInput-label {
   color: white;
 }
 .mantine-TextInput-input{
-  color: rgb(107, 116, 130);
+  color: rgba(0, 0, 0, 0.6);
   border: 1.5px solid white;
   border-radius: 8px;
 }
 
 .mantine-TextInput-input:focus {
-  border: 1.5px solid grey;
+  border: 1.5px solid rgba(0, 0, 0, 0.6);
 }
 .mantine-TextInput-invalid {
   border: 1.5px solid red

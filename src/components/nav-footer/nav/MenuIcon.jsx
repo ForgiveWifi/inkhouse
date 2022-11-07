@@ -88,26 +88,28 @@ function MenuIcon() {
         animate={isOpen ? "open" : "closed"}
       >
       <motion.div className="menu-background backgroun1 shadow1" variants={sidebar} />
-      <motion.ul variants={variants} className="menu-list">
+      <motion.ul variants={variants} className="menu-list" >
         {
           navList.map((item, i) => {
             const {name, to} = item
             return(
-              <MenuItem key={i} setIsOpen={setIsOpen} name={name} to={to}/>
+              <MenuItem key={i} isOpen={isOpen} setIsOpen={setIsOpen} name={name} to={to}/>
             )
           })
         }
-        <div className="flexbox">
-          <motion.button 
-            variants={variations}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => logout({ returnTo: window.location.origin })} 
-            style={{ border: "4px solid #FF9244", padding: "5px 20px", borderRadius: 20, marginTop: 40, marginLeft: 12}}
-          >
-            <h2 className="orange-text">logout</h2>
-          </motion.button> 
-        </div>
+        {
+          <div className="flexbox">
+            <motion.button 
+              variants={variations}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={isOpen ? () => logout({ returnTo: window.location.origin }) : null} 
+              style={{cursor: isOpen ? "pointer" : "auto", border: "4px solid #FF9244", padding: "5px 20px", borderRadius: 20, marginTop: 40, marginLeft: 12}}
+            >
+              <h2 className="orange-text">logout</h2>
+            </motion.button> 
+          </div>
+        }
       </motion.ul>
 
       <MenuButton isOpen={isOpen} setIsOpen={setIsOpen}/>

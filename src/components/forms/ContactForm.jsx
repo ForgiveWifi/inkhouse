@@ -73,7 +73,8 @@ export default function ContactForm() {
                 iconWidth={25}
                 variant="unstyled"
                 className="input-field"
-                
+                sx={{ color: "yellow"}}
+                style={{ paddingTop: 1 }}
                 name="budget" 
                 type="number" 
                 min={0}

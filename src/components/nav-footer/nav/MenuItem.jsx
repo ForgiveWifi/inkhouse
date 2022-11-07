@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-function MenuItem({setIsOpen, name, to}) {
+function MenuItem({isOpen, setIsOpen, name, to}) {
 
   const navigate = useNavigate()
   
@@ -33,7 +33,7 @@ function MenuItem({setIsOpen, name, to}) {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
-      <button onClick={nav}>
+      <button onClick={isOpen ? () => nav() : null} style={{ cursor: isOpen ? "pointer" : "auto"}}>
         <h2 className="orange-text">{name}</h2>
       </button>
     </motion.li>
