@@ -105,7 +105,7 @@ function MenuIcon() {
               whileTap={{ scale: 0.95 }}
               onClick={isOpen ? () => logout({ returnTo: window.location.origin }) : null} 
               style={{cursor: isOpen ? "pointer" : "auto", border: "4px solid #FF9244", padding: "5px 20px", borderRadius: 20, marginTop: 40, marginLeft: 12}}
-              disabled={isOpen}
+              disabled={!isOpen}
             >
               <h2 className="orange-text">logout</h2>
             </motion.button> 
