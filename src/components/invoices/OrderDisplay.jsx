@@ -13,36 +13,39 @@ import ProductList from "../list/ProductList";
 
 function OrderDisplay({order, loading}) {
 
-  const skeleton = loading || order === null
-
   return (
     <>
-      <div className="flexbox-column full-width" style={{ padding: "4px 4px 0px" }}>
+      <div className="flexbox-column full-width">
 
         <div className="flexbox-row full-width">
-          {skeleton ? <Skeleton className="radius10" style={{ width: "90px", height: "24.5px" }} /> : <div>{order.account.name}</div>}
+          <h3>{order.id}</h3>
         </div>
 
         <div className="flexbox-row full-width flex-wrap" style={{ marginBottom: "15px" }}>
-          {skeleton ? <Skeleton className="radius10" style={{ width: "150px", height: "24.5px" }} /> : <div>{toDate(order.created_at, "long")}</div>}
+          <div>{toDate(order.created, "long")}</div>
           <Divider />
-          {skeleton ? <Skeleton className="radius10" style={{ width: "70px", height: "24.5px" }} /> : <div>{toTime(order.created_at)}</div>}
+          <div>{toTime(order.created)}</div>
 
           <div style={{ marginLeft: "auto" }}>
             <Button color="orange" loading={loading} leftIcon={<MyLocationIcon sx={{ fontSize: "20px"}} />} uppercase>Track Order</Button>
           </div>
         </div>
 
-        <ProductList loading={loading} items={order?.order.items} />
+        {/* <ProductList loading={loading} items={order?.order.items} /> */}
 
-        <HorzDivider />
+        <HorzDivider/>
 
         <div className="flexbox-row flex-wrap">
-          {skeleton ? <ShippingBoxSkeleton /> : <ShippingBox ship_address={order.order.ship_from} />}
+          {/* <ShippingBox ship_address={{
+            line1: "15708 San Solano Ct",
+            city: "Austin",
+            state: "TX",
+            postal_code: "78738"
+          }} /> */}
 
           <KeyboardDoubleArrowRightIcon sx={{ fontSize: "35px" }} />
 
-          {skeleton ? <ShippingBoxSkeleton /> : <ShippingBox ship_address={order.order.ship_to} />}
+          <ShippingBox ship_address={order.customer_shipping} />
         </div>
 
       </div>

@@ -32,14 +32,6 @@ function TagList({sizes, tagList, setTagList, setTags}) {
               )
             })
           }
-        {
-          sizes &&
-          <div className="flexbox span2" style={{ marginTop: 10}}>
-            <Button onClick={() => removeTags()} style={{ borderRadius: 50, backgroundColor: "rgb(253, 81, 81)"}} leftIcon={<CloseIcon style={{fontSize: 20}} />} uppercase>
-              tags
-            </Button>
-          </div>
-        }
         </div>
     </>
   );

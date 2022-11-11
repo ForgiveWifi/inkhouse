@@ -1,5 +1,5 @@
 import OrderBox from "../boxes/OrderBox";
-import OrderSkeleton from "../skeletons/OrderSkeleton";
+import OrderSkeleton from "./OrderSkeleton";
 import NoBox from "../ui/NoBox";
 
 function OrderList({loading, orders}) {
@@ -15,6 +15,16 @@ function OrderList({loading, orders}) {
   } else 
   return (
     <>
+      <div className="flexbox-row full-width" style={{ justifyContent: "space-between", margin: "10px 0px 5px", maxWidth: "600px", position: "relative", top: "13px"}}>
+        <h4 className="flexbox" style={{ width: "95px", marginLeft:"10px"}}>
+          Order ID
+        </h4>
+        <h4 className="flexbox" style={{ width: "100px"}} >Company</h4>
+        <h4 className="flexbox" style={{ width: "60px"}}>Shirts</h4>
+        <h4 className="flexbox no-wrap" style={{ width: "120px", marginRight: "10px"}}>
+          Order Date
+        </h4>
+      </div>
       <div className="order-list">
         {
           orders.map((order,i) => {

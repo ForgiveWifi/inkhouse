@@ -1,12 +1,12 @@
 
 function ShippingBox({ ship_address }) {
-
+  const {name,address} = ship_address
   return (
     <div className="background1 radius15 shadow2" style={{ width: "250px", margin: "5px 10px", padding: "8px 15px"}}>
-      { ship_address?.first_name && <div>{`${ship_address?.first_name} ${ship_address?.last_name}`}</div> }
-      { ship_address?.company_name && <div>{ship_address?.company_name}</div> }
-      <div>{ship_address.address},</div> 
-      <div>{`${ship_address.city}, ${ship_address.state}, ${ship_address.zip_code}`}</div> 
+      <div>{name}</div>
+      <div>{address.line1}</div> 
+      <div>{address.line2}</div> 
+      <div>{`${address.city}, ${address.state}, ${address.postal_code}`}</div> 
     </div>
   );
 }

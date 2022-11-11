@@ -2,10 +2,9 @@ import { Link } from "react-router-dom"
 import toDate from "../../utils/toDate";
 import toTime from "../../utils/toTime";
 import countShirts from "../../utils/countShirts";
-import "./OrderBox.css"
+import "./Invoices.css"
 
-function OrderBox(props) {
-  const { _id, account, order, created_at } = props.order
+function OrderBox({ _id, account, order, created_at }) {
   return (
     <>
       <Link to={`/order/${_id}`} className="order-box link flexbox-row full-width shadow2">

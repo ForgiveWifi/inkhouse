@@ -2,11 +2,11 @@
 import CloseIcon from '@mui/icons-material/Close';
 import { IconButton } from '@mui/material';
 
-function CloseButton({handleClose}) {
+function CloseButton({onClick}) {
   return (
     <>
       <div style={{ position: "absolute", top: "10px", right: "10px" }}>
-        <IconButton onClick={handleClose}>
+        <IconButton onClick={() => onClick()}>
           <CloseIcon style={{ fill: "#FF9244" }} sx={{ fontSize: "30px" }} />
         </IconButton>
       </div>

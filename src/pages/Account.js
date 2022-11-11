@@ -10,10 +10,17 @@ const links = [
     to: "profile"
   },
   {
+    name: "invoices",
+    to: "invoices"
+  },
+  {
     name: "products",
     to: "products/?page=1"
-  }
-
+  },
+  {
+    name: "tags",
+    to: "tags"
+  },
 ]
 
 function Account() {
@@ -27,16 +34,17 @@ function Account() {
       <div className="flexbox-row-start full-width" style={{ backgroundColor: "transparent", minHeight: "calc(100vh - 120px)", margin: "20px 0px 25px", borderRadius: 25}}>
         {
           mobile &&
-          <div className="flexbox-column-start full-width" style={{ maxWidth: 150, padding: 10, gap: 5}}>
+          <div className="flexbox-column-start full-width" style={{ maxWidth: 150, marginRight: 20, gap: 5}}>
             {
               links.map((link,i) => {
                 const {name, to} = link
                 return(
                   <Link to={to} className="link">
                     <motion.div
-                      whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.35)"}}
-                      style={{ height: 40, paddingLeft: 15}}
-                      className="flexbox-row radius15">
+                      whileHover={{ x: 5, backgroundColor: "rgba(255, 255, 255, 0.35)"}}
+                      transition={{ duration: 0.3}}
+                      style={{ height: 40, paddingLeft: 20, backgroundColor: "transparent"}}
+                      className="flexbox-row full-width radius15">
                        {name}
                     </motion.div>
                   </Link>
@@ -48,12 +56,6 @@ function Account() {
         }
         <div className="flexbox-column-start background3 shadow2 radius15 full-width" style={{ position: "relative"}}>
           <Outlet />
-          {
-            (!isAuthenicated && mobile)  &&
-            <div style={{ position: "absolute", top: 15, right: 15, marginTop: "auto" }}>
-              <LogButton name="logout" onClick={() => logout({ returnTo: window.location.origin })}/> 
-            </div>
-          }
         </div>
       </div>
         

@@ -1,3 +1,4 @@
+import HorzDivider from "../ui/HorzDivider";
 import NoBox from "../ui/NoBox";
 import ProductCard from "./ProductCard";
 

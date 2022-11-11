@@ -1,12 +1,12 @@
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
-function OrderSkeleton({ count }) {
+function OrderSkeleton({count}) {
 
   return (
     Array(count).fill(0).map((_, i) => {
       return (
-        <div key={i} className="flexbox-row full-width background1 radius15" style={{ justifyContent: "space-between", border: "2px solid white", height: "80px", maxWidth: "600px", marginTop: "15px" }}>
+        <div key={i} className="flexbox-row full-width background1 radius15" style={{ justifyContent: "space-between", border: "2px solid white", height: "80px" }}>
           <Skeleton className="" style={{ borderRadius: "10px", width: "95px", height: "33.5px", marginLeft: "10px", position: 'relative', bottom: "2px" }} />
 
           <div className='flexbox' style={{ width: "100px" }}>

@@ -41,9 +41,9 @@ export default function ContactForm() {
       <div className='flexbox-column full-width'>
 
         <motion.div 
-          initial={{ y: 50, opacity: 0 }}
+          initial={{ y: 50, opacity: 0}}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.3}}
           viewport={{ once: true }}
           className='background1 shadow2' 
           style={{ height: "190px", position: "relative", top: "40px", borderRadius: "30px", padding: "0px 20px"}}

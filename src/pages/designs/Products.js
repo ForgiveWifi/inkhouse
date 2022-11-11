@@ -9,7 +9,7 @@ import AddIcon from '@mui/icons-material/Add';
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import ProductList from "../../components/products/ProductList";
-import Loading from "../../auth/Loading";
+import Loading from "../../components/ui/Loading";
 
 function Products() {
 

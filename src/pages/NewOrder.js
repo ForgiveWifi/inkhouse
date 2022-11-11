@@ -1,10 +1,10 @@
 import { Button } from "@mantine/core";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import NewOrderForm from "../../components/forms/NewOrderForm"
-import BackButton from "../../components/ui/buttons/BackButton";
-import Header from "../../components/ui/Header";
-import { showError, showLoading, updateError, updateSuccess } from "../../utils/alerts";
+import NewOrderForm from "../components/forms/NewOrderForm"
+import BackButton from "../components/ui/buttons/BackButton";
+import Header from "../components/ui/Header";
+import { showError, showLoading, updateError, updateSuccess } from "../utils/alerts";
 
 function NewOrder() {
 

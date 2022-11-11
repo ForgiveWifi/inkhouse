@@ -20,8 +20,8 @@ function ColorSelect({ attributes, setAttributes}) {
                   <button 
                     key={i}
                     onClick={() => setAttributes({...attributes, color: color})} 
-                    className="flexbox max-radius" 
-                    style={{ margin: "5px", backgroundColor: hex, width: "40px", height: "40px", outline: !selected ? "none" : light ? "2px solid black" : "2px solid white" }}
+                    className="flexbox" 
+                    style={{ borderRadius: 20, margin: "5px", backgroundColor: hex, width: 40, height: 40, outline: !selected ? "none" : light ? "2px solid black" : "2px solid white" }}
                   >
                     { selected && <CheckCircleOutlineIcon key={i} sx={{ fill: light ? "black" : "white"}} />}
                   </button>

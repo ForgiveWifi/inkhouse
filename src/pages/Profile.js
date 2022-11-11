@@ -2,14 +2,18 @@ import { useAuth0 } from "@auth0/auth0-react"
 import { Button } from "@mantine/core";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Loading from "../auth/Loading";
+import Loading from "../components/ui/Loading";
 import AddressForm from "../components/forms/AddressForm";
 import { showError, showLoading, updateError, updateSuccess } from "../utils/alerts";
 import { TextInput } from "@mantine/core";
 import isEqual from 'lodash.isequal'
+import LogButton from "../components/ui/buttons/LogButton";
+import { useMediaQuery } from '@mantine/hooks';
 
 function Profile() {
-  
+
+  const mobile = useMediaQuery('(min-width: 670px)')
+
   const profileBlank = {
     first_name: "",
     last_name: "",
@@ -22,7 +26,7 @@ function Profile() {
     state: "",
     postal_code: ""
   }
-  const { user, isAuthenticated, isLoading, getAccessTokenSilently } = useAuth0()
+  const { user, isAuthenticated, isLoading, logout, getAccessTokenSilently } = useAuth0()
   const [profile, setProfile] = useState(profileBlank)
   const [profileRef, setProfileRef] = useState(profileBlank)
   // const [address, setAddress] = useState({})
@@ -99,6 +103,12 @@ function Profile() {
   }
   return (
     <>
+      {
+        (!isAuthenticated && mobile)  &&
+        <div style={{ position: "absolute", top: 15, right: 15, marginTop: "auto" }}>
+          <LogButton name="logout" onClick={() => logout({ returnTo: window.location.origin })}/> 
+        </div>
+      }
       {loading && <Loading />}
       {
         isAuthenticated && 

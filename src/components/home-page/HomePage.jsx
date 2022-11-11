@@ -13,7 +13,7 @@ function HomePage() {
       <motion.div 
         initial={{ y: 30, scale: 0.95, opacity: 0 }}
         whileInView={{ y: 0, scale: 1, opacity: 1 }}
-        transition={{ duration: 1, delay: 0.5 }}
+        transition={{ duration: 1, delay: 0.2 }}
         viewport={{ once: true }}
         className={`${desktop ? "flexbox-column" : "flexbox-row"} flex-wrap full-width`}
         style={{ maxWidth: 1000, marginBottom: desktop ? 100 : 200 }}

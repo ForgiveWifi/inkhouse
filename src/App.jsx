@@ -3,9 +3,9 @@ import Layout from "./pages/Layout";
 import Home from "./pages/home/Home";
 import Production from "./pages/home/Production";
 import Design from "./pages/home/Design";
-import Orders from "./pages/orders/Orders"
-import SingleOrder from "./pages/orders/SingleOrder"
-import NewOrder from "./pages/orders/NewOrder";
+import Invoices from "./pages/Invoices"
+import SingleInvoice from "./pages/SingleInvoice"
+import NewOrder from "./pages/NewOrder";
 import Products from "./pages/designs/Products"
 import NewProduct from "./pages/NewProduct";
 import SingleDesign from "./pages/designs/SingleDesign";
@@ -17,6 +17,7 @@ import './App.css';
 import "./Mantine.css"
 import ProtectedRoute from "./auth/ProtectedRoute";
 import Profile from "./pages/Profile";
+import Tags from "./pages/Tags";
 
 export default function App() {
   return (
@@ -28,15 +29,16 @@ export default function App() {
             <Route path="design" element={<Design />} />
             <Route path="account" element={<ProtectedRoute component={Account} />} >
               <Route path="profile" element={<Profile />} />
-              <Route path="orders" element={<Orders />} />
-              <Route path="order/new" element={<NewOrder />} />
+              <Route path="invoices" element={<Invoices />} />
+              <Route path="invoices/:invoice_id" element={<SingleInvoice />} />
               <Route path="products" element={<Products/>} />
               <Route path="product/new" element={<NewProduct/>} />
+              <Route path="tags" element={<Tags/>} />
             </Route>
 
             {/* <Route path="orders" element={<Orders />} /> */}
             {/* <Route path="order/new" element={<NewOrder />} /> */}
-            {/* <Route path="order/:order_id" element={<SingleOrder />} /> */}
+            {/* <Route path="order/:order_id" element={<SingleInvoice />} /> */}
             
             {/* <Route path="design/:design_id" element={<SingleDesign />} /> */}
             {/* <Route path="accounts" element={<Accounts />} /> */}
