@@ -41,7 +41,7 @@ function Account() {
                 return(
                   <Link to={to} className="link">
                     <motion.div
-                      whileHover={{ x: 5, backgroundColor: "rgba(255, 255, 255, 0.35)"}}
+                      whileHover={{ x: 5, backgroundColor: "rgba(255, 255, 255, 0.25)"}}
                       transition={{ duration: 0.3}}
                       style={{ height: 40, paddingLeft: 20, backgroundColor: "transparent"}}
                       className="flexbox-row full-width radius15">

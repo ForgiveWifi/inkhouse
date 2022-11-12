@@ -9,23 +9,23 @@ function InvoiceItem({invoice}) {
       <Link to={id} className="link full-width">
         <motion.div
           whileHover={{ scale: 1.02 }}
-          className="invoice-item  flexbox-row"
+          className="invoice-item space-between flexbox-row"
+          style={{ padding: "0px 20px"}}
         > 
+          <div>{status}</div>
+          <div className="order-id">{id}</div>
+        
+          <div>{amount_due}</div>
           
-            <div>{status}</div>
-            <div className="order-id">{id}</div>
+          <div>{created}</div>
+          {/* <div className="flexbox" style={{ width: "60px"}}>
+            <div>{countShirts(order.items)}</div>
+          </div>
           
-            <div>{amount_due}</div>
-            
-            <div>{created}</div>
-            <div className="flexbox" style={{ width: "60px"}}>
-              {/* <div>{countShirts(order.items)}</div> */}
-            </div>
-            
-            <div className="date flexbox-column" style={{ width: "120px"}}>
-              {/* <div className="no-wrap">{toDate(created_at, "short")}</div> */}
-              {/* <div>{toTime(created_at)}</div> */}
-            </div>
+          <div className="date flexbox-column" style={{ width: "120px"}}>
+            <div className="no-wrap">{toDate(created_at, "short")}</div>
+            <div>{toTime(created_at)}</div>
+          </div> */}
           
         </motion.div>
       </Link>

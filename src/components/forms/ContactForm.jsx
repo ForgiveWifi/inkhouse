@@ -66,7 +66,7 @@ export default function ContactForm() {
             <PhoneNumber ref={phoneInput} />
             <InputField name="quantity" type="number" min={0} />
 
-            <div className="flexbox-start" style={{ color: "rgba(0, 0, 0, 0.6)", fontSize: "104px", paddingTop: "1px"}}>
+            <div className="flexbox-column-start" style={{ color: "rgba(0, 0, 0, 0.6)", fontSize: "104px" }}>
               <label>budget</label>
               <Input
                 icon={<AttachMoneyIcon style={{ fill: "rgba(0, 0, 0, 0.6)", marginLeft: "2px"}}/>} 
@@ -74,7 +74,6 @@ export default function ContactForm() {
                 variant="unstyled"
                 className="input-field"
                 sx={{ color: "yellow"}}
-                style={{ paddingTop: 1 }}
                 name="budget" 
                 type="number" 
                 min={0}

@@ -19,7 +19,7 @@ import NoBox from "../components/ui/NoBox.jsx";
 
 function NewProduct() {
 
-  const mobile = useMediaQuery('(min-width: 860px)')
+  const mobile = useMediaQuery('(min-width: 890px)')
 
   const { getAccessTokenSilently } = useAuth0()
 

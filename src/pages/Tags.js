@@ -9,7 +9,7 @@ function Tags() {
     <>
       <div style={{ margin: 40}}>
         <h1>Tags</h1>
-        <TagList sizes={sizes} tagList={tagList} setTagList={setTagList} setTags={setTags}/>
+        <TagList sizes={sizes} tagList={tagList} setTagList={setTagList}/>
       </div>
     </>
   );

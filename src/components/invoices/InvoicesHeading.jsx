@@ -35,8 +35,11 @@ function InvoicesHeader() {
           </div>
         </div>
         
-        <div className="flexbox-row space-between">
-          <div> status</div>
+        <div className="flexbox-row full-width space-between" style={{ margin: "20px 0px 3px", padding: "0px 20px"}}>
+          <h5> status</h5>
+          <h5>ID</h5>
+          <h5>price</h5>
+          <h5>date</h5>
         </div>  
 
           <HorzDivider width="98%"/>

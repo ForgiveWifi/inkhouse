@@ -3,7 +3,7 @@ import NoBox from "../ui/NoBox";
 import TagUpload from "./TagUpload";
 import CloseIcon from '@mui/icons-material/Close';
 
-function TagList({sizes, tagList, setTagList, setTags}) {
+function TagList({sizes, tagList, setTagList}) {
 
   function addTag(file, size) {
     const tag = { ...tagList }
@@ -15,24 +15,17 @@ function TagList({sizes, tagList, setTagList, setTags}) {
     setTagList({...tagList, [size]: null })
   }
 
-  function removeTags() {
-    setTagList({})
-    setTags(false)
-  }
-
   return (
     <>
-        <div className="label full-width">tags</div>
-        {/* { sizes.length === 0 && <NoBox text="Select Sizes"/> } */}
-        <div className="full-width" style={{ display: "grid", gridTemplateColumns : "repeat(2, 1fr)", maxWidth: 300}}>
-          {
-            sizes.map((size,i) => {
-              return(
-                <TagUpload key={i} label={size} value={tagList[size]} onChange={(file) => addTag(file,size)} deleteTag={() => deleteTag(size)}/>
-              )
-            })
-          }
-        </div>
+      <div className="full-width" style={{ display: "grid", gridTemplateColumns : "repeat(2, 1fr)", maxWidth: 300}}>
+        {
+          sizes.map((size,i) => {
+            return(
+              <TagUpload key={i} label={size} value={tagList[size]} onChange={(file) => addTag(file,size)} deleteTag={() => deleteTag(size)}/>
+            )
+          })
+        }
+      </div>
     </>
   );
 }

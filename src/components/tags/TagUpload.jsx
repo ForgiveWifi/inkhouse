@@ -11,13 +11,15 @@ function TagUpload({label, value, onChange, deleteTag}) {
           !value && 
           <div>
             <FileInput
-              style={{ marginBottom: "5px"}}
+              style={{ marginBottom: "5px", width: 200, height: 300}}
               placeholder="+"
               value={value}
               onChange={onChange}
               accept="image/png,image/jpeg"
               aria-label={`${label} tag`}
-            />
+            >
+              
+            </FileInput>
           </div>
         }
         { 
