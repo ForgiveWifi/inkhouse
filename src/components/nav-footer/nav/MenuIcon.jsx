@@ -12,18 +12,6 @@ function MenuIcon() {
   const { logout } = useAuth0()
 
   const navList = [
-    // {
-    //   name: "accounts",
-    //   to: "/accounts/?page=1"
-    // },
-    // {
-    //   name: "orders",
-    //   to: "/orders/?page=1"
-    // },
-    // {
-    //   name: "designs",
-    //   to: "/designs/?page=1"
-    // },
     {
       name: "profile",
       to: "/account/profile"
@@ -31,6 +19,14 @@ function MenuIcon() {
     {
       name: "products",
       to: "/account/products/?page=1"
+    },
+    {
+      name: "invoices",
+      to: "/account/invoices"
+    },
+    {
+      name: "tags",
+      to: "/account/tags"
     },
   ]
 
@@ -87,8 +83,8 @@ function MenuIcon() {
         initial={false}
         animate={isOpen ? "open" : "closed"}
       >
-      <motion.div className="menu-background backgroun1 shadow1" variants={sidebar} />
-      <motion.ul variants={variants} className="menu-list" >
+      <motion.div className="menu-background shadow1" variants={sidebar} />
+      <motion.ul variants={variants} className="menu-list flexbox-column" >
         {
           navList.map((item, i) => {
             const {name, to} = item
@@ -104,7 +100,7 @@ function MenuIcon() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={isOpen ? () => logout({ returnTo: window.location.origin }) : null} 
-              style={{cursor: isOpen ? "pointer" : "auto", border: "4px solid #FF9244", padding: "5px 20px", borderRadius: 20, marginTop: 40, marginLeft: 12}}
+              style={{cursor: isOpen ? "pointer" : "auto", border: "4px solid #FF9244", padding: "5px 20px", borderRadius: 20, marginTop: 5}}
               disabled={!isOpen}
             >
               <h2 className="orange-text">logout</h2>

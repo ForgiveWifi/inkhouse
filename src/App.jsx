@@ -5,10 +5,10 @@ import Production from "./pages/home/Production";
 import Design from "./pages/home/Design";
 import Invoices from "./pages/Invoices"
 import SingleInvoice from "./pages/SingleInvoice"
-import NewOrder from "./pages/NewOrder";
+import NewInvoice from "./pages/NewInvoice";
 import Products from "./pages/designs/Products"
 import NewProduct from "./pages/NewProduct";
-import SingleDesign from "./pages/designs/SingleDesign";
+import SingleProduct from "./pages/SingleProduct";
 import Account from "./pages/Account";
 import NewAccount from "./pages/accounts/NewAccount";
 import NoPage from "./pages/NoPage";
@@ -31,13 +31,14 @@ export default function App() {
               <Route path="profile" element={<Profile />} />
               <Route path="invoices" element={<Invoices />} />
               <Route path="invoices/:invoice_id" element={<SingleInvoice />} />
+              <Route path="invoices/new" element={<NewInvoice />} />
               <Route path="products" element={<Products/>} />
+              <Route path="products/:product_id" element={<SingleProduct/>} />
               <Route path="product/new" element={<NewProduct/>} />
               <Route path="tags" element={<Tags/>} />
             </Route>
 
             {/* <Route path="orders" element={<Orders />} /> */}
-            {/* <Route path="order/new" element={<NewOrder />} /> */}
             {/* <Route path="order/:order_id" element={<SingleInvoice />} /> */}
             
             {/* <Route path="design/:design_id" element={<SingleDesign />} /> */}

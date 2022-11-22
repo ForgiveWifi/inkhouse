@@ -2,8 +2,8 @@ import Divider from "../ui/Divider";
 
 function SizeList({sizes}) {
   return (
-    <div className="flexbox full-width">
-      <div className="flexbox-row background1 radius15 flex-wrap" style={{ padding: "4px 14px"}} > 
+    <>
+      <div className="flexbox-row radius15 flex-wrap" > 
         {
           sizes.map((size,i) => {
             if (i === sizes.length - 1) {
@@ -19,7 +19,7 @@ function SizeList({sizes}) {
           })
         }
       </div>
-    </div>
+    </>
   );
 }
 

@@ -52,7 +52,6 @@ function Invoices() {
       <div style={{ margin: 40 }}>
         <InvoicesHeading />
         <InvoiceList loading={loading} invoices={invoices} />
-        {/* <InvoiceList loading={loading} invoices={invoices} /> */}
         {/* <MyPagination loading={loading} currentPage={currentPage} totalPages={totalPages} setPageNumber={setPageNumber} /> */}
       </div>
     </>

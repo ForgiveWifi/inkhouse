@@ -6,13 +6,11 @@ function InvoiceDisplay({loading, invoice}) {
       null
     )
   } else
-  console.log("invoice", invoice)
   return (
     <>
-      <div style={{ marginTop: 80}}>
+      <div style={{ margin: 40, marginTop: 90}}>
         <OrderDisplay loading={loading} order={invoice} />
       </div>
-      
     </>
   );
 }

@@ -16,14 +16,14 @@ function HomePage() {
         transition={{ duration: 1, delay: 0.2 }}
         viewport={{ once: true }}
         className={`${desktop ? "flexbox-column" : "flexbox-row"} flex-wrap full-width`}
-        style={{ maxWidth: 1000, marginBottom: desktop ? 100 : 200 }}
+        style={{ maxWidth: 1000, marginBottom: desktop ? 100 : 150 }}
       > 
         <div className="full-width" style={{ maxWidth: 330, marginBottom: desktop ? 0 : 50}}>
-          <div className={desktop ? "flexbox-column margin-auto full-width" : ""} style={{ position: desktop ? "" : "relative", right: desktop ? "" : "18px", marginBottom: "15px" }}> 
+          <div className={desktop ? "flexbox-column margin-auto full-width" : ""} style={{ position: desktop ? "" : "relative", right: desktop ? "" : "18px", marginBottom: "15px", marginTop: desktop ? 50 : 0 }}> 
             <h1 style={{ lineHeight: "40px", marginTop: "25px", marginLeft: desktop ? "0px" : "16px"}}>
               inkhouse
             </h1>
-            <h2 className="rainbow flexbox no-wrap text-center max-radius shadow2" style={{ width: "350px", height: "45px", padding: "0px 10px", fontWeight: "500", marginTop: "8px"}}>a merchandise agency</h2>
+            <h2 className="rainbow flexbox no-wrap text-center max-radius shadow2" style={{ width: "350px", height: "45px", padding: "0px 10px", fontWeight: "500", fontSize: 26, marginTop: "8px"}}>a merchandise agency</h2>
           </div>
           <div className={desktop ? "text-center" : ""} style={{ maxWidth: 400}}>
             Our company provides manufacturing and design services for apparel.  Turn your ideas into custom merchandise for your brand, company, groups, or events.

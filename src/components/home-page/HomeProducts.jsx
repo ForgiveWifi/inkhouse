@@ -8,7 +8,7 @@ function HomeProducts() {
       file: "BellaCanvas_3001_White_04.jpg",
       alt: "Bella Canvas 3001 White",
       position: "0px -30px",
-      link: "product/new"
+      link: "https://www.bellacanvas.com/product/3001/Unisex-Jersey-Short-Sleeve-Tee.html"
     },
     // {
     //   name: "Hoodies",
@@ -24,6 +24,7 @@ function HomeProducts() {
     // }
   ]
   const navigate = useNavigate()
+  
   return (
     <>
       <div className="flexbox-column" style={{ marginTop: "50px"}}>
@@ -33,8 +34,7 @@ function HomeProducts() {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
           viewport={{ once: true }}
-          className="flexbox-row full-width"
-          style={{ maxWidth: "830px", marginBottom: "10px" }}>
+          style={{ maxWidth: "830px", marginBottom: "20px" }}>
           Products 
         </motion.h2>
 
@@ -42,22 +42,25 @@ function HomeProducts() {
           {
             productlist.map(({name, file, alt, position, link}) => {
               return(
-                <motion.div 
+                <motion.a
+                  href={link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   initial={{ scale: 0.95, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.7, delay: 0.3 }}
                   viewport={{ once: true }}
-                  onClick={() => navigate(link)}
-                >
+                  // onClick={() => navigate(link)}
+                  className="flexbox-column link"
+                ><h5 style={{ height: 25 }}>{name.toUpperCase()} </h5> 
                   <motion.div
-                    whileHover={{ scale: 1.05}}
+                    whileHover={{ scale: 1.02}}
                     whileTap={{ scale: 0.98 }}
                     transition={{ duration: 0.3 }}
                   >
-                  
                   <div style={{ position: "relative"}}> 
                     <div className="product-box radius15" style={{ backgroundColor: "white", top: 0}}></div> 
-
+                    
                     <motion.img 
                       whileHover={{ opacity: 0.8}}
                       src={require(`../../assets/${file}`)} 
@@ -66,12 +69,10 @@ function HomeProducts() {
                       style={{ position: "absolute", top: 0, objectPosition: position, objectFit: "cover" }}
                     />
                   </div>
-                  
-                 
                     
-                    <h4 style={{ height: 25, marginLeft: 5, marginTop: 6}}>{name.toUpperCase()} </h4> 
+                    
                   </motion.div>
-                </motion.div>
+                </motion.a>
               )
             })
           }

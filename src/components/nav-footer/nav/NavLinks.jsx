@@ -6,6 +6,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useMediaQuery } from '@mantine/hooks';
 import MenuButton from "./MenuButton";
 import MenuIcon from "./MenuIcon";
+import { Loader } from "@mantine/core";
 
 function NavLinks() {
 
@@ -21,7 +22,7 @@ function NavLinks() {
 
         { 
           isLoading ? 
-          <div>Loading...</div> :
+          <Loader color="white" variant="dots" /> :
           !isAuthenticated ? 
           <LogButton name="LOG IN" onClick={() => loginWithRedirect()}/> : 
           mobile ? 

@@ -120,3 +120,13 @@
 .mantine-Pagination-item {
   border: none;
 }
+
+
+
+.mantine-Carousel-indicator {
+  background-color: grey;
+}
+
+.mantine-Carousel-indicators {
+  bottom: 3%
+}

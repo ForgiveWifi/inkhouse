@@ -29,7 +29,7 @@ function Products() {
       try {
         setLoading(true)
         const access_token = await getAccessTokenSilently()
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/product?page=${page}&limit=20`, {
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/product?page=${page}&limit=18`, {
           headers: {
             authorization: `Bearer ${access_token}` 
           }

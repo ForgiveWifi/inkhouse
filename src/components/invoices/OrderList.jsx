@@ -1,5 +1,5 @@
 import OrderBox from "../boxes/OrderBox";
-import OrderSkeleton from "./OrderSkeleton";
+import OrderSkeleton from "./InvoiceSkeleton";
 import NoBox from "../ui/NoBox";
 
 function OrderList({loading, orders}) {

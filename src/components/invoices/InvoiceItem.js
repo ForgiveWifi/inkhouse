@@ -1,23 +1,33 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom";
+import toDate from "../../utils/toDate";
+import toDollars from "../../utils/toDollars";
+import toTime from "../../utils/toTime";
+import unixToLocalTime from "../../utils/unixToLocalTime";
 import "./Invoices.css"
+import StatusBox from "./StatusBox";
 
 function InvoiceItem({invoice}) {
-  const { id, amount_due, status, created } = invoice
+  const { id, amount_due, status, due_date} = invoice
   return (
     <>
       <Link to={id} className="link full-width">
         <motion.div
           whileHover={{ scale: 1.02 }}
-          className="invoice-item space-between flexbox-row"
-          style={{ padding: "0px 20px"}}
+          className="invoice-item space-between flexbox-row flex-wrap"
+          style={{ height: 75}}
         > 
-          <div>{status}</div>
-          <div className="order-id">{id}</div>
+          <StatusBox status={status} />
+          <h5 className="text-center" style={{width: 300}}>{id}</h5>
         
-          <div>{amount_due}</div>
+          <h5 className="text-center" style={{width: 100}}>{toDollars(amount_due)}</h5>
+
+          <h5 className="text-center" style={{width: 70}}>{70}</h5>
           
-          <div>{created}</div>
+          <div className="flexbox-column" style={{ width: 100}}>
+            <h5>{toDate(due_date * 1000, "short")}</h5>
+            <h5>{toTime(due_date * 1000)}</h5>
+          </div>
           {/* <div className="flexbox" style={{ width: "60px"}}>
             <div>{countShirts(order.items)}</div>
           </div>
@@ -26,7 +36,6 @@ function InvoiceItem({invoice}) {
             <div className="no-wrap">{toDate(created_at, "short")}</div>
             <div>{toTime(created_at)}</div>
           </div> */}
-          
         </motion.div>
       </Link>
     </>

@@ -3,55 +3,68 @@ import toDate from "../../utils/toDate";
 import toTime from "../../utils/toTime";
 import Divider from "../ui/Divider";
 import HorzDivider from "../ui/HorzDivider";
-import ShippingBox from "../boxes/ShippingBox";
+import ShippingBox from "./ShippingBox";
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
-import MyLocationIcon from '@mui/icons-material/MyLocation';
-import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import ShippingBoxSkeleton from "../skeletons/ShippingBoxSkeleton";
-import ProductList from "../list/ProductList";
+import ProductList from "./ProductList";
+import StatusBox from "./StatusBox";
+import toDollars from "../../utils/toDollars";
+import InvoiceButtons from "./InvoiceButtons";
+import ShippingDisplay from "./ShippingDisplay";
 
-function OrderDisplay({order, loading}) {
-
+function InvoiceDisplay({order, loading}) {
   return (
     <>
       <div className="flexbox-column full-width">
 
         <div className="flexbox-row full-width">
-          <h3>{order.id}</h3>
+          <h2>{order.id}</h2>
         </div>
-
-        <div className="flexbox-row full-width flex-wrap" style={{ marginBottom: "15px" }}>
-          <div>{toDate(order.created, "long")}</div>
-          <Divider />
-          <div>{toTime(order.created)}</div>
-
-          <div style={{ marginLeft: "auto" }}>
-            <Button color="orange" loading={loading} leftIcon={<MyLocationIcon sx={{ fontSize: "20px"}} />} uppercase>Track Order</Button>
+        
+        <div className="flexbox-row full-width" style={{ marginTop: "5px", gap: 15}}>
+          <StatusBox status={order.status} />
+        </div>
+        
+        <div className="flexbox-row full-width flex-wrap" style={{marginTop: 10}}>
+          <div style={{width: 100}}>created:</div>
+          <div className="flexbox-row">
+            <h5>{toDate(order.created * 1000, "long")}</h5>
+            <Divider />
+            <h5>{toTime(order.created * 1000)}</h5>
           </div>
         </div>
 
-        {/* <ProductList loading={loading} items={order?.order.items} /> */}
-
-        <HorzDivider/>
-
-        <div className="flexbox-row flex-wrap">
-          {/* <ShippingBox ship_address={{
-            line1: "15708 San Solano Ct",
-            city: "Austin",
-            state: "TX",
-            postal_code: "78738"
-          }} /> */}
-
-          <KeyboardDoubleArrowRightIcon sx={{ fontSize: "35px" }} />
-
-          <ShippingBox ship_address={order.customer_shipping} />
+        <div className="flexbox-row full-width flex-wrap">
+          <div style={{width: 100}}>due date:</div>
+          <div className="flexbox-row">
+            <h5>{toDate(order.due_date * 1000, "long")}</h5>
+            <Divider />
+            <h5>{toTime(order.due_date * 1000)}</h5>
+          </div>
         </div>
 
+        <div className="flexbox-column-start full-width flex-wrap" style={{ margin: "15px 0px 22px", gap: 10}}>
+          <h5 style={{ marginLeft: 10}}>{toDollars(order.amount_due)}</h5>
+          <InvoiceButtons status={order.status} order={order}/>
+        </div>
+
+        <ProductList loading={loading} lines={order.lines} />
+        
+        <div className="flexbox-column-start" style={{margin: "10px 22px 0px auto"}}>
+          <h5>Total:</h5>
+          <h5>{toDollars(order.amount_due)}</h5>
+        </div>
+        
+        {/* <div className="flexbox full-width" style={{ margin: "25px 0px"}}>
+          <HorzDivider width="95%"/>
+        </div> */}
+        <ShippingDisplay customerShipping={order.customer_shipping} />
+        
       </div>
     </>
 
   );
 }
 
-export default OrderDisplay;
+export default InvoiceDisplay;

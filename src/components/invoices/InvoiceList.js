@@ -1,4 +1,4 @@
-import OrderSkeleton from "./OrderSkeleton";
+import InvoiceSkeleton from "./InvoiceSkeleton";
 import NoBox from "../ui/NoBox";
 import InvoiceItem from "./InvoiceItem";
 import { useState } from "react";
@@ -9,12 +9,10 @@ import Loading from "../ui/Loading";
 
 function InvoiceList({loading, invoices}) {
 
-  const [selectedId, setSelectedId] = useState(null)
-  console.log(selectedId)
   if (loading || !invoices) {
     return(
-      <div className="flexbox-column" style={{ gap: 15, marginTop: 15 }}>
-        <OrderSkeleton count={5} /> 
+      <div className="flexbox-column" style={{ gap: 10 }}>
+        <InvoiceSkeleton count={5} /> 
       </div>
     )
   } else
@@ -23,7 +21,7 @@ function InvoiceList({loading, invoices}) {
   } else 
   return (
     <>
-      <div className="flexbox-column" style={{ gap: 15, marginTop: 15 }}>
+      <div className="flexbox-column" style={{ gap: 10 }}>
         <AnimatePresence>
           {
             invoices.map((invoice,i) => {
