@@ -5,6 +5,8 @@ import LogButton from "../../ui/buttons/LogButton";
 import MenuButton from "./MenuButton";
 import MenuItem from "./MenuItem";
 
+import "./Nav.css"
+
 function MenuIcon() {
   
   const [isOpen, setIsOpen] = useState(false)
@@ -82,6 +84,7 @@ function MenuIcon() {
       <motion.nav
         initial={false}
         animate={isOpen ? "open" : "closed"}
+        className="flexbox"
       >
       <motion.div className="menu-background shadow1" variants={sidebar} />
       <motion.ul variants={variants} className="menu-list flexbox-column" >
@@ -103,7 +106,7 @@ function MenuIcon() {
               style={{cursor: isOpen ? "pointer" : "auto", border: "4px solid #FF9244", padding: "5px 20px", borderRadius: 20, marginTop: 5}}
               disabled={!isOpen}
             >
-              <h2 className="orange-text">logout</h2>
+              <div className="orange-text">logout</div>
             </motion.button> 
           </div>
         }

@@ -34,11 +34,11 @@ function InvoicesHeader() {
           </div> */}
         </div>
         
-        <div className="flexbox-row full-width space-between" style={{ margin: "25px 0px 3px", padding: "0px 15px"}}>
+        <div className="flexbox-row full-width space-between" style={{ margin: "10px 0px 3px", padding: "0px 15px"}}>
           <h5 className="text-center" style={{width: 90}}> status</h5>
           <h5 className="text-center" style={{ width: 300}}>ID</h5>
           <h5 className="text-center" style={{ width: 100}}>total</h5>
-          <h5 className="text-center" style={{ width: 70}}>quantity</h5>
+          <h5 className="text-center" style={{ width: 70}}>items</h5>
           <h5 className="text-center" style={{ width: 100}}>due date</h5>
         </div>  
 

@@ -34,12 +34,12 @@ function Account() {
       <div className="flexbox-row-start full-width" style={{ backgroundColor: "transparent", minHeight: "calc(100vh - 120px)", margin: "20px 0px 25px", borderRadius: 25}}>
         {
           mobile &&
-          <div className="flexbox-column-start full-width" style={{ maxWidth: 150, marginRight: 20, gap: 5}}>
+          <div className="flexbox-column full-width" style={{ maxWidth: 150, marginRight: 20, gap: 5}}>
             {
               links.map((link,i) => {
                 const {name, to} = link
                 return(
-                  <Link to={to} className="link">
+                  <Link to={to} className="link full-width">
                     <motion.div
                       whileHover={{ x: 5, backgroundColor: "rgba(255, 255, 255, 0.25)"}}
                       transition={{ duration: 0.3}}
@@ -51,10 +51,12 @@ function Account() {
                 )
               })
             }
-            {/* <Link to="orders/?page=1" className="link shadow2">orders</Link> */}
           </div>
         }
         <div className="flexbox-column-start background3 shadow2 radius15 full-width" style={{ position: "relative"}}>
+          <div style={{ position: "absolute", top: 20, right: 20}}>
+            <LogButton name="LOG OUT" onClick={() => logout({returnTo: window.location.origin})}/>
+          </div>
           <Outlet />
         </div>
       </div>

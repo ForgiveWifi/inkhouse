@@ -1,0 +1,31 @@
+.menu-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 250px;
+  height: 375px;
+  background: white;
+  border-radius: 0px 0px 0px 50px;
+  z-index: 4;
+}
+
+.menu-button {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 20px;
+  right: 23.5px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+.menu-list {
+  width: 250;
+  right: 0px;
+  top: 0;
+  color: orange;
+  z-index: 100;
+}

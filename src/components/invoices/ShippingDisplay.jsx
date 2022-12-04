@@ -19,7 +19,7 @@ function ShippingDisplay({customerShipping}) {
           }} />
           
           <motion.div
-            animate={{ x: [-2,6,-2] }}
+            animate={{ x: [-5,7,-5] }}
             // exit={{ x: -10}}
             transition={{ duration: 2, repeat: Infinity}}
             className="flexbox">

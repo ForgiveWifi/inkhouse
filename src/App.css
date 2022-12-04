@@ -68,7 +68,7 @@ ul {
   padding: 25px;
   margin-top: 40px;
   position: absolute;
-  width: 230px;
+  width: 250px;
 }
 
 li {
@@ -153,8 +153,8 @@ span {
 }
 
 .white-background {
-  -webkit-background-color: rgba(255, 255, 255, 0.9);
-  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-background-color: white;
+  background-color: white;
 }
 
 .grey-background {
@@ -162,35 +162,9 @@ span {
   background-color: rgb(107, 116, 130);
 }
 
-.menu-background {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 250px;
-  height: 375px;
-  background: white;
-  border-radius: 0px 0px 0px 50px;
-  z-index: 4;
-}
-
-.menu-button {
-  background-color: transparent;
-  border: none;
-  position: absolute;
-  top: 3px;
-  right: 15.5px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  z-index: 100;
-}
-
-.menu-list {
-  right: 10px;
-  top: 0;
-  color: orange;
-  z-index: 100;
+.red-background{
+  -webkit-background-color:  rgb(253, 81, 81);
+  background-color: rgb(253, 81, 81);
 }
 
 .grey-text {
@@ -204,6 +178,10 @@ span {
 .orange-text {
   color: #FF9244
 } 
+
+.white-border{
+  outline: 3px solid white
+}
 
 .text-center {
   text-align: center
@@ -290,11 +268,11 @@ span {
   margin: 0px auto
 }
 
-.margin-auto-right {
+.margin-right {
   margin-right: auto
 }
 
-.margin-auto-left {
+.margin-left {
   margin-left: auto
 }
 

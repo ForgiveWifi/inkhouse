@@ -9,9 +9,15 @@ function InvoiceSkeleton({count}) {
         <div key={i} className="invoice-item space-between flexbox-row flex-wrap full-width" style={{ height: 75, padding: 15 }}>
           <Skeleton className="radius10" style={{ width: "90px", height: "33.5px", position: 'relative', bottom: "2px" }} />
 
-          <Skeleton className="radius15" style={{ width: "300px", height: "20px", position: 'relative', bottom: "2px" }} />
+          <Skeleton className="radius15" style={{ width: "275px", height: "20px", position: 'relative', bottom: "2px" }} />
+          
+          <div className='flexbox' style={{ width: "100px", position: 'relative', bottom: "2px"}}>
+            <Skeleton className="radius15" style={{ width: "70px" }} />
+          </div>
 
-          <Skeleton className="radius15" style={{ width: "100px", position: 'relative', bottom: "2px" }} />
+          <div className='flexbox' style={{ width: "70px"}}>
+            <Skeleton className="radius15" style={{ width: 40 }} />
+          </div>
 
           <div className="flexbox-column" style={{ width: "100px", position: 'relative', bottom: "2px" }}>
             <Skeleton className="radius15" style={{ width: "90px", height: "20px" }} />

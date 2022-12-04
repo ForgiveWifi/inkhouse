@@ -1,14 +1,18 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom";
-import toDate from "../../utils/toDate";
+import { toTime, toDate } from "../../utils/time";
 import toDollars from "../../utils/toDollars";
-import toTime from "../../utils/toTime";
 import unixToLocalTime from "../../utils/unixToLocalTime";
 import "./Invoices.css"
 import StatusBox from "./StatusBox";
 
 function InvoiceItem({invoice}) {
-  const { id, amount_due, status, due_date} = invoice
+  const { id, amount_due, status, due_date, lines} = invoice
+
+  const items = lines.data.reduce((accumulator, value) => {
+    return accumulator + value.quantity;
+  }, 0);
+
   return (
     <>
       <Link to={id} className="link full-width">
@@ -22,7 +26,7 @@ function InvoiceItem({invoice}) {
         
           <h5 className="text-center" style={{width: 100}}>{toDollars(amount_due)}</h5>
 
-          <h5 className="text-center" style={{width: 70}}>{70}</h5>
+          <h5 className="text-center" style={{width: 70}}>{items}</h5>
           
           <div className="flexbox-column" style={{ width: 100}}>
             <h5>{toDate(due_date * 1000, "short")}</h5>

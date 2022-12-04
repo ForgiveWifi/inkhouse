@@ -5,7 +5,7 @@ function MenuButton({isOpen, setIsOpen}) {
   const title = isOpen ? 'Close navigation' : 'Open navigation';
     
   return (
-    <button onClick={() => setIsOpen(!isOpen)} className="menu-button max-radius flexbox" style={{ marginTop: "10px"}} >
+    <button onClick={() => setIsOpen(!isOpen)} className="menu-button max-radius flexbox" style={{ }} >
       <Burger
         opened={isOpen}
         size={22}

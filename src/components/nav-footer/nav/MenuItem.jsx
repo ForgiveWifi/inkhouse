@@ -34,7 +34,7 @@ function MenuItem({isOpen, setIsOpen, name, to}) {
       whileTap={{ scale: 0.95 }}
     >
       <button onClick={isOpen ? () => nav() : null} style={{ cursor: isOpen ? "pointer" : "auto"}} disabled={!isOpen}>
-        <h2 className="orange-text">{name}</h2>
+        <div className="orange-text">{name}</div>
       </button>
     </motion.li>
   );

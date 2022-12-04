@@ -1,5 +1,4 @@
-import toDate from "../../utils/toDate";
-import toTime from "../../utils/toTime";
+import { toTime, toDate } from "../../utils/time";
 import PlacementList from "./PlacementList";
 import Divider from "../ui/Divider";
 import CopyID from "./CopyID";
@@ -15,21 +14,20 @@ function ProductDisplay({loading, product}) {
 
   const [currentSlide, setCurrentSlide] = useState(0)
 
+  console.log(product)
   if (!product) {
     return <Loading />
   } else {
-  const { _id, name, description, sizes, images, created_at} = product
+  const { _id, name, description, sizes, images, created_at,} = product
   // const {style, size, color} = attributes 
-  
+
   return (
     <>
       {loading && <Loading /> }
-      <div className="flexbox-row-start full-width flex-wrap" style={{ padding: "0px 30px 10px", marginTop: 90, gap: 20 }}>
+      <div className="flexbox-row-start full-width flex-wrap" style={{ padding: "0px 30px 10px", marginTop: 80, gap: 20 }}>
         <div className="flexbox-column" style={{ gap: 10}}>
           <ProductCarousel images={images} name={name} setCurrentSlide={setCurrentSlide}/>
-          <div className="flexbox-row" style={{ marginLeft: "auto", gap: 15}}>
-            <Button onClick={() => images[currentSlide]} leftIcon={<TbDownload style={{ fontSize: 20}} />}> Download</Button>
-          </div>
+          {/* <Button onClick={() => downloadImage(images[currentSlide])} leftIcon={<TbDownload style={{ fontSize: 20}} />}> Download</Button> */}
         </div>
 
         <div className="flexbox-column-start" style={{ margin: 0}}>
@@ -43,8 +41,19 @@ function ProductDisplay({loading, product}) {
           <div>{description}</div>
 
           <div style={{ marginTop: 15}}>
-            <h5>sizes</h5>
+            <h5>color</h5> 
+            <div>{product.color}</div>
+            <h5>available sizes</h5>
             <SizeList sizes={sizes} />
+            {sizes.map((size, i) => {
+              return(
+                <div className="flexbox-row">
+                  <div>{size}</div>
+                  <div>cost</div>
+                </div>
+              )
+            })}
+            
           </div>
 
           <div style={{ marginTop: 15}}>

@@ -16,7 +16,7 @@ function HomePage() {
         transition={{ duration: 1, delay: 0.2 }}
         viewport={{ once: true }}
         className={`${desktop ? "flexbox-column" : "flexbox-row"} flex-wrap full-width`}
-        style={{ maxWidth: 1000, marginBottom: desktop ? 100 : 150 }}
+        style={{ maxWidth: 1000, marginBottom: 100 }}
       > 
         <div className="full-width" style={{ maxWidth: 330, marginBottom: desktop ? 0 : 50}}>
           <div className={desktop ? "flexbox-column margin-auto full-width" : ""} style={{ position: desktop ? "" : "relative", right: desktop ? "" : "18px", marginBottom: "15px", marginTop: desktop ? 50 : 0 }}> 
@@ -39,7 +39,7 @@ function HomePage() {
             <Image file="BellaCanvas_3001_ChangeColor_01.jpg" alt="BellaCanvas 3001 Purple" width="100%" />
           </div>
 
-          <div className="margin-auto-left" style={{ width: "46%" }}>
+          <div className="margin-left" style={{ width: "46%" }}>
             <Image 
               file="3501_Citron_3513_Grey-Triblend_3501CVC_Athletic-Heather_SPSU22D4_Split_03.jpg" 
               alt="3501 Citron, 3513 Grey-Triblend, 3501CVC Athletic-Heather" 

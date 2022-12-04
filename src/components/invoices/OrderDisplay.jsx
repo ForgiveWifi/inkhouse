@@ -1,6 +1,5 @@
 import { Button } from "@mantine/core";
-import toDate from "../../utils/toDate";
-import toTime from "../../utils/toTime";
+import { toTime, toDate } from "../../utils/time";
 import Divider from "../ui/Divider";
 import HorzDivider from "../ui/HorzDivider";
 import ShippingBox from "./ShippingBox";

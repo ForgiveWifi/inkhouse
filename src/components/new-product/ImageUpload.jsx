@@ -20,6 +20,7 @@ export function ImageUpload({currentImage, setCurrentImage, open, close}) {
       onClose={close}
       overflow="outside"
       withCloseButton={false}
+      radius={15}
       centered
     >
         <Dropzone
@@ -61,14 +62,14 @@ export function ImageUpload({currentImage, setCurrentImage, open, close}) {
               </Dropzone.Idle>
 
             <Text align="center" size="sm" mt="xs" color="dimmed" style={{ marginBottom: "20px"}}>
-              Select or drop image here for your design. We reccomend .png and .jpeg files that
-              are less than 10mb in size.  You must own rights to images.
+              Select or drop. We reccomend .png and .jpeg @300dpi that
+              are less than 10mb.  You must own rights to images.
             </Text>
           </div>
         </Dropzone>
 
         <div className="flexbox full-width">
-          <button className="orange-background max-radius" style={{ position: "absolute", bottom: "18px", padding: "8px 25px"}} onClick={() => openRef.current?.()}>
+          <button className="white-background max-radius" style={{ position: "absolute", bottom: "18px", padding: "8px 25px"}} onClick={() => openRef.current?.()}>
             <div>Select file</div>
           </button>
         </div>

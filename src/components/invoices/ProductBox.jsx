@@ -4,6 +4,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import { Link } from "react-router-dom";
 import toDollars from "../../utils/toDollars";
 import Divider from "../ui/Divider";
+import { CgClose } from "react-icons/cg"
 
 function ProductBox({product}) {
   
@@ -44,11 +45,15 @@ function ProductBox({product}) {
             <Divider />
               <div>{style}</div>
           </div>
-          <div>Qty: {quantity}</div>
+          <div>Qty: </div>
         </div>
         
         <div className="flexbox-row no-wrap" style={{ marginLeft: "auto", marginTop: "auto", marginRight: "5px" }}>
-          <h5>{toDollars(amount)}</h5>
+        <h5 style={{ marginRight: 30}}>{quantity}</h5>
+        <CgClose style={{ fontSize: 20}}/>
+          <div className="flexbox-column-end" style={{ width: 70 }}>
+            <h5 style={{ marginLeft: "auto"}}>{toDollars(amount)}</h5>
+          </div>
         </div>
       </Link>
     </>

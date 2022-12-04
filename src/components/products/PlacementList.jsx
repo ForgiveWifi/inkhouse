@@ -1,16 +1,16 @@
-import PlacementBox from "./PlacementBox";
+import DesignBox from "./DesignBox";
 
 function PlacementList({designs}) {
 
   return (
     <>
-      <div className="flexbox-column-start full-width radius10" style={{ margin: "15px 20px", gap: "20px"}}>
-        <h4>Image List</h4>
-        <div className="product-grid">
+      <div className="flexbox-column-start radius10" style={{ margin: "40px 20px 40px"}}>
+        <h4>Design List</h4>
+        <div className="product-grid full-width">
           {
             designs.map((design, i) => {
               return (
-                <PlacementBox key={i} design={design}/>
+                <DesignBox key={i} design={design}/>
               )
             })
           }

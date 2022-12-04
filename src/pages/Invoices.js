@@ -36,7 +36,7 @@ function Invoices() {
         setLoading(false)
       }
       catch (err) {
-        showError("invoices", "API error - invoices", "Contact us!") 
+        showError("invoices", "Server error - invoices", "Contact us!") 
       }
     }
     fetchInvoices() 

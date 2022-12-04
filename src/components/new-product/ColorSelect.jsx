@@ -1,9 +1,9 @@
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { Tooltip } from '@mantine/core';
 import { colors } from "../../data/colors";
+import { HiCheck } from "react-icons/hi"
 
 function ColorSelect({ attributes, setAttributes}) {
-
   return (
     <>
       <div className="flexbox-row flex-wrap full-width" style={{ justifyContent: "center"}}>
@@ -23,7 +23,7 @@ function ColorSelect({ attributes, setAttributes}) {
                     className="flexbox shadow2" 
                     style={{ borderRadius: 20, margin: "5px", backgroundColor: hex, width: 40, height: 40, outline: !selected ? "none" : light ? "2px solid black" : "2px solid white" }}
                   >
-                    { selected && <CheckCircleOutlineIcon key={i} sx={{ fill: light ? "black" : "white"}} />}
+                    { selected && <HiCheck key={i} style={{ fontSize: 40, fill: light ? "black" : "white"}} />}
                   </button>
                 </Tooltip>
               </>

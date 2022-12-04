@@ -41,7 +41,7 @@ function ProductList({loading, lines}) {
         setLoad(false)
       }
       catch (err) {
-        showError("products", "API error - products", "Contact Us!")
+        showError("products", "Server error - products", "Contact Us!")
       }
     }
     

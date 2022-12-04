@@ -1,4 +1,7 @@
-
+function toTime(utc) {
+  const localTime = new Date(utc)
+  return(localTime.toLocaleTimeString('en', { timeStyle: 'short', hour12: true }))
+}
 
 function toDate(utc, length) {
   const localTime = new Date(utc)
@@ -6,4 +9,5 @@ function toDate(utc, length) {
   return(localTime.toLocaleDateString(undefined, options))
 }
 
-export default toDate;
+
+export { toTime, toDate };

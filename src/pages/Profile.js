@@ -63,7 +63,7 @@ function Profile() {
       }
       catch (err) {
         setLoading(false)
-        showError("profile", "API Error: profile", "Contact Us!")
+        showError("profile", "Server error: profile", "Contact Us!")
       }
     }
     getProfile()

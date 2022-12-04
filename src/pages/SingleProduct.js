@@ -20,7 +20,6 @@ function SingleProduct() {
       try {
         setLoading(true)
         const access_token = await getAccessTokenSilently()
-        console.log(product_id)
         const res = await axios.get(`${process.env.REACT_APP_API_URL}/product/${product_id}`, {
           headers: {
             authorization: `Bearer ${access_token}`
@@ -33,7 +32,7 @@ function SingleProduct() {
         if (err.response.status === 404) {
           showError("404-error", "Product does not exist!")
         } else {
-          showError("server-error", `API error - product`, "Contact Us!")
+          showError("server-error", `Server error - product`, "Contact Us!")
         }
       }
     }

@@ -1,5 +1,5 @@
 .mantine-Modal-modal{
-  background-color: rgb(240, 239, 239)
+  background-color: #FF9244;
 }
 
 .mantine-Input-input{
@@ -71,6 +71,9 @@
 }
 .mantine-Select-item{
   color: rgb(107, 116, 130);
+}
+.mantine-Select-rightSection{
+  background-color: transparent;
 }
 .mantine-Select-input{
   color: rgb(107, 116, 130);

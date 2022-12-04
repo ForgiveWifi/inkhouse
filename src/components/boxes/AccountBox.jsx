@@ -1,5 +1,4 @@
-import toDate from "../../utils/toDate";
-import toTime from "../../utils/toTime";
+import { toTime, toDate } from "../../utils/time";
 
 function AccountBox({user}) {
 

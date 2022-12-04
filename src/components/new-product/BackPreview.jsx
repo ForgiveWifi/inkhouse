@@ -1,6 +1,6 @@
 import SingleImage from "./SingleImage";
 
-function BackPreview({currentImage, makeCurrentImage, color, zIndex, backImages, backRef}) {
+function BackPreview({currentImage, makeCurrentImage, color, zIndex, backImages}) {
   return (
     <>  
       <div id="back-preview" className="flexbox" style={{ position: "absolute", zIndex: zIndex, width: 650, height: 650}}>

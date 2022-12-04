@@ -1,11 +1,11 @@
 
-function PlacementBox({ design }) {
+function DesignBox({ design }) {
 
   const { width, height, x_offset, y_offset, art_file } = design
 
   return (
     <>
-      <div className="flexbox-column full-width radius15 white-border" style={{ width: "300px" }}>
+      <div className="flexbox-column full-width white-border shadow2 margin-auto">
         <img 
           src={ art_file instanceof File ? URL.createObjectURL(art_file) : design.art_url }
           alt={ art_file instanceof File ? art_file.name : art_file}
@@ -63,4 +63,4 @@ function PlacementBox({ design }) {
   );
 }
 
-export default PlacementBox;
+export default DesignBox;

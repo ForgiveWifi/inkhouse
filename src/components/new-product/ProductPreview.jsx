@@ -9,7 +9,6 @@ function ProductPreview({frontImages, backImages, color, currentImage, setCurren
     setCurrentImage(item)
     setImageList(imageList.filter((image) => image !== item))
   }
-
   const { placement, width, height } = currentImage
   const front = placement === "front"
 

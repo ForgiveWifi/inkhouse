@@ -16,25 +16,24 @@ function NavLinks() {
   return (
     <>
       <div className="flexbox-row" style={{ marginLeft: "auto" }}>
-        {/* <Link to="/production" className="nav-link shadow2">production</Link> */}
 
-        {/* <Link to="/design" className="nav-link shadow2">design</Link> */}
-
-        { 
-          isLoading ? 
-          <Loader color="white" variant="dots" /> :
-          !isAuthenticated ? 
-          <LogButton name="LOG IN" onClick={() => loginWithRedirect()}/> : 
-          mobile ? 
-          <MenuIcon/> :
-          <motion.div
-            whileHover={{scale: 1.05}}
-            whileTap={{ scale: 0.97 }}>
-            <Link to="/account/profile" className="flexbox link" s>
-              <AccountCircleIcon style={{ fontSize: 50 }}/>
-            </Link> 
-          </motion.div>
-        }
+        <div className="flexbox" style={{ width: 50, height: 50 }}>
+          { 
+            isLoading ? 
+            <Loader color="white" /> :
+            !isAuthenticated ? 
+            <LogButton name="LOG IN" onClick={() => loginWithRedirect()}/> : 
+            mobile ? 
+            <MenuIcon/> :
+            <motion.div
+              whileHover={{scale: 1.05}}
+              whileTap={{ scale: 0.97 }}>
+              <Link to="/account/profile" className="flexbox link" s>
+                <AccountCircleIcon style={{ fontSize: 50 }}/>
+              </Link> 
+            </motion.div>
+          }
+        </div>
       </div>
     </>
   );

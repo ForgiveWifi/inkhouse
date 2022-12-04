@@ -16,6 +16,8 @@ function SingleInvoice() {
   const { getAccessTokenSilently } = useAuth0()
 
   useEffect(() => {
+    fetchInvoice()
+
     async function fetchInvoice() {
       try {
         setLoading(true)
@@ -32,11 +34,10 @@ function SingleInvoice() {
         if (err.response.status === 404) {
           showError("404-error", "Order does not exist!")
         } else {
-          showError("invoice", `API Error - invoice`, "Contact Us!")
+          showError("invoice", `Server error - invoice`, "Contact Us!")
         }
       }
     }
-    fetchInvoice()
   },[])
   console.log(invoice)
   return (

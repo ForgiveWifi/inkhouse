@@ -10,24 +10,24 @@ function ProductCard({product}) {
 
   return (
     <>
-      <Link to={product._id} className="link flexbox-column radius15 shadow2 background margin-auto" style={{ width: 250, padding: 10, outline: "3px solid white" }}>
-        <div>
-          {
-            loaded ?
-              null :
-              <div className="flexbox" style={{ width: 250, height: 250}}><Skeleton className="radius10" style={{ width: "250px", height: "250px"}} /></div>
-          }
-          <img 
-            onLoad={() => setLoaded(true)} 
-            className="radius10" 
-            src={product.images[0]} 
-            style={ loaded ? { width: "100%" } : { display: "none"} }/
-          >
-          <div className="flexbox-column-start full-width" style={{ margin: 8, marginTop: 0}}>
-            <h3>{product.name}</h3>
-            <h5>sizes</h5>
-            <SizeList sizes={product.sizes} />
-          </div>
+      <Link to={product._id} className="link flexbox-column radius10 shadow2 white-background white-border margin-auto" style={{ width: 250, padding: 10 }}>
+        {
+          loaded ?
+            null :
+            <div className="flexbox" style={{ width: 230, height: 230}}>
+              <Skeleton className="radius10" style={{ width: "230px", height: "230px", position: "relative", bottom: 2}} />
+            </div>
+        }
+        <img 
+          onLoad={() => setLoaded(true)} 
+          className="radius10" 
+          src={product.images[0]} 
+          style={ loaded ? { width: "230px" } : { display: "none"} }/
+        >
+        <div className="flexbox-column-start full-width" style={{ padding: "5px 8px"}}>
+          <h3 className="grey-text" style={{ marginTop: 5}}>{product.name}</h3>
+          <h5 className="grey-text">sizes</h5>
+          <SizeList sizes={product.sizes} />
         </div>
       </Link>
     </>

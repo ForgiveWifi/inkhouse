@@ -1,18 +1,14 @@
 import InvoiceSkeleton from "./InvoiceSkeleton";
 import NoBox from "../ui/NoBox";
 import InvoiceItem from "./InvoiceItem";
-import { useState } from "react";
 import { motion, AnimatePresence, MotionConfig } from "framer-motion";
-import BackButton from "../ui/buttons/BackButton";
-import CloseButton from "../ui/buttons/CloseButton";
-import Loading from "../ui/Loading";
 
 function InvoiceList({loading, invoices}) {
 
   if (loading || !invoices) {
     return(
       <div className="flexbox-column" style={{ gap: 10 }}>
-        <InvoiceSkeleton count={5} /> 
+        <InvoiceSkeleton count={6} /> 
       </div>
     )
   } else
@@ -22,7 +18,7 @@ function InvoiceList({loading, invoices}) {
   return (
     <>
       <div className="flexbox-column" style={{ gap: 10 }}>
-        <AnimatePresence>
+        {/* <AnimatePresence> */}
           {
             invoices.map((invoice,i) => {
               return(
@@ -30,7 +26,7 @@ function InvoiceList({loading, invoices}) {
               )
             })
           }
-        </AnimatePresence>
+        {/* </AnimatePresence> */}
       </div>
       {/* {selectedId && <Loading />}
       

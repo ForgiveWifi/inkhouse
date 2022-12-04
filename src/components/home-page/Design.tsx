@@ -53,7 +53,7 @@ function Design() {
               Team of designers
             </h4>
 
-            <h4 className={mobile ? "flexbox-row margin-auto-left" : center ? "flexbox-row" : ""} style={mobile ? { maxWidth: "250px" } : { margin: "0px" }}>
+            <h4 className={mobile ? "flexbox-row margin-left" : center ? "flexbox-row" : ""} style={mobile ? { maxWidth: "250px" } : { margin: "0px" }}>
               <div className="square-icon flexbox shadow2">
                 <ForumIcon style={boxIcon} />
               </div>
@@ -67,7 +67,7 @@ function Design() {
               Rapid prototype turnaround
             </h4>
 
-            <h4 className={mobile ? "flexbox-row margin-auto-left" : center ? "flexbox-row" : ""} style={mobile ? { width: "250px" } : { margin: "0px" }}>
+            <h4 className={mobile ? "flexbox-row margin-left" : center ? "flexbox-row" : ""} style={mobile ? { width: "250px" } : { margin: "0px" }}>
               <div className="square-icon flexbox shadow2">
                 <DesignServicesIcon style={boxIcon} />
               </div>

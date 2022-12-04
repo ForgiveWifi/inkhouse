@@ -7,7 +7,6 @@ import Invoices from "./pages/Invoices"
 import SingleInvoice from "./pages/SingleInvoice"
 import NewInvoice from "./pages/NewInvoice";
 import Products from "./pages/designs/Products"
-import NewProduct from "./pages/NewProduct";
 import SingleProduct from "./pages/SingleProduct";
 import Account from "./pages/Account";
 import NewAccount from "./pages/accounts/NewAccount";
@@ -34,7 +33,6 @@ export default function App() {
               <Route path="invoices/new" element={<NewInvoice />} />
               <Route path="products" element={<Products/>} />
               <Route path="products/:product_id" element={<SingleProduct/>} />
-              <Route path="product/new" element={<NewProduct/>} />
               <Route path="tags" element={<Tags/>} />
             </Route>
 

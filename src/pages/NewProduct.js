@@ -1,8 +1,5 @@
 import { useState } from "react"
 import axios from "axios";
-import { v4 } from "uuid"
-import { storage } from "../firebase.js";
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage"
 import AttributesSelect from "../components/new-product/AttributesSelect";
 import ProductDetails from "../components/new-product/ProductDetails";
 import { showError, showLoading, updateSuccess, updateError } from '../utils/alerts'
@@ -16,6 +13,7 @@ import html2canvas from "html2canvas";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useMediaQuery } from '@mantine/hooks';
 import NoBox from "../components/ui/NoBox.jsx";
+import { uploadFirebase } from "../utils/firebaseFunctions.js";
 
 function NewProduct() {
 
@@ -85,13 +83,11 @@ function NewProduct() {
   async function screenshot(id) {
     const canvas = await html2canvas(document.getElementById(id))
     const screenshot = await new Promise((resolve) => canvas.toBlob(async function(blob) {
-      const image = new Image();
+      const image = new Image()
+      image.src = blob
       const name = `${details.name}-${id}`
-      image.src = blob;
-      const imageRef = ref(storage, `${id}/${name}`)
-      await uploadBytes(imageRef, blob)
-      const url = await getDownloadURL(imageRef)
-      resolve(url)
+      const res = await uploadFirebase(id, name, image)
+      resolve(res)
     })); 
     return(screenshot)
   }
@@ -114,26 +110,14 @@ function NewProduct() {
     return (design_data)
   }
 
-
   async function uploadImage(design) {
-    const art = await uploadFirebase("art", design.image)
+    const art = await uploadFirebase("art", design.image.name, design.image)
     return({
       ...design,
       image: null,
       art_file: art.name,
       art_url: art.url,
-    })
-  }
-
-  
-  async function uploadFirebase(folder, image) {
-    const name = image.name + v4() 
-    const imageRef = ref(storage, `${folder}/${name}`)
-    await uploadBytes(imageRef, image)
-    const url = await getDownloadURL(imageRef)
-    return({
-      name: name,
-      url: url
+      thumbnail_url: undefined // add 
     })
   }
 
@@ -168,12 +152,10 @@ function NewProduct() {
 
   return (
     <>
-    
-      <BackButton />
       {
         !mobile ? 
-        <div style={{ marginTop: 30, padding: 20}}><NoBox text="Use a wider screen to create designs" /></div> :
-        <div className="flexbox flex-wrap full-width" style={{ margin: "80px 0px 15px", alignItems: "flex-start", gap: 15}}>
+        <div style={{ marginTop: 30, padding: 20}}><NoBox text="Use a computer to create designs" /></div> :
+        <div className="flexbox flex-wrap background3 full-width radius10" style={{ margin: "50px 0px 15px", padding: 20, alignItems: "flex-start", gap: 15}}>
           <div className="flexbox-column full-width radius15" style={{ maxWidth: "300px", padding: "5px 15px 15px"}}>
             <h2>New Product</h2>
             <ProductDetails details={details} setDetails={setDetails} error={error} />
